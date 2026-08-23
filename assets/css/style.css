@@ -212,6 +212,12 @@ h2 {
   text-underline-offset: 0.2em;
 }
 
+.button-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+}
+
 .button-ghost:hover, .button-ghost:focus-visible {
   background: transparent;
   color: var(--ink-60);
