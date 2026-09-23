@@ -4,130 +4,336 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hempdustry 2 – A Vanilla+ Cannabis Mod for Minecraft</title>
-<meta name="description" content="Grow, harvest, craft, build, and smoke your way through Hempdustry 2, a Vanilla+ mod. Multiple cannabis strains, hemp-based materials including a full hemp building set, a real advancement tree.">
+<meta name="description" content="Minecraft for stoners and hemprepreneurs. Grow two cannabis strains, smoke them in a spliff, pipe or bong, bake space cake from real cannabutter, and build a fireproof hemp house. Fabric, 1.21.11 and 1.21.1.">
+<meta property="og:title" content="Hempdustry 2">
+<meta property="og:description" content="Grow it, smoke it, bake it, build with it. A Vanilla+ cannabis mod for Minecraft on Fabric.">
+<meta property="og:image" content="assets/shots/showcase-1600.webp">
+<link rel="icon" href="assets/icons/hemp_leaf.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body id="top">
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="#top">Hempdustry 2</a>
+    <a class="brand" href="#top"><img src="assets/icons/hemp_leaf.png" alt="" width="16" height="16"><span class="brand-text">Hempdustry 2</span></a>
     <nav class="site-nav" aria-label="Primary">
       <ul>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#soundtrack">Soundtrack</a></li>
-        <li><a href="#roadmap">Roadmap</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#grow">Grow</a></li>
+        <li><a href="#smoke">Smoke</a></li>
+        <li><a href="#kitchen">Kitchen</a></li>
+        <li><a href="#build">Build</a></li>
+        <li><a href="#soundtrack">Music</a></li>
+        <li><a href="#roadmap">Coming next</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer">Discord</a></li>
       </ul>
     </nav>
-    <a class="button header-cta" href="#download">Download</a>
+    <a class="button button-primary header-cta" href="#download">Download</a>
   </div>
 </header>
 
 <main>
 
   <section id="hero" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <h1>Hempdustry 2</h1>
-        <p class="hero-subtitle">(formerly GanjaCraft)</p>
-        <p class="hero-description">A Vanilla+ hemp/cannabis mod for Minecraft. Grow plants, harvest them, craft with their fiber, build with fireproof hemp materials, smoke the flowers, cook edibles and eat them. Cannabis's diverse uses deserved to be represented in the game. I made it real, inspired by science and culture.</p>
-        <div id="download" class="hero-actions">
-          <a class="button button-primary button-disabled" href="#" aria-disabled="true">Modrinth (coming soon)</a>
-          <a class="button" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft" target="_blank" rel="noopener noreferrer">Download on CurseForge</a>
-          <a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/latest" target="_blank" rel="noopener noreferrer">Download on GitHub</a>
-          <a class="button button-ghost" href="https://github.com/warlon-mhite/hempdustry-fabric" target="_blank" rel="noopener noreferrer">View source on GitHub</a>
+    <div class="container">
+      <p class="eyebrow">Fabric &middot; Minecraft 1.21.11 &amp; 1.21.1 &middot; Public beta</p>
+      <h1>Hempdustry 2</h1>
+      <div class="hero-grid">
+        <div>
+          <p class="hero-subtitle">(formerly GanjaCraft)</p>
+          <p class="hero-description">Minecraft for stoners and hemprepreneurs. Grow weed, smoke it, bake it into space cake, then build a fireproof house out of the leftovers.</p>
+        </div>
+        <div id="download" class="hero-download">
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft" target="_blank" rel="noopener noreferrer">Download on CurseForge</a>
+            <a class="button" href="https://www.nexusmods.com/minecraft/mods/218" target="_blank" rel="noopener noreferrer">NexusMods</a>
+            <a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/latest" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <span class="button button-disabled" aria-disabled="true">Modrinth (soon)</span>
+          </div>
+          <p class="hero-note">Free, open source. Only needs <a href="https://modrinth.com/mod/fabric-api" target="_blank" rel="noopener noreferrer">Fabric API</a>.</p>
         </div>
       </div>
-      <!-- TODO: replace with real staged screenshot/artwork once photography is ready -->
-      <div class="hero-visual">
-        <p class="hero-visual-label">Plate 01 — artwork pending</p>
+
+      <figure class="plate plate-hero">
+        <img src="assets/shots/showcase-1600.webp" srcset="assets/shots/showcase-800.webp 800w, assets/shots/showcase-1600.webp 1600w" sizes="(min-width: 90rem) 84rem, 100vw" alt="A stepped display in a superflat world holding every item and block in the mod: both crops at every growth stage along the bottom, raw materials, the kitchen, the smoking gear and machines, the outfit, and a hemp-brick wall with the six paintings at the top." width="1600" height="880" fetchpriority="high">
+        <figcaption><span>Plate 01</span> Everything in the mod, on one staircase.</figcaption>
+      </figure>
+
+      <ol class="loop" aria-label="The loop">
+        <li><img src="assets/icons/indica_seeds.png" alt="" width="16" height="16"><span>Plant</span></li>
+        <li><img src="assets/icons/indica_buds.png" alt="" width="16" height="16"><span>Harvest</span></li>
+        <li><img src="assets/icons/sativa_spliff.png" alt="" width="16" height="16"><span>Smoke</span></li>
+        <li><img src="assets/icons/space_cookie.png" alt="" width="16" height="16"><span>Bake</span></li>
+        <li><img src="assets/icons/hempcrete.png" alt="" width="16" height="16"><span>Build</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <aside class="disclaimer" aria-label="A quick word first">
+    <div class="container">
+      <p><strong>A quick word first.</strong> Hempdustry is a comedy (but serious) mod about a plant. Nobody here is trying to teach you how to roll anything in real life, and nothing in this mod is medical advice. It's blocks, items, and a couple of dumb jokes about the munchies.</p>
+    </div>
+  </aside>
+
+  <section class="stats" aria-label="In numbers">
+    <div class="container">
+      <ul class="stat-grid">
+        <li><b>2</b> strains</li>
+        <li><b>3</b> ways to smoke</li>
+        <li><b>6</b> edibles</li>
+        <li><b>24</b> advancements</li>
+        <li><b>12</b> languages</li>
+        <li><b>2</b> original tracks</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="grow" class="feature">
+    <div class="container">
+      <h2>Grow your own</h2>
+      <p class="lede">Two strains, two very different plants.</p>
+
+      <figure class="plate plate-wide">
+        <img src="assets/shots/crops-1600.webp" srcset="assets/shots/crops-800.webp 800w, assets/shots/crops-1600.webp 1600w" sizes="(min-width: 90rem) 84rem, 100vw" alt="A long bed of farmland with Purple Kush growing from seedling to ripe on the left and Lemon Haze on the right, the seeds, buds, leaves and stems displayed on the shelf above." width="1600" height="318" loading="lazy">
+        <figcaption><span>Plate 02</span> Seedling to harvest. Purple Kush left, Lemon Haze right.</figcaption>
+      </figure>
+
+      <div class="strain-grid">
+        <article class="strain">
+          <span class="slot slot-lg"><img src="assets/icons/indica_buds.png" alt="" width="16" height="16"></span>
+          <div>
+            <h3>Purple Kush</h3>
+            <p>Short and leafy, two blocks tall. Grows wild in jungles, swamps and lush caves.</p>
+          </div>
+        </article>
+        <article class="strain">
+          <span class="slot slot-lg"><img src="assets/icons/sativa_buds.png" alt="" width="16" height="16"></span>
+          <div>
+            <h3>Lemon Haze</h3>
+            <p>Three blocks tall, slower, wants headroom. Pays out in stems. Grows wild from savanna to badlands.</p>
+          </div>
+        </article>
+      </div>
+
+      <ul class="tips">
+        <li><b>Trim it.</b> Shear a growing plant twice and the harvest leans toward buds. Or don't, it grows anyway.</li>
+        <li><b>Find it.</b> Seeds drop from tall grass and turn up in chests. Wild plants are rare, shear one up for a flower pot.</li>
+        <li><b>Farm life.</b> Bees pollinate it. Chickens and parrots eat the seeds. Goats go for the leaves.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="smoke" class="feature">
+    <div class="container">
+      <h2>Pack a bowl</h2>
+      <p class="lede">The device decides how long. The buds decide how hard.</p>
+
+      <ul class="device-grid">
+        <li class="device">
+          <span class="slot slot-xl"><img src="assets/icons/indica_spliff.png" alt="" width="16" height="16"></span>
+          <h3>Spliff</h3>
+          <p>Roll it, smoke it, gone.</p>
+        </li>
+        <li class="device">
+          <span class="slot slot-xl"><img src="assets/icons/wooden_pipe.png" alt="" width="16" height="16"></span>
+          <h3>Wooden pipe</h3>
+          <p>Pack it again and again. Takes enchantments, repairs on an anvil.</p>
+        </li>
+        <li class="device">
+          <span class="slot slot-xl"><img src="assets/icons/bong.png" alt="" width="16" height="16"></span>
+          <h3>Bong</h3>
+          <p>Bigger bowl, up to three buds. It bubbles.</p>
+        </li>
+      </ul>
+
+      <div class="effects">
+        <div class="effect-card">
+          <h3><img src="assets/icons/indica_buds.png" alt="" width="16" height="16">Purple Kush</h3>
+          <ul class="chips">
+            <li class="chip chip-good">Resistance</li>
+            <li class="chip chip-bad">Mining Fatigue</li>
+            <li class="chip chip-bad">Munchies</li>
+          </ul>
+        </div>
+        <div class="effect-card">
+          <h3><img src="assets/icons/sativa_buds.png" alt="" width="16" height="16">Lemon Haze</h3>
+          <ul class="chips">
+            <li class="chip chip-good">Speed</li>
+            <li class="chip chip-good">Haste</li>
+            <li class="chip chip-bad">Weakness</li>
+            <li class="chip chip-bad">Munchies</li>
+          </ul>
+        </div>
+        <p class="effect-note">More buds, stronger high, bigger downside. Buffs stop at level II like a beacon, so a third bud makes it last longer instead.</p>
+      </div>
+
+      <p class="callout"><b>Greening out is real.</b> Go big and you might lose the hit and spend a while nauseous instead. At three buds it also wipes every buff you had and benches you for a minute. A single bud never does that.</p>
+    </div>
+  </section>
+
+  <section id="kitchen" class="feature">
+    <div class="container">
+      <h2>The kitchen</h2>
+      <p class="lede">Real cannabutter, made the long way. Edibles are the endgame, not a day-one snack.</p>
+
+      <figure class="plate">
+        <img src="assets/shots/kitchen-1600.webp" srcset="assets/shots/kitchen-800.webp 800w, assets/shots/kitchen-1600.webp 1600w" sizes="(min-width: 90rem) 84rem, 100vw" alt="A cozy wooden kitchen: the Decarboxylator, a water cauldron and the Infuser line the counter under framed buds and milk buckets, a farmer villager stands by, and a space cake sits on the table with cookies and brownies around it." width="1600" height="900" loading="lazy">
+        <figcaption><span>Plate 03</span> Oven, rinse, infuse. The farmer is just watching.</figcaption>
+      </figure>
+
+      <ol class="chain">
+        <li>
+          <span class="slot"><img src="assets/icons/decarboxylator_front_on.png" alt="" width="16" height="16"></span>
+          <h3>Decarboxylator</h3>
+          <p>A hemp-brick oven with three trays.</p>
+        </li>
+        <li>
+          <span class="slot"><img src="assets/icons/washed_decarboxylated_hemp.png" alt="" width="16" height="16"></span>
+          <h3>Cauldron</h3>
+          <p>Rinse it. Optional, but it makes better butter.</p>
+        </li>
+        <li>
+          <span class="slot"><img src="assets/icons/infuser_front.png" alt="" width="16" height="16"></span>
+          <h3>Infuser</h3>
+          <p>Pour in milk, light a fire under it, wait.</p>
+        </li>
+        <li>
+          <span class="slot"><img src="assets/icons/cannabutter.png" alt="" width="16" height="16"></span>
+          <h3>Cannabutter</h3>
+          <p>Strength and quality both count. Patience pays.</p>
+        </li>
+      </ol>
+
+      <div class="split">
+        <figure class="plate">
+          <img src="assets/shots/kitchen-table-1600.webp" srcset="assets/shots/kitchen-table-800.webp 800w, assets/shots/kitchen-table-1600.webp 1600w" sizes="(min-width: 64rem) 42rem, 100vw" alt="Top-down view of a kitchen table with a space cake, a brownie, a space cookie and cannabutter toast." width="1600" height="978" loading="lazy">
+          <figcaption><span>Plate 04</span> Dinner is served.</figcaption>
+        </figure>
+        <div>
+          <ul class="inventory" aria-label="Edibles">
+            <li><span class="slot"><img src="assets/icons/space_cookie.png" alt="" width="16" height="16"></span>Space Cookie</li>
+            <li><span class="slot"><img src="assets/icons/space_brownie.png" alt="" width="16" height="16"></span>Space Brownie</li>
+            <li><span class="slot"><img src="assets/icons/space_cake.png" alt="" width="16" height="16"></span>Space Cake</li>
+            <li><span class="slot"><img src="assets/icons/cannabutter_toast.png" alt="" width="16" height="16"></span>Cannabutter Toast</li>
+            <li><span class="slot"><img src="assets/icons/dawamesk.png" alt="" width="16" height="16"></span>Dawamesk</li>
+            <li><span class="slot"><img src="assets/icons/bhang_bucket.png" alt="" width="16" height="16"></span>Bucket of Bhang</li>
+          </ul>
+          <p class="small">One batch of butter makes eight cookies or a single dawamesk. Guess which one hits harder.</p>
+          <p class="callout">Edibles take thirty seconds to three minutes to kick in. Eating a second one because the first "isn't working" is a mistake the game will let you make.</p>
+        </div>
+      </div>
+
+      <div class="sober">
+        <h3>And food that won't get you high</h3>
+        <ul class="inventory inventory-row">
+          <li><span class="slot"><img src="assets/icons/toasted_hemp_seeds.png" alt="" width="16" height="16"></span>Toasted Hemp Seeds</li>
+          <li><span class="slot"><img src="assets/icons/hemp_flapjack.png" alt="" width="16" height="16"></span>Hemp Seed Bar</li>
+          <li><span class="slot"><img src="assets/icons/hemp_milk_bucket.png" alt="" width="16" height="16"></span>Hemp Milk</li>
+          <li><span class="slot"><img src="assets/icons/siemieniotka.png" alt="" width="16" height="16"></span>Siemieniotka</li>
+        </ul>
+        <p class="small">Hemp milk works anywhere cow's milk does, Infuser and cake included. You never need to find a cow.</p>
       </div>
     </div>
   </section>
 
-  <section id="disclaimer" class="disclaimer">
+  <section id="build" class="feature">
     <div class="container">
-      <h2>A quick word first</h2>
-      <p>Hempdustry is a comedy (but serious) mod about a plant. Nobody here is trying to teach you how to roll anything in real life, and nothing in this mod is medical advice. It's blocks, items, and a couple of dumb jokes about the munchies.</p>
+      <h2>Build with it</h2>
+      <p class="lede">Hemp was a fiber crop long before it was a vibe. Everything here is fireproof, like Crimson and Warped wood.</p>
+
+      <figure class="plate plate-wide">
+        <img src="assets/shots/wall-1600.webp" srcset="assets/shots/wall-800.webp 800w, assets/shots/wall-1600.webp 1600w" sizes="(min-width: 90rem) 84rem, 100vw" alt="Two small hemp-plank houses flank a row of building blocks, hempcrete, bricks, planks, wool and bales, under a hemp-brick wall hung with the mod's paintings." width="1600" height="334" loading="lazy">
+        <figcaption><span>Plate 05</span> The building sets, with the paintings up top.</figcaption>
+      </figure>
+
+      <ul class="block-grid">
+        <li><span class="slot slot-lg"><img src="assets/icons/hempcrete_block.png" alt="" width="16" height="16"></span><h3>Hempcrete</h3><p>The powder sets in water, like concrete.</p></li>
+        <li><span class="slot slot-lg"><img src="assets/icons/hemp_bricks_block.png" alt="" width="16" height="16"></span><h3>Hemp bricks</h3><p>Full set of stairs, slabs and walls.</p></li>
+        <li><span class="slot slot-lg"><img src="assets/icons/hemp_planks.png" alt="" width="16" height="16"></span><h3>Hemp planks</h3><p>Doors, trapdoors, fences, signs, boats. The works.</p></li>
+        <li><span class="slot slot-lg"><img src="assets/icons/hemp_wool.png" alt="" width="16" height="16"></span><h3>Canvas &amp; wool</h3><p>Stands in for leather and wool. Beds and books without a sheep or a cow.</p></li>
+      </ul>
+
+      <div class="outfit">
+        <ul class="inventory inventory-row" aria-label="Hemp outfit">
+          <li><span class="slot"><img src="assets/icons/hemp_beanie.png" alt="" width="16" height="16"></span>Beanie</li>
+          <li><span class="slot"><img src="assets/icons/hemp_shirt.png" alt="" width="16" height="16"></span>Shirt</li>
+          <li><span class="slot"><img src="assets/icons/hemp_harem_pants.png" alt="" width="16" height="16"></span>Harem pants</li>
+          <li><span class="slot"><img src="assets/icons/flip_flops.png" alt="" width="16" height="16"></span>Flip-flops</li>
+        </ul>
+        <p class="small">The full hemp outfit. It is not good armor. It does take trims.</p>
+      </div>
     </div>
   </section>
 
-  <section id="features" class="features">
+  <section id="extras" class="feature">
     <div class="container">
-      <h2>What you can actually do in it</h2>
-      <ul class="feature-grid">
+      <h2>The rest of the stash</h2>
 
-        <li class="feature-card">
-          <div class="feature-icon" aria-hidden="true">
-            <img src="assets/icons/indica_buds.png" alt="" width="16" height="16">
-            <img src="assets/icons/sativa_buds.png" alt="" width="16" height="16">
-          </div>
-          <h3>Two strains, two very different plants</h3>
-          <p>Purple Kush and Lemon Haze grow, look, and behave differently. Purple Kush is a two-block plant; Lemon Haze stretches to three and takes noticeably longer to mature. Same seed economy, same farmland, completely different plant to walk past in your fields.</p>
-        </li>
-
-        <li class="feature-card">
-          <div class="feature-icon" aria-hidden="true">
-            <img src="assets/icons/hempcrete.png" alt="" width="16" height="16">
-          </div>
-          <h3>Hempcrete that won't burn down your build</h3>
-          <p>Hempcrete, the hemp brick set, and the full hemp plank set (stairs, slabs, doors, trapdoors, fences, signs, boats, the works) are all fireproof, the same way Crimson and Warped wood is. Build your hemp farmhouse next to lava if you really want to.</p>
-        </li>
-
-        <li class="feature-card">
-          <div class="feature-icon" aria-hidden="true">
-            <img src="assets/icons/hemp_fiber.png" alt="" width="16" height="16">
-          </div>
-          <h3>Turn fiber into something useful</h3>
-          <p>Hemp fiber goes into armor and a growing list of materials such as strings, wool, paintings, item frames, and probably more to come.</p>
-        </li>
-
-        <li class="feature-card">
-          <div class="feature-icon" aria-hidden="true">
-            <img src="assets/icons/bong.png" alt="" width="16" height="16">
-          </div>
-          <h3>Spliffs, pipes, and bongs, each with their own feel</h3>
-          <p>Roll a spliff for a quick, single-use hit, or pack a pipe or bong for repeated use with real durability and enchantments. Every device and every strain gives a different effect stack, so a Lemon Haze bong hits nothing like a Purple Kush spliff.</p>
-        </li>
-
-        <li class="feature-card">
-          <div class="feature-icon" aria-hidden="true">
-            <img src="assets/icons/cannabutter.png" alt="" width="16" height="16">
-          </div>
-          <h3>Cook something with your harvest</h3>
-          <p>Cannabutter is the base for a chain of edibles with various properties. Eat responsibly. Or don't. It's a video game, and nobody seems to die from a THC overdose.</p>
-        </li>
-
-        <li class="feature-card">
-          <div class="feature-icon" aria-hidden="true">
-            <img src="assets/icons/knowledge_book.png" alt="" width="16" height="16">
-          </div>
-          <h3>An advancement tree with a few secrets in it</h3>
-          <p>There's a real advancement tree to help you learn about the mod and its mechanics, but a few easter eggs are hidden in it. Will you find them all?</p>
-        </li>
-
-        <li class="feature-card">
-          <div class="feature-icon" aria-hidden="true">
-            <img src="assets/icons/hemp_leaf.png" alt="" width="16" height="16">
-          </div>
-          <h3>Real plant, real facts</h3>
-          <p>A few of the mod's mechanics are lifted straight from actual cannabis science. The sativa/indica split you hear about is mostly folklore rather than genetics. Hempcrete is a genuine building material too.</p>
-        </li>
-
+      <ul class="paintings" aria-label="The six paintings">
+        <li><img src="assets/paintings/snoop.png" alt="Painting: Snoop" width="48" height="48"></li>
+        <li><img src="assets/paintings/hendrix.png" alt="Painting: Hendrix" width="32" height="32"></li>
+        <li><img src="assets/paintings/pineapple_express.png" alt="Painting: Pineapple Express" width="32" height="48"></li>
+        <li><img src="assets/paintings/rihanna.png" alt="Painting: Rihanna" width="16" height="32"></li>
+        <li><img src="assets/paintings/brownie_mary.png" alt="Painting: Brownie Mary" width="64" height="64"></li>
+        <li><img src="assets/paintings/b_rappaz.png" alt="Painting: B. Rappaz" width="64" height="64"></li>
       </ul>
+      <p class="small center">Six paintings, for the walls of your grow house.</p>
+
+      <ul class="extra-grid">
+        <li><span class="slot"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"></span><h3>24 advancements</h3><p>A real tree that teaches the mod, with a few jokes hidden in it. One is named after a Paris club where Baudelaire ate dawamesk.</p></li>
+        <li><span class="slot"><img src="assets/discs/music_disc_moonlight.png" alt="" width="16" height="16"></span><h3>Two music discs</h3><p>Original tracks by Nefuß. Creepers drop them. <a href="#soundtrack">Listen below.</a></p></li>
+        <li><span class="slot"><img src="assets/icons/decarboxylated_hemp.png" alt="" width="16" height="16"></span><h3>JEI &amp; REI pages</h3><p>Every machine and both cauldron steps show up in your recipe viewer.</p></li>
+      </ul>
+
+      <details class="nerd">
+        <summary>For server owners and pack makers</summary>
+        <ul>
+          <li><code>config/hempdustry.json</code> can switch off every drug effect ("industrial hemp only"), green-outs, nausea and loot, or speed up crops and machines. <code>/hempdustry reload</code> applies it.</li>
+          <li>Strains are a datapack registry. Edit the shipped two or add your own, then <code>/reload</code>.</li>
+          <li>Both machines run on datapack recipes, so KubeJS and CraftTweaker can rebalance them.</li>
+          <li>The Infuser's spout pours into chests, hoppers and anything with Fabric storage, AE2 included. A dispenser can feed it milk.</li>
+          <li>An API with four events (smoke, eat, infuse, and a veto) for addon makers.</li>
+          <li>Install it on both client and server.</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <section id="languages" class="languages">
+    <div class="container">
+      <h2>Speaks your language</h2>
+      <p class="lede">Twelve languages, local slang included.</p>
+
+      <figure class="plate mc-screen">
+        <div class="mc-panel">
+          <p class="mc-title" aria-hidden="true">Language</p>
+          <ul class="mc-list" aria-label="Languages the mod ships in, and who translated each">
+            <li class="is-selected"><span lang="en">English (United States)</span> <small>by Warlon Mhite</small></li>
+            <li><span lang="en">English (United Kingdom)</span> <small>by LLM</small></li>
+            <li><span lang="en">English (Canada)</span> <small>by LLM</small></li>
+            <li><span lang="en">English (Australia)</span> <small>by LLM</small></li>
+            <li><span lang="en">English (New Zealand)</span> <small>by LLM</small></li>
+            <li><span lang="fr">Français (France)</span> <small>by Warlon Mhite</small></li>
+            <li><span lang="fr">Français (Canada)</span> <small>by LLM</small></li>
+            <li><span lang="fr">Français (Suisse)</span> <small>by Warlon Mhite</small></li>
+            <li><span lang="de">Deutsch (Deutschland)</span> <small>by Gülps'sch420</small></li>
+            <li><span lang="de">Deitsch (Österreich)</span> <small>by LLM</small></li>
+            <li><span lang="de">Schwiizerdütsch (Schwiiz)</span> <small>by Gülps'sch420</small></li>
+            <li><span lang="ru">Русский (Россия)</span> <small>by MargoxaTheGamer</small></li>
+
+        </div>
+        <figcaption><span>LLM</span> Machine translated, not checked by a person yet. Speak one of these? Help out on the <a href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer">Discord</a>.</figcaption>
+      </figure>
     </div>
   </section>
 
   <section id="soundtrack" class="soundtrack">
     <div class="container">
       <h2>Original soundtrack</h2>
-      <p>The music disc in the mod isn't a placeholder joke track anymore. Original music by Nefuß, released under CC BY-NC-SA 4.0.</p>
+      <p class="lede">Two tracks by Nefuß, written for the mod. Released under CC BY-NC-SA 4.0.</p>
 
       <fieldset class="player-toggle">
         <legend class="sr-only">Choose which player to show for every track</legend>
@@ -143,28 +349,34 @@
 
       <ul class="track-list">
         <li class="track-card">
-          <h3 class="sr-only">Moonlight</h3>
           <div class="track-art-frame">
             <img class="track-art" src="assets/discs/music_disc_moonlight.png" alt="" width="16" height="16">
           </div>
           <div class="track-players">
+            <h3>Moonlight</h3>
             <iframe class="track-player-frame track-player-frame-bandcamp" src="https://bandcamp.com/EmbeddedPlayer/track=3477749362/size=small/bgcol=ffffff/linkcol=2ebd35/artwork=none/transparent=true/" title="Moonlight by Nefuß — Bandcamp player" loading="lazy">
               <a href="https://nefu1.bandcamp.com/track/moonlight">Moonlight by Nefuß</a>
             </iframe>
-            <iframe class="track-player-frame track-player-frame-soundcloud" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2377503962&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" title="Moonlight by Nefuß — SoundCloud player" loading="lazy" allow="autoplay; encrypted-media"></iframe>
+            <div class="track-player-soundcloud">
+              <iframe class="track-player-frame-soundcloud" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" title="Moonlight by Nefuß, SoundCloud player" data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2377503962&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+              <p class="track-credit"><a href="https://soundcloud.com/user-427551104" target="_blank" rel="noopener noreferrer">Nefuß</a> · <a href="https://soundcloud.com/user-427551104/moonlight" target="_blank" rel="noopener noreferrer">Moonlight</a></p>
+            </div>
           </div>
         </li>
 
         <li class="track-card">
-          <h3 class="sr-only">Robadob</h3>
           <div class="track-art-frame">
             <img class="track-art" src="assets/discs/music_disc_robadob.png" alt="" width="16" height="16">
           </div>
           <div class="track-players">
+            <h3>Robadob</h3>
             <iframe class="track-player-frame track-player-frame-bandcamp" src="https://bandcamp.com/EmbeddedPlayer/track=2148164601/size=small/bgcol=ffffff/linkcol=2ebd35/artwork=none/transparent=true/" title="Robadob by Nefuß — Bandcamp player" loading="lazy">
               <a href="https://nefu1.bandcamp.com/track/robadob-2">Robadob by Nefuß</a>
             </iframe>
-            <iframe class="track-player-frame track-player-frame-soundcloud" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2377525649&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" title="Robadob by Nefuß — SoundCloud player" loading="lazy" allow="autoplay; encrypted-media"></iframe>
+            <div class="track-player-soundcloud">
+              <iframe class="track-player-frame-soundcloud" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" title="Robadob by Nefuß, SoundCloud player" data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2377525649&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+              <p class="track-credit"><a href="https://soundcloud.com/user-427551104" target="_blank" rel="noopener noreferrer">Nefuß</a> · <a href="https://soundcloud.com/user-427551104/robadob" target="_blank" rel="noopener noreferrer">Robadob</a></p>
+            </div>
           </div>
         </li>
       </ul>
@@ -173,24 +385,59 @@
 
   <section id="roadmap" class="roadmap">
     <div class="container">
-      <h2>What's coming next</h2>
-      <p>Nothing on this list is promised, but it's what's actually on the board:</p>
-      <ul class="roadmap-list">
-        <li>A dungeon-style structure with a pillager drug dealer NPC</li>
-        <li>More diverse strains</li>
-        <li>Hashish and an iceolator processing chain</li>
-        <li>Custom status effects instead of borrowed vanilla ones, tolerance included</li>
-        <li>A hemprepreneur villager profession and a small economy around it</li>
-        <li>A custom structure or two</li>
-        <li>Whatever else survives contact with actually trying to build it</li>
+      <h2>Coming in 2.1</h2>
+      <p class="lede">Built and in testing. No release date, it's ready when it's ready.</p>
+
+      <div class="bento">
+        <figure class="plate bento-a">
+          <img src="assets/shots/bong-shelf-1600.webp" srcset="assets/shots/bong-shelf-800.webp 800w, assets/shots/bong-shelf-1600.webp 1600w" sizes="(min-width: 64rem) 56rem, 100vw" alt="Two wooden shelves lined with glass bongs in every stained-glass color." width="1600" height="900" loading="lazy">
+          <figcaption><span>Glass bongs</span> All sixteen colors, plus tinted. They stand on tables now.</figcaption>
+        </figure>
+        <figure class="plate bento-b">
+          <img src="assets/shots/bong-rip-800.webp" srcset="assets/shots/bong-rip-800.webp 800w, assets/shots/bong-rip-1600.webp 1600w" sizes="(min-width: 64rem) 28rem, 100vw" alt="A player on a dock by the sea holding a bong up to their face, mid-draw." width="1600" height="978" loading="lazy">
+          <figcaption><span>Hold to rip</span> Hold the button and it bubbles and fills with smoke.</figcaption>
+        </figure>
+        <figure class="plate bento-c">
+          <img src="assets/shots/grow-aisle-800.webp" srcset="assets/shots/grow-aisle-800.webp 800w, assets/shots/grow-aisle-1600.webp 1600w" sizes="(min-width: 64rem) 28rem, 100vw" alt="An indoor grow room: rows of flowering plants in grow pots either side of a stone aisle, LED lamps hanging from copper chains." width="1600" height="900" loading="lazy">
+          <figcaption><span>Grow room</span> Grow pots, LED lamps, hydro trays. Twice a field's pace.</figcaption>
+        </figure>
+        <figure class="plate bento-d">
+          <img src="assets/shots/hash-bench-800.webp" srcset="assets/shots/hash-bench-800.webp 800w, assets/shots/hash-bench-1600.webp 1600w" sizes="(min-width: 64rem) 28rem, 100vw" alt="A sandstone workshop with the Sifting Box, the Hemp Press over a heat source, and pressed hash bars on the counter." width="1600" height="978" loading="lazy">
+          <figcaption><span>Hash</span> Sift kief, wash bubble hash, press it hot.</figcaption>
+        </figure>
+        <figure class="plate bento-e">
+          <img src="assets/shots/bong-jetty-800.webp" srcset="assets/shots/bong-jetty-800.webp 800w, assets/shots/bong-jetty-1600.webp 1600w" sizes="(min-width: 64rem) 56rem, 100vw" alt="Four colored glass bongs standing on a table at the end of a jetty at dusk, lanterns on either side." width="1600" height="900" loading="lazy">
+          <figcaption><span>Sunset session</span> Set one down anywhere.</figcaption>
+        </figure>
+      </div>
+
+      <ul class="soon-grid">
+        <li><span class="slot"><img src="assets/icons/rosin.png" alt="" width="16" height="16"></span><h3>Rosin &amp; moon rocks</h3><p>The top of the extraction bench. No BHO, not happening.</p></li>
+        <li><span class="slot"><img src="assets/icons/charas.png" alt="" width="16" height="16"></span><h3>Charas</h3><p>Shear a ripe plant and sometimes get hand-rubbed resin. The plant lives.</p></li>
+        <li><span class="slot"><img src="assets/icons/vaporizer.png" alt="" width="16" height="16"></span><h3>Redstone Vaporizer</h3><p>A gentle level I buzz that never greens you out.</p></li>
+        <li><span class="slot"><img src="assets/icons/beldia_buds.png" alt="" width="16" height="16"></span><h3>Beldía</h3><p>A Moroccan landrace that grows on sand by water. Smoke it and you turn invisible.</p></li>
+        <li><span class="slot"><img src="assets/icons/grow_lamp_bottom_on.png" alt="" width="16" height="16"></span><h3>Stressed plants</h3><p>Bad light shows on the plant and turns buds into schwag. Don't smoke the schwag.</p></li>
+        <li><span class="slot"><img src="assets/icons/hemp_leaf.png" alt="" width="16" height="16"></span><h3>And more</h3><p>A hemp-leaf banner pattern, creepers that wander toward your fields, 42 advancements.</p></li>
       </ul>
+
+      <div class="later">
+        <h3>After that</h3>
+        <ul>
+          <li><img src="assets/icons/warped_kush_buds.png" alt="" width="16" height="16"><b>Warped Kush.</b> A Nether strain. Striders eat the seeds, piglins want the buds.</li>
+          <li><b>Ruderalis.</b> The wild ancestor. Sniffers dig it up.</li>
+          <li><b>Industrial Hemp.</b> A tall fiber crop with no buds, and Ditchweed, its wild cousin.</li>
+          <li><b>Crimson.</b> A second Nether strain that grows down from the ceiling.</li>
+          <li><b>NeoForge.</b> A port, once 2.1 is out.</li>
+          <li><b>Someday.</b> Custom High and Munchies effects with tolerance, a hemprepreneur villager, a pillager dealer's hideout.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <section id="open-source" class="open-source">
     <div class="container">
       <h2>Free and open source</h2>
-      <p>The code has been AGPL-3.0 since day one. It's on GitHub, issues and pull requests are welcome, and nothing here is hidden behind a paywall if you want to see how it works. <em>(The art and music run under a separate license, CC BY-NC-SA 4.0 — see CREDITS.md for the full picture.)</em></p>
+      <p class="lede">Code under AGPL-3.0 since day one, art and music under CC BY-NC-SA 4.0. Read it, fork it, send a pull request. Nothing is behind a paywall. <a href="https://github.com/warlon-mhite/hempdustry-fabric/blob/master/CREDITS.md" target="_blank" rel="noopener noreferrer">CREDITS.md</a> has the full picture.</p>
       <p class="cta">
         <a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric" target="_blank" rel="noopener noreferrer">View on GitHub</a>
       </p>
@@ -218,9 +465,9 @@
   <section id="community" class="community">
     <div class="container">
       <h2>Come hang out</h2>
-      <p>The Discord from the GanjaCraft days never actually closed. It's quiet, but it's there, and it's the easiest way to report a bug, suggest a feature as a non-technical user, or just tell me the Lemon Haze grow time is too slow.</p>
+      <p class="lede">The Discord from the GanjaCraft days never closed. It's quiet, but it's the easiest place to report a bug, suggest a feature, or tell me the Lemon Haze grow time is too slow.</p>
       <p class="cta">
-        <a class="button" href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer">Join the Discord</a>
+        <a class="button button-primary" href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer">Join the Discord</a>
       </p>
     </div>
   </section>
@@ -233,14 +480,28 @@
         <li>
           <details class="faq-item">
             <summary>Forge or Fabric?</summary>
-            <p>Fabric only, targeting the 1.21.1 line right now. No Forge or NeoForge port planned at the moment, but very likely to follow.</p>
+            <p>Fabric, on Minecraft 1.21.11. A 1.21.1 build is still around if your pack lives there. A NeoForge port is planned after 2.1.</p>
           </details>
         </li>
 
         <li>
           <details class="faq-item">
             <summary>Do I need any other mods for this to work?</summary>
-            <p>Just Fabric API. Nothing else is required, though it's built to not fight with the usual kitchen-sink modpacks.</p>
+            <p>Just Fabric API, on both client and server. JEI or REI are optional and get their own recipe pages. It's built to not fight with the usual kitchen-sink modpacks.</p>
+          </details>
+        </li>
+
+        <li>
+          <details class="faq-item">
+            <summary>It says beta. Is it broken?</summary>
+            <p>It builds, loads on a dedicated server without a warning, and its data all validates. Beta means not enough people have played it yet. Keep a backup of any world you care about, and send bug reports, that's the whole point.</p>
+          </details>
+        </li>
+
+        <li>
+          <details class="faq-item">
+            <summary>Can I have the hemp without the weed?</summary>
+            <p>Yes. Set <code>effects.enabled</code> to <code>false</code> in <code>config/hempdustry.json</code> and nothing gets anyone high. The farming, building and food all stay.</p>
           </details>
         </li>
 
@@ -254,7 +515,7 @@
         <li>
           <details class="faq-item">
             <summary>Can I use this in my modpack?</summary>
-            <p>Yes. Credit is appreciated, not required beyond whatever the license already asks for. Check the CREDITS.md file, especially if you make money off it or distribute the jar directly.</p>
+            <p>Yes, monetized packs included, as long as the launcher downloads it. Mirroring, modifying and forking are fine too, with credit, non-commercially. Only a commercial use needs to ask. CREDITS.md has the details.</p>
           </details>
         </li>
 
@@ -268,19 +529,26 @@
   <div class="container footer-inner">
     <nav class="footer-links" aria-label="Footer">
       <ul>
-        <li><span class="button-disabled" aria-disabled="true">Modrinth (coming soon)</span></li>
-        <li>
-          <a href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft" target="_blank" rel="noopener noreferrer">CurseForge</a>
-        </li>
-        <li>
-          <a href="https://github.com/warlon-mhite/hempdustry-fabric" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </li>
+        <li><a href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft" target="_blank" rel="noopener noreferrer">CurseForge</a></li>
+        <li><a href="https://www.nexusmods.com/minecraft/mods/218" target="_blank" rel="noopener noreferrer">NexusMods</a></li>
+        <li><a href="https://github.com/warlon-mhite/hempdustry-fabric" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><span class="button-disabled" aria-disabled="true">Modrinth (soon)</span></li>
         <li><a href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer">Discord</a></li>
       </ul>
     </nav>
-    <p class="license">Hempdustry 2, formerly GanjaCraft. Code licensed AGPL-3.0; art and music CC BY-NC-SA 4.0.</p>
+    <p class="license">Hempdustry 2, formerly GanjaCraft. Code licensed AGPL-3.0; art and music CC BY-NC-SA 4.0.<br>Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</p>
   </div>
 </footer>
 
+<script>
+  // SoundCloud's widget lays itself out on load; loading it while hidden draws it broken.
+  document.querySelector('.player-toggle').addEventListener('change', function (e) {
+    if (e.target.value !== 'soundcloud') return;
+    document.querySelectorAll('iframe[data-src]').forEach(function (f) {
+      f.src = f.dataset.src;
+      f.removeAttribute('data-src');
+    });
+  });
+</script>
 </body>
 </html>
