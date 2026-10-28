@@ -756,7 +756,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: end;
+  align-items: center;
   gap: var(--space-3);
   padding: var(--space-5) var(--space-3);
   background: #6d5a3c url("../icons/hemp_bricks_block.png") repeat;
@@ -775,20 +775,19 @@ h2 {
 
 .paintings li:hover { rotate: -2deg; }
 
-/* 3px of screen per texture pixel, whatever the painting's size */
 .paintings img { height: auto; }
 
-.paintings li:nth-child(1) img { width: 144px; }
-.paintings li:nth-child(2) img { width: 96px; }
-.paintings li:nth-child(3) img { width: 96px; }
-.paintings li:nth-child(4) img { width: 48px; }
-.paintings li:nth-child(5) img { width: 160px; }
-.paintings li:nth-child(6) img { width: 160px; }
+/* 48px of screen per block (32px on a phone), so the sizes compare as they do on a wall */
+.paintings .p-1x2 { width: 48px; }
+.paintings .p-2x2, .paintings .p-2x3 { width: 96px; }
+.paintings .p-3x3 { width: 144px; }
+.paintings .p-4x4 { width: 192px; }
 
 @media (max-width: 40rem) {
-  .paintings li:nth-child(1) img { width: 96px; }
-  .paintings li:nth-child(5) img,
-  .paintings li:nth-child(6) img { width: 128px; }
+  .paintings .p-1x2 { width: 32px; }
+  .paintings .p-2x2, .paintings .p-2x3 { width: 64px; }
+  .paintings .p-3x3 { width: 96px; }
+  .paintings .p-4x4 { width: 128px; }
 }
 
 .paintings + .small { margin-bottom: var(--space-6); }
@@ -1143,4 +1142,16 @@ h2 {
 .license {
   font-size: var(--text-micro);
   color: var(--ink-60);
+}
+
+/* 2.1: three strains, four effect cards, a product grid under the hash chain */
+@media (min-width: 64rem) {
+  .strain-grid { grid-template-columns: repeat(3, 1fr); }
+  .strain { flex-direction: column; align-items: flex-start; }
+  .strain h3 { font-size: var(--text-h3); }
+}
+.effect-note { grid-column: 1 / -1; }
+.chain + .soon-grid { margin-top: var(--space-5); }
+@media (min-width: 56rem) {
+  .effects { grid-template-columns: repeat(4, 1fr); align-items: start; }
 }
