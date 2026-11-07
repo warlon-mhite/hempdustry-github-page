@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hempdustry 2 – Minecraft Weed &amp; Cannabis Mod (Fabric &amp; NeoForge, 1.21 and 26.x)</title>
-<meta name="description" content="Free, open-source weed mod for Minecraft Java on Fabric and NeoForge. Grow cannabis indoors or out, smoke it in a spliff, pipe, bong or vaporizer, press hash and rosin, bake edibles, build with hemp. Minecraft 26.3, 26.2, 1.21.11 and 1.21.1.">
+<title>Hempdustry 2 – Minecraft Weed &amp; Cannabis Mod (Fabric, NeoForge &amp; Forge, 1.16.5 to 26.3)</title>
+<meta name="description" content="Free, open-source weed mod for Minecraft Java on Fabric, NeoForge and Forge. Grow cannabis indoors or out, smoke it in a spliff, pipe, bong or vaporizer, press hash and rosin, bake edibles, build with hemp. Minecraft 26.3, 26.2, 1.21.11, 1.21.1, 1.18.2 and 1.16.5; opens GanjaCraft and Hemp-Craft worlds.">
 <link rel="canonical" href="https://warlon-mhite.github.io/hempdustry-github-page/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hempdustry 2">
 <meta property="og:url" content="https://warlon-mhite.github.io/hempdustry-github-page/">
 <meta property="og:title" content="Hempdustry 2 – the Minecraft cannabis mod">
-<meta property="og:description" content="Grow weed, smoke it, press it into hash, bake it, build with it. A Vanilla+ cannabis mod for Minecraft Java on Fabric and NeoForge.">
+<meta property="og:description" content="Grow weed, smoke it, press it into hash, bake it, build with it. A Vanilla+ cannabis mod for Minecraft Java on Fabric, NeoForge and Forge.">
 <meta property="og:image" content="https://warlon-mhite.github.io/hempdustry-github-page/assets/shots/showcase-1600.webp">
 <meta property="og:image:width" content="1600">
 <meta property="og:image:height" content="880">
@@ -21,16 +21,16 @@
   "@type": "SoftwareApplication",
   "name": "Hempdustry 2",
   "alternateName": ["Hempdustry", "GanjaCraft"],
-  "description": "A free, open-source cannabis (weed, marijuana, hemp) mod for Minecraft Java Edition on Fabric and NeoForge. Grow three strains in fields, grow pots or hydro trays, smoke them in a spliff, pipe, bong or vaporizer, sift and press hash and rosin, make cannabutter and edibles, and build with hempcrete, hemp bricks and hemp planks.",
+  "description": "A free, open-source cannabis (weed, marijuana, hemp) mod for Minecraft Java Edition on Fabric, NeoForge and Forge. Grow three strains in fields, grow pots or hydro trays, smoke them in a spliff, pipe, bong or vaporizer, sift and press hash and rosin, make cannabutter and edibles, and build with hempcrete, hemp bricks and hemp planks. The Forge 1.16.5 and 1.18.2 builds open and convert GanjaCraft and Hemp-Craft worlds.",
   "url": "https://warlon-mhite.github.io/hempdustry-github-page/",
   "image": "https://warlon-mhite.github.io/hempdustry-github-page/assets/shots/showcase-1600.webp",
   "applicationCategory": "GameApplication",
   "applicationSubCategory": "Minecraft mod",
-  "operatingSystem": "Windows, macOS, Linux (Minecraft Java Edition with Fabric or NeoForge)",
+  "operatingSystem": "Windows, macOS, Linux (Minecraft Java Edition with Fabric, NeoForge or Forge)",
   "softwareVersion": "2.1.0",
-  "dateModified": "2026-11-04",
-  "softwareRequirements": "Minecraft Java Edition 26.3, 26.2, 1.21.11 or 1.21.1, with Fabric Loader and Fabric API, or NeoForge",
-  "keywords": "minecraft cannabis mod, minecraft weed mod, minecraft marijuana mod, minecraft hemp mod, minecraft hash mod, fabric mod, neoforge mod, edibles, bong, grow room, hempcrete",
+  "dateModified": "2026-11-08",
+  "softwareRequirements": "Minecraft Java Edition 26.3, 26.2, 1.21.11 or 1.21.1 with Fabric Loader and Fabric API, or NeoForge; Minecraft 1.18.2 or 1.16.5 with Forge",
+  "keywords": "minecraft cannabis mod, minecraft weed mod, minecraft marijuana mod, minecraft hemp mod, minecraft hash mod, fabric mod, neoforge mod, forge mod, ganjacraft, edibles, bong, grow room, hempcrete",
   "license": "https://www.gnu.org/licenses/agpl-3.0.html",
   "isAccessibleForFree": true,
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -50,6 +50,14 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body id="top">
+<!-- Platform logos: Simple Icons (CC0), drawn in currentColor -->
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <symbol id="logo-curseforge" viewBox="0 0 24 24"><path d="M18.326 9.2145S23.2261 8.4418 24 6.1882h-7.5066V4.4H0l2.0318 2.3576V9.173s5.1267-.2665 7.1098 1.2372c2.7146 2.516-3.053 5.917-3.053 5.917L5.0995 19.6c1.5465-1.4726 4.494-3.3775 9.8983-3.2857-2.0565.65-4.1245 1.6651-5.7344 3.2857h10.9248l-1.0288-3.2726s-7.918-4.6688-.8336-7.1127z"/></symbol>
+  <symbol id="logo-nexusmods" viewBox="0 0 24 24"><path d="M17.376 0c-.993 0-2.18.686-2.907 1.182-1.676-.36-4.036-.545-6.787.635-1.365-.513-2.425-.562-3.32-.488a2.16 2.16 0 0 0-1.27.429c-.33.22-2.788 2.69-3.069 4.652C-.15 7.508.68 8.932 1.218 9.718c-.44 1.76-.2 4.572.517 6.188-.353 1.041-.713 2.089-.664 3.205.01.584.061 1.188.398 1.684C1.72 21.19 4.528 24 6.545 24c.957 0 1.93-.428 3.07-1.24 2.16.383 4.402.348 6.448-.532 2.573 1.001 4.224.625 4.84.162.587-.457 2.826-2.915 3.07-4.622.1-.672-.023-1.638-1.226-3.397a10.983 10.983 0 0 0-.501-6.455c.396-1.069.673-2.188.59-3.337-.015-.68-.221-1.167-.487-1.507-.209-.335-2.415-2.39-4.028-2.91A3.105 3.105 0 0 0 17.376 0m-.03 2.082c.65.015 2.155 1.093 3.01 1.906l.355.34c-.959-.163-2.125.428-3.26 1.55a10.28 10.28 0 0 0-1.358 1.595c-.28.384-.517.768-.753 1.285l1.18.635-3.895 1.477-1.122-4.18 1.033.547c1.358-3.102 2.524-3.973 3.232-4.416h.015a5.12 5.12 0 0 1 1.49-.724zM12 3.065a8.932 8.932 0 0 1 2.22.279 7.67 7.67 0 0 0-.42.488 8.403 8.403 0 0 0-1.8-.196 8.336 8.336 0 0 0-5.897 2.432 7.86 7.86 0 0 1-.37-.433A8.905 8.905 0 0 1 12 3.065m-7.076.305c.71-.002 1.309.127 2.2.466a9.526 9.526 0 0 0-1.713 1.337c-.327-.542-.624-1.156-.488-1.803m-.606.042c-.162.96.428 2.126 1.55 3.264.457.487 1.003.945 1.594 1.358.383.281.767.517 1.283.754l.62-1.182 1.49 3.914-4.176 1.122.546-1.033c-3.099-1.36-3.969-2.526-4.412-3.235v-.015a5.144 5.144 0 0 1-.723-1.491l-.015-.074c.015-.65 1.092-2.156 1.904-3.013Zm16.035 1.483a1.259 1.259 0 0 1 .26.015l.14.023a5.05 5.05 0 0 1-.13 1.137v.015c-.1.383-.228.765-.377 1.148a9.526 9.526 0 0 0-1.346-1.776c.547-.357 1.051-.546 1.453-.562M18.43 5.8a8.903 8.903 0 0 1 2.506 6.2 8.937 8.937 0 0 1-.27 2.183 7.658 7.658 0 0 0-.488-.425A8.407 8.407 0 0 0 20.364 12 8.334 8.334 0 0 0 18 6.173a7.904 7.904 0 0 1 .429-.373M3.315 9.905c.157.148.319.29.488.425A8.417 8.417 0 0 0 3.636 12c0 2.248.887 4.286 2.327 5.788a8.11 8.11 0 0 1-.426.376A8.902 8.902 0 0 1 3.065 12a8.937 8.937 0 0 1 .25-2.095m13.988 1.541-.546 1.034c3.098 1.359 3.969 2.526 4.412 3.235v.014c.34.488.575.99.723 1.492l.014.074c-.014.65-1.092 2.156-1.903 3.013l-.34.354c.163-.96-.427-2.127-1.549-3.264a10.298 10.298 0 0 0-1.594-1.359 7.008 7.008 0 0 0-1.283-.753l-.605 1.152-1.505-3.87zm-6.006 1.684 1.121 4.18-1.033-.547c-1.357 3.102-2.523 3.973-3.231 4.416h-.015c-.487.34-.989.576-1.49.724l-.074.015c-.65-.015-2.154-1.093-3.01-1.906l-.354-.34c.959.163 2.124-.428 3.26-1.55.488-.458.945-1.004 1.358-1.595.28-.384.517-.768.753-1.285l-1.166-.635ZM3.72 16.663A9.526 9.526 0 0 0 5.086 18.5c-.697.47-1.33.665-1.777.59l-.138-.024c0-.367.038-.748.128-1.137v-.015c.11-.417.254-.835.42-1.252m14.131 1.314c.129.14.253.283.372.43A8.904 8.904 0 0 1 12 20.936a8.932 8.932 0 0 1-2.282-.296 7.757 7.757 0 0 0 .417-.487 8.335 8.335 0 0 0 7.716-2.175m.696.889c.43.666.607 1.267.534 1.698l-.023.138a5.034 5.034 0 0 1-1.136-.128h-.014a10.718 10.718 0 0 1-1.114-.366 9.526 9.526 0 0 0 1.753-1.342"/></symbol>
+  <symbol id="logo-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+  <symbol id="logo-modrinth" viewBox="0 0 24 24"><path d="M12.252.004a11.78 11.768 0 0 0-8.92 3.73 11 10.999 0 0 0-2.17 3.11 11.37 11.359 0 0 0-1.16 5.169c0 1.42.17 2.5.6 3.77.24.759.77 1.899 1.17 2.529a12.3 12.298 0 0 0 8.85 5.639c.44.05 2.54.07 2.76.02.2-.04.22.1-.26-1.7l-.36-1.37-1.01-.06a8.5 8.489 0 0 1-5.18-1.8 5.34 5.34 0 0 1-1.3-1.26c0-.05.34-.28.74-.5a37.572 37.545 0 0 1 2.88-1.629c.03 0 .5.45 1.06.98l1 .97 2.07-.43 2.06-.43 1.47-1.47c.8-.8 1.48-1.5 1.48-1.52 0-.09-.42-1.63-.46-1.7-.04-.06-.2-.03-1.02.18-.53.13-1.2.3-1.45.4l-.48.15-.53.53-.53.53-.93.1-.93.07-.52-.5a2.7 2.7 0 0 1-.96-1.7l-.13-.6.43-.57c.68-.9.68-.9 1.46-1.1.4-.1.65-.2.83-.33.13-.099.65-.579 1.14-1.069l.9-.9-.7-.7-.7-.7-1.95.54c-1.07.3-1.96.53-1.97.53-.03 0-2.23 2.48-2.63 2.97l-.29.35.28 1.03c.16.56.3 1.16.31 1.34l.03.3-.34.23c-.37.23-2.22 1.3-2.84 1.63-.36.2-.37.2-.44.1-.08-.1-.23-.6-.32-1.03-.18-.86-.17-2.75.02-3.73a8.84 8.839 0 0 1 7.9-6.93c.43-.03.77-.08.78-.1.06-.17.5-2.999.47-3.039-.01-.02-.1-.02-.2-.03Zm3.68.67c-.2 0-.3.1-.37.38-.06.23-.46 2.42-.46 2.52 0 .04.1.11.22.16a8.51 8.499 0 0 1 2.99 2 8.38 8.379 0 0 1 2.16 3.449 6.9 6.9 0 0 1 .4 2.8c0 1.07 0 1.27-.1 1.73a9.37 9.369 0 0 1-1.76 3.769c-.32.4-.98 1.06-1.37 1.38-.38.32-1.54 1.1-1.7 1.14-.1.03-.1.06-.07.26.03.18.64 2.56.7 2.78l.06.06a12.07 12.058 0 0 0 7.27-9.4c.13-.77.13-2.58 0-3.4a11.96 11.948 0 0 0-5.73-8.578c-.7-.42-2.05-1.06-2.25-1.06Z"/></symbol>
+  <symbol id="logo-discord" viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></symbol>
+</svg>
 
 <header class="site-header">
   <div class="container header-inner">
@@ -62,13 +70,15 @@
         <li><a href="#kitchen">Kitchen</a></li>
         <li><a href="#build">Build</a></li>
         <li><a href="#minecraft-26">26.x</a></li>
+        <li><a href="#old-worlds">Old worlds</a></li>
+        <li><a href="#wiki">Wiki</a></li>
         <li><a href="#soundtrack">Music</a></li>
         <li><a href="#roadmap">Coming next</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer">Discord</a></li>
       </ul>
     </nav>
-    <a class="button button-primary header-cta" href="#download">Download</a>
+    <a class="button button-primary header-cta" href="#download"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>Download</a>
   </div>
 </header>
 
@@ -76,21 +86,21 @@
 
   <section id="hero" class="hero">
     <div class="container">
-      <p class="eyebrow">Fabric &amp; NeoForge &middot; Minecraft 26.3, 26.2, 1.21.11 &amp; 1.21.1 &middot; Version 2.1.0</p>
+      <p class="eyebrow">Fabric, NeoForge &amp; Forge &middot; Minecraft 1.16.5 to 26.3 &middot; Version 2.1.0</p>
       <h1>Hempdustry 2</h1>
       <div class="hero-grid">
         <div>
           <p class="hero-subtitle">(formerly GanjaCraft)</p>
           <p class="hero-description">The cannabis mod for Minecraft, for stoners and hemprepreneurs. Grow weed in a field or under a lamp, smoke it, press it into hash, bake it into space cake, then build a fireproof house out of the leftovers.</p>
         </div>
-        <div id="download" class="hero-download">
+        <div class="hero-download">
           <div class="hero-actions">
-            <a class="button button-primary" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft" target="_blank" rel="noopener noreferrer">Download on CurseForge</a>
-            <a class="button" href="https://www.nexusmods.com/minecraft/mods/218" target="_blank" rel="noopener noreferrer">NexusMods</a>
-            <a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/latest" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <span class="button button-disabled" aria-disabled="true">Modrinth (soon)</span>
+            <a class="button button-primary" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>Download on CurseForge</a>
+            <a class="button" href="https://www.nexusmods.com/minecraft/mods/218" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-nexusmods"></use></svg>NexusMods</a>
+            <a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/latest" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>GitHub</a>
+            <span class="button button-disabled" aria-disabled="true"><svg class="logo" aria-hidden="true"><use href="#logo-modrinth"></use></svg>Modrinth (soon)</span>
           </div>
-          <p class="hero-note">Free, open source. On Fabric it only needs <a href="https://modrinth.com/mod/fabric-api" target="_blank" rel="noopener noreferrer">Fabric API</a>. On NeoForge it needs nothing at all.</p>
+          <p class="hero-note">Free, open source. On Fabric it only needs <a href="https://modrinth.com/mod/fabric-api" target="_blank" rel="noopener noreferrer">Fabric API</a>. On NeoForge and Forge it needs nothing at all. <a href="#download">Which file do I need?</a></p>
         </div>
       </div>
 
@@ -119,12 +129,14 @@
   <section class="stats" aria-label="In numbers">
     <div class="container">
       <ul class="stat-grid">
-        <li><b>3</b> strains</li>
-        <li><b>4</b> ways to smoke</li>
-        <li><b>5</b> kinds of hash</li>
-        <li><b>42</b> advancements</li>
-        <li><b>12</b> languages</li>
-        <li><b>2</b> mod loaders</li>
+        <li><a href="#grow"><b>3</b> strains</a></li>
+        <li><a href="#smoke"><b>4</b> ways to smoke</a></li>
+        <li><a href="#hash"><b>5</b> kinds of hash</a></li>
+        <li><a href="#extras"><b>42</b> advancements</a></li>
+        <li><a href="#languages"><b>12</b> languages</a></li>
+        <li><a href="#download"><b>3</b> mod loaders</a></li>
+        <li><a href="#download"><b>6</b> Minecraft versions</a></li>
+        <li><a href="#wiki"><b>41</b> wiki pages</a></li>
       </ul>
     </div>
   </section>
@@ -134,7 +146,8 @@
       <h2>New in 2.1</h2>
       <p class="lede">The biggest update since the rewrite. Same world, nothing to do: a save from any Hempdustry 2 version opens on 2.1.0.</p>
       <ul class="soon-grid">
-        <li><span class="slot"><img src="assets/icons/hemp_leaf.png" alt="" width="16" height="16"></span><h3>NeoForge</h3><p>Same mod, same numbers, on both loaders now. One download per loader and Minecraft version.</p></li>
+        <li><span class="slot"><img src="assets/icons/hemp_leaf.png" alt="" width="16" height="16"></span><h3>NeoForge and Forge</h3><p>Same mod, same numbers, on Fabric and NeoForge, and on Forge for 1.18.2 and 1.16.5. One download per loader and Minecraft version. <a href="#download">Pick yours.</a></p></li>
+        <li><span class="slot"><img src="assets/icons/hemp_bale.png" alt="" width="16" height="16"></span><h3>Old worlds come back</h3><p>The Forge builds open GanjaCraft and Hemp-Craft worlds and turn them into Hempdustry worlds as they load. <a href="#old-worlds">How.</a></p></li>
         <li><span class="slot"><img src="assets/icons/hydro_tray.png" alt="" width="16" height="16"></span><h3>Grow rooms</h3><p>Grow pots, grow lamps and hydro trays. <a href="#indoor">Below.</a></p></li>
         <li><span class="slot"><img src="assets/icons/beldia_buds.png" alt="" width="16" height="16"></span><h3>Beldía</h3><p>A third strain. Grows on sand by water and turns you invisible.</p></li>
         <li><span class="slot"><img src="assets/icons/hashish.png" alt="" width="16" height="16"></span><h3>Hash</h3><p>Kief, bubble hash, hashish, charas, rosin and moon rocks. <a href="#hash">Below.</a></p></li>
@@ -142,7 +155,7 @@
         <li><span class="slot"><img src="assets/icons/hemp_bed.png" alt="" width="16" height="16"></span><h3>Furniture</h3><p>A hemp bed, shelf and parquet, a harness for the happy ghast, a leaf banner, and <i>Marley</i>.</p></li>
         <li><span class="slot"><img src="assets/icons/clock.png" alt="" width="16" height="16"></span><h3>Minecraft 26.2 and 26.3</h3><p>2.1.0 on the new Minecraft, plus a few things only it can do. <a href="#minecraft-26">Below.</a></p></li>
       </ul>
-      <p class="small center">Everything else is in the <a href="https://github.com/warlon-mhite/hempdustry-fabric/releases/tag/v2.1.0" target="_blank" rel="noopener noreferrer">changelog</a>, and the <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki" target="_blank" rel="noopener noreferrer">wiki</a> has the numbers.</p>
+      <p class="small center">Everything else is in the <a href="https://github.com/warlon-mhite/hempdustry-fabric/releases/tag/v2.1.0" target="_blank" rel="noopener noreferrer">changelog</a>, and the <a href="#wiki">wiki</a> has the numbers.</p>
     </div>
   </section>
 
@@ -190,6 +203,8 @@
         <li><b>Find it.</b> Seeds drop from tall grass and turn up in chests and village houses. Wild plants are rare, shear one up for a flower pot.</li>
         <li><b>Farm life.</b> Bees pollinate it. Chickens and parrots eat the seeds. Goats go for the leaves. And now and then a creeper wanders into a grown field and hides in it, so wall and light the big ones.</li>
       </ul>
+
+      <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Strains" target="_blank" rel="noopener noreferrer">Strains</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Growing-Hemp" target="_blank" rel="noopener noreferrer">Growing Hemp</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Finding-Hemp" target="_blank" rel="noopener noreferrer">Finding Hemp</a></p>
     </div>
   </section>
 
@@ -231,6 +246,8 @@
           <p class="small">A stressed plant also spoils some of its buds into <b>schwag</b>. Seedy, stemmy, weak. Smoke it and you'll probably just get poisoned. There's an advancement for that.</p>
         </div>
       </div>
+
+      <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Indoor-Growing" target="_blank" rel="noopener noreferrer">Indoor Growing</a></p>
     </div>
   </section>
 
@@ -313,6 +330,8 @@
       </div>
 
       <p class="callout"><b>Greening out is real.</b> Go big and you might lose the hit and spend a while nauseous instead. At three it also wipes every buff you had and benches you for a minute. A single bud never does that.</p>
+
+      <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Smoking" target="_blank" rel="noopener noreferrer">Smoking</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Smoking-Gear" target="_blank" rel="noopener noreferrer">Smoking Gear</a></p>
     </div>
   </section>
 
@@ -366,6 +385,8 @@
         <li><span class="slot"><img src="assets/icons/kief.png" alt="" width="16" height="16"></span><h3>Five kinds</h3><p>Kief, bubble hash, hashish, charas, rosin. Hold all five and there's an advancement in it.</p></li>
       </ul>
       <p class="small center">Hash is for smoking only. The kitchen still runs on plant matter.</p>
+
+      <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Hash-and-Concentrates" target="_blank" rel="noopener noreferrer">Hash and Concentrates</a></p>
     </div>
   </section>
 
@@ -433,6 +454,8 @@
         </ul>
         <p class="small">Hemp milk works anywhere cow's milk does, Infuser and cake included. You never need to find a cow.</p>
       </div>
+
+      <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Cannabutter" target="_blank" rel="noopener noreferrer">Cannabutter</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Edibles" target="_blank" rel="noopener noreferrer">Edibles</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Hemp-Food" target="_blank" rel="noopener noreferrer">Hemp Food</a></p>
     </div>
   </section>
 
@@ -479,6 +502,8 @@
         </ul>
         <p class="small">The full hemp outfit. Still not good armor, but it lasts as long as leather now, the shirt and pants take dye, the beanie keeps you out of powder snow, and the whole set halves your odds of coughing.</p>
       </div>
+
+      <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Hemp-Materials" target="_blank" rel="noopener noreferrer">Hemp Materials</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Building-Blocks" target="_blank" rel="noopener noreferrer">Building Blocks</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Furniture-and-Decoration" target="_blank" rel="noopener noreferrer">Furniture and Decoration</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Hemp-Outfit" target="_blank" rel="noopener noreferrer">Hemp Outfit</a></p>
     </div>
   </section>
 
@@ -500,6 +525,8 @@
       <p class="small center">On 26.3, REI works on NeoForge too (with Architectury API 22.0.5 or newer), and NeoForge kicks a footbag as hard as Fabric does. On NeoForge 26.2 a footbag gets about half the kick, and jelly legs slide without the extra knockback. A world moved up to 26.2 or 26.3 keeps everything it had. The <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Minecraft-26.x" target="_blank" rel="noopener noreferrer">wiki</a> has the numbers.</p>
 
       <p class="callout"><b>Sulfur against mildew.</b> Shears clear a sick plant in a trim window. Or put Minecraft's own potent sulfur under water: no plant its gas reaches catches mildew. Gas a plant while it flowers, though, and a tenth of its buds turn to schwag anyway, so take the water away once the flowers show.</p>
+
+      <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Minecraft-26.x" target="_blank" rel="noopener noreferrer">Minecraft 26.2 and 26.3</a></p>
     </div>
   </section>
 
@@ -527,15 +554,17 @@
       <details class="nerd">
         <summary>For server owners and pack makers</summary>
         <ul>
-          <li>Fabric or NeoForge, Minecraft 26.3, 26.2, 1.21.11 or 1.21.1. Install it on both client and server. The 1.21.1 builds have everything except what that version can't hold: the shelf, the harness and canvas bundles. The 26.x builds add <a href="#minecraft-26">a few things of their own</a> and need Java 25, like Minecraft 26.x itself.</li>
+          <li>Fabric or NeoForge on Minecraft 26.3, 26.2, 1.21.11 or 1.21.1, Forge on 1.18.2 or 1.16.5. Install it on both client and server. The 1.21.1 builds have everything except what that version can't hold: the shelf, the harness and canvas bundles. The 26.x builds add <a href="#minecraft-26">a few things of their own</a> and need Java 25, like Minecraft 26.x itself. The Forge builds run on Java 17 (1.18.2) and Java 8 (1.16.5) and skip what those versions can't hold, <a href="#download">listed with each file</a>.</li>
           <li><code>config/hempdustry.json</code> can switch off every drug effect ("industrial hemp only"), green-outs, nausea, loot and the wandering creepers, or speed up crops and machines. On 26.x, <code>world.mildew</code> turns mildew off. <code>/hempdustry reload</code> applies it.</li>
           <li>Strains (hash included) are a datapack registry. Edit the shipped ones or add your own. They load with the world, not on <code>/reload</code>.</li>
           <li>The Decarboxylator, the Infuser and the Hemp Press run on datapack recipes, so KubeJS and CraftTweaker can rebalance them. Grow pots and trays take anything in <code>#c:fertilizers</code>.</li>
           <li>The Infuser and the Hemp Press pour into chests, hoppers and anything with storage, AE2 included. Dispensers can water pots and fill trays.</li>
           <li>Addon events (smoke, eat, infuse, and a veto) on both loaders.</li>
-          <li>A world from any Hempdustry 2 version opens on every later one. Moving a world between Fabric and NeoForge isn't promised.</li>
+          <li>A world from any Hempdustry 2 version opens on every later one. Moving a world between Fabric and NeoForge isn't promised. A GanjaCraft or Hemp-Craft server converts its world on its own once the old jar is swapped for the Forge build (<a href="#old-worlds">below</a>).</li>
         </ul>
       </details>
+
+      <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Advancements" target="_blank" rel="noopener noreferrer">Advancements</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Server-Guide" target="_blank" rel="noopener noreferrer">Server Guide</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Configuration" target="_blank" rel="noopener noreferrer">Configuration</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Modpack-Guide" target="_blank" rel="noopener noreferrer">Modpack Guide</a></p>
     </div>
   </section>
 
@@ -562,8 +591,283 @@
             <li><span lang="ru">Русский (Россия)</span> <small>by MargoxaTheGamer</small></li>
           </ul>
         </div>
-        <figcaption>The regional variants were adapted with an LLM and no native speaker has read them yet. The Russian translation hasn't caught up with 2.1, so the new stuff shows in English there. Speak one of these and spot a word nobody would say? Help out on the <a href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer">Discord</a>.</figcaption>
+        <figcaption>The regional variants were adapted with an LLM and no native speaker has read them yet. The Russian translation hasn't caught up with 2.1, so the new stuff shows in English there. Speak one of these and spot a word nobody would say? <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Translating" target="_blank" rel="noopener noreferrer">Translating</a> on the wiki says how to check, fix or finish one, and the <a href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer">Discord</a> is there for questions.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section id="download" class="download" aria-labelledby="download-title">
+    <div class="container">
+      <h2 id="download-title">Download</h2>
+      <p class="lede">Version 2.1.0, stable and free. The same files are on every site, one per Minecraft version and loader.</p>
+
+      <div class="dl-platforms">
+        <a class="dl-main" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft" target="_blank" rel="noopener noreferrer">
+          <svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>
+          <span class="dl-main-text"><b>Download on CurseForge</b><span>The mod's home page. Every file for every version, and the CurseForge app installs it in one click.</span></span>
+          <span class="dl-main-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+        <ul class="dl-mirrors" aria-label="Also on">
+          <li><a class="dl-mirror dl-nexus" href="https://www.nexusmods.com/minecraft/mods/218" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-nexusmods"></use></svg><b>NexusMods</b><span>The same files</span></a></li>
+          <li><a class="dl-mirror dl-github" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/latest" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg><b>GitHub</b><span>Every jar, with checksums</span></a></li>
+          <li><span class="dl-mirror dl-modrinth is-soon" aria-disabled="true"><svg class="logo" aria-hidden="true"><use href="#logo-modrinth"></use></svg><b>Modrinth</b><span>In review, coming soon</span></span></li>
+        </ul>
+      </div>
+
+      <h3 class="dl-heading">Which file?</h3>
+      <fieldset class="mc-picker">
+        <legend>Pick your Minecraft version</legend>
+        <label><input type="radio" name="mc-version" id="mc-263" checked><span><b>26.3</b><small>Fabric &middot; NeoForge</small></span></label>
+        <label><input type="radio" name="mc-version" id="mc-262"><span><b>26.2</b><small>Fabric &middot; NeoForge</small></span></label>
+        <label><input type="radio" name="mc-version" id="mc-12111"><span><b>1.21.11</b><small>Fabric &middot; NeoForge</small></span></label>
+        <label><input type="radio" name="mc-version" id="mc-1211"><span><b>1.21.1</b><small>Fabric &middot; NeoForge</small></span></label>
+        <label><input type="radio" name="mc-version" id="mc-1182"><span><b>1.18.2</b><small>Forge &middot; Hemp-Craft worlds</small></span></label>
+        <label><input type="radio" name="mc-version" id="mc-1165"><span><b>1.16.5</b><small>Forge &middot; GanjaCraft worlds</small></span></label>
+      </fieldset>
+
+      <div class="dl-panels">
+
+        <article class="dl-panel" id="dl-263" aria-label="Minecraft 26.3">
+          <header class="dl-panel-head">
+            <h4>Minecraft 26.3</h4>
+            <p>The newest. Everything in the mod, plus <a href="#minecraft-26">the 26.x extras</a>.</p>
+          </header>
+          <div class="dl-loaders">
+            <section class="dl-loader">
+              <h5><span class="loader-tag loader-fabric">Fabric</span></h5>
+              <code class="dl-file">hempdustry-fabric-2.1.0+26.3.jar</code>
+              <ul class="dl-needs"><li>Fabric Loader 0.20.1 or newer</li><li><a href="https://modrinth.com/mod/fabric-api" target="_blank" rel="noopener noreferrer">Fabric API</a> 0.165.0+26.3 or newer</li></ul>
+              <p class="dl-actions"><a class="button button-primary" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft/files" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>CurseForge</a><a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/download/v2.1.0/hempdustry-fabric-2.1.0%2B26.3.jar" aria-label="Download hempdustry-fabric-2.1.0+26.3.jar from GitHub"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>Direct .jar</a></p>
+            </section>
+            <section class="dl-loader">
+              <h5><span class="loader-tag loader-neoforge">NeoForge</span></h5>
+              <code class="dl-file">hempdustry-neoforge-2.1.0+26.3.jar</code>
+              <ul class="dl-needs"><li>NeoForge 26.3.0.101 or newer</li><li>Nothing else</li></ul>
+              <p class="dl-actions"><a class="button button-primary" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft/files" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>CurseForge</a><a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/download/v2.1.0/hempdustry-neoforge-2.1.0%2B26.3.jar" aria-label="Download hempdustry-neoforge-2.1.0+26.3.jar from GitHub"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>Direct .jar</a></p>
+            </section>
+          </div>
+          <dl class="dl-facts">
+            <div><dt>Java</dt><dd>25 or newer, like Minecraft 26.x itself</dd></div>
+            <div><dt>Recipe viewers</dt><dd>JEI or REI, on both loaders. REI on NeoForge wants Architectury API 22.0.5 or newer</dd></div>
+            <div><dt>On the wiki</dt><dd><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Installation" target="_blank" rel="noopener noreferrer">Installation</a> &middot; <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Minecraft-26.x" target="_blank" rel="noopener noreferrer">Minecraft 26.2 and 26.3</a></dd></div>
+          </dl>
+        </article>
+
+        <article class="dl-panel" id="dl-262" aria-label="Minecraft 26.2">
+          <header class="dl-panel-head">
+            <h4>Minecraft 26.2</h4>
+            <p>Everything in the mod, plus <a href="#minecraft-26">the 26.x extras</a>.</p>
+          </header>
+          <div class="dl-loaders">
+            <section class="dl-loader">
+              <h5><span class="loader-tag loader-fabric">Fabric</span></h5>
+              <code class="dl-file">hempdustry-fabric-2.1.0+26.2.jar</code>
+              <ul class="dl-needs"><li>Fabric Loader 0.20.1 or newer</li><li><a href="https://modrinth.com/mod/fabric-api" target="_blank" rel="noopener noreferrer">Fabric API</a> 0.161.0+26.2 or newer</li></ul>
+              <p class="dl-actions"><a class="button button-primary" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft/files" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>CurseForge</a><a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/download/v2.1.0/hempdustry-fabric-2.1.0%2B26.2.jar" aria-label="Download hempdustry-fabric-2.1.0+26.2.jar from GitHub"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>Direct .jar</a></p>
+            </section>
+            <section class="dl-loader">
+              <h5><span class="loader-tag loader-neoforge">NeoForge</span></h5>
+              <code class="dl-file">hempdustry-neoforge-2.1.0+26.2.jar</code>
+              <ul class="dl-needs"><li>NeoForge 26.2.0.93 or newer</li><li>Nothing else</li></ul>
+              <p class="dl-actions"><a class="button button-primary" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft/files" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>CurseForge</a><a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/download/v2.1.0/hempdustry-neoforge-2.1.0%2B26.2.jar" aria-label="Download hempdustry-neoforge-2.1.0+26.2.jar from GitHub"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>Direct .jar</a></p>
+            </section>
+          </div>
+          <dl class="dl-facts">
+            <div><dt>Java</dt><dd>25 or newer, like Minecraft 26.x itself</dd></div>
+            <div><dt>Recipe viewers</dt><dd>JEI on both loaders. REI on Fabric only: it doesn't run on NeoForge 26.2</dd></div>
+            <div><dt>On the wiki</dt><dd><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Installation" target="_blank" rel="noopener noreferrer">Installation</a> &middot; <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Minecraft-26.x" target="_blank" rel="noopener noreferrer">Minecraft 26.2 and 26.3</a></dd></div>
+          </dl>
+        </article>
+
+        <article class="dl-panel" id="dl-12111" aria-label="Minecraft 1.21.11">
+          <header class="dl-panel-head">
+            <h4>Minecraft 1.21.11</h4>
+            <p>The whole mod, shelf and harness included.</p>
+          </header>
+          <div class="dl-loaders">
+            <section class="dl-loader">
+              <h5><span class="loader-tag loader-fabric">Fabric</span></h5>
+              <code class="dl-file">hempdustry-fabric-2.1.0+1.21.11.jar</code>
+              <ul class="dl-needs"><li>Fabric Loader 0.18.2 or newer</li><li><a href="https://modrinth.com/mod/fabric-api" target="_blank" rel="noopener noreferrer">Fabric API</a> 0.139.4+1.21.11 or newer</li></ul>
+              <p class="dl-actions"><a class="button button-primary" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft/files" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>CurseForge</a><a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/download/v2.1.0/hempdustry-fabric-2.1.0%2B1.21.11.jar" aria-label="Download hempdustry-fabric-2.1.0+1.21.11.jar from GitHub"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>Direct .jar</a></p>
+            </section>
+            <section class="dl-loader">
+              <h5><span class="loader-tag loader-neoforge">NeoForge</span></h5>
+              <code class="dl-file">hempdustry-neoforge-2.1.0+1.21.11.jar</code>
+              <ul class="dl-needs"><li>NeoForge 21.11.45 or newer</li><li>Nothing else</li></ul>
+              <p class="dl-actions"><a class="button button-primary" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft/files" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>CurseForge</a><a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/download/v2.1.0/hempdustry-neoforge-2.1.0%2B1.21.11.jar" aria-label="Download hempdustry-neoforge-2.1.0+1.21.11.jar from GitHub"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>Direct .jar</a></p>
+            </section>
+          </div>
+          <dl class="dl-facts">
+            <div><dt>Java</dt><dd>21 or newer</dd></div>
+            <div><dt>Recipe viewers</dt><dd>JEI or REI, on both loaders</dd></div>
+            <div><dt>On the wiki</dt><dd><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Installation" target="_blank" rel="noopener noreferrer">Installation</a></dd></div>
+          </dl>
+        </article>
+
+        <article class="dl-panel" id="dl-1211" aria-label="Minecraft 1.21.1">
+          <header class="dl-panel-head">
+            <h4>Minecraft 1.21.1</h4>
+            <p>Everything but three things 1.21.1 can't hold, and EMI on top.</p>
+          </header>
+          <div class="dl-loaders">
+            <section class="dl-loader">
+              <h5><span class="loader-tag loader-fabric">Fabric</span></h5>
+              <code class="dl-file">hempdustry-fabric-2.1.0+1.21.1.jar</code>
+              <ul class="dl-needs"><li>Fabric Loader 0.16.5 or newer</li><li><a href="https://modrinth.com/mod/fabric-api" target="_blank" rel="noopener noreferrer">Fabric API</a> 0.105.0+1.21.1 or newer</li></ul>
+              <p class="dl-actions"><a class="button button-primary" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft/files" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>CurseForge</a><a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/download/v2.1.0/hempdustry-fabric-2.1.0%2B1.21.1.jar" aria-label="Download hempdustry-fabric-2.1.0+1.21.1.jar from GitHub"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>Direct .jar</a></p>
+            </section>
+            <section class="dl-loader">
+              <h5><span class="loader-tag loader-neoforge">NeoForge</span></h5>
+              <code class="dl-file">hempdustry-neoforge-2.1.0+1.21.1.jar</code>
+              <ul class="dl-needs"><li>NeoForge 21.1.209 or newer</li><li>Nothing else</li></ul>
+              <p class="dl-actions"><a class="button button-primary" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft/files" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>CurseForge</a><a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/download/v2.1.0/hempdustry-neoforge-2.1.0%2B1.21.1.jar" aria-label="Download hempdustry-neoforge-2.1.0+1.21.1.jar from GitHub"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>Direct .jar</a></p>
+            </section>
+          </div>
+          <dl class="dl-facts">
+            <div><dt>Java</dt><dd>21 or newer</dd></div>
+            <div><dt>Recipe viewers</dt><dd>JEI, REI or EMI, on both loaders</dd></div>
+            <div><dt>Not on 1.21.1</dt><dd>The Hemp Shelf, the Hemp Harness and canvas bundles. Move the world up to 1.21.11 and it gains them</dd></div>
+            <div><dt>On the wiki</dt><dd><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Installation" target="_blank" rel="noopener noreferrer">Installation</a> &middot; <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Modpack-Guide" target="_blank" rel="noopener noreferrer">Modpack Guide</a></dd></div>
+          </dl>
+        </article>
+
+        <article class="dl-panel" id="dl-1182" aria-label="Minecraft 1.18.2">
+          <header class="dl-panel-head">
+            <h4>Minecraft 1.18.2</h4>
+            <p>Forge only. Opens <a href="#old-worlds">Hemp-Craft and GanjaCraft worlds</a> and converts them.</p>
+          </header>
+          <div class="dl-loaders">
+            <section class="dl-loader">
+              <h5><span class="loader-tag loader-forge">Forge</span></h5>
+              <code class="dl-file">hempdustry-forge-2.1.0+1.18.2.jar</code>
+              <ul class="dl-needs"><li>Forge 40.3.12 or newer</li><li>Nothing else</li></ul>
+              <p class="dl-actions"><a class="button button-primary" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft/files" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>CurseForge</a><a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/download/v2.1.0/hempdustry-forge-2.1.0%2B1.18.2.jar" aria-label="Download hempdustry-forge-2.1.0+1.18.2.jar from GitHub"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>Direct .jar</a></p>
+            </section>
+            <section class="dl-loader dl-loader-none">
+              <h5><span class="loader-tag">No Fabric or NeoForge</span></h5>
+              <p>Hempdustry on 1.18.2 is a Forge build. NeoForge doesn't exist on 1.18.2.</p>
+            </section>
+          </div>
+          <dl class="dl-facts">
+            <div><dt>Java</dt><dd>17 or newer</dd></div>
+            <div><dt>Recipe viewers</dt><dd>JEI 10 or REI 8 (REI with Architectury and Cloth Config)</dd></div>
+            <div><dt>Not on 1.18.2</dt><dd>The hanging sign, the boat with chest, the shelf, the harness, canvas bundles, hemp in archaeology finds and trims on the outfit. Copper, amethyst, the tinted bong, goats and lush caves are all there</dd></div>
+            <div><dt>On the wiki</dt><dd><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Minecraft-1.18.2-and-Hemp-Craft" target="_blank" rel="noopener noreferrer">Minecraft 1.18.2 and Hemp-Craft</a></dd></div>
+          </dl>
+        </article>
+
+        <article class="dl-panel" id="dl-1165" aria-label="Minecraft 1.16.5">
+          <header class="dl-panel-head">
+            <h4>Minecraft 1.16.5</h4>
+            <p>Forge only, where GanjaCraft started. Opens <a href="#old-worlds">every GanjaCraft 1.16.5 world</a> and converts it.</p>
+          </header>
+          <div class="dl-loaders">
+            <section class="dl-loader">
+              <h5><span class="loader-tag loader-forge">Forge</span></h5>
+              <code class="dl-file">hempdustry-forge-2.1.0+1.16.5.jar</code>
+              <ul class="dl-needs"><li>Forge 36.2.39 or newer</li><li>Nothing else</li></ul>
+              <p class="dl-actions"><a class="button button-primary" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft/files" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>CurseForge</a><a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/download/v2.1.0/hempdustry-forge-2.1.0%2B1.16.5.jar" aria-label="Download hempdustry-forge-2.1.0+1.16.5.jar from GitHub"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>Direct .jar</a></p>
+            </section>
+            <section class="dl-loader dl-loader-none">
+              <h5><span class="loader-tag">No Fabric or NeoForge</span></h5>
+              <p>Hempdustry on 1.16.5 is a Forge build. NeoForge doesn't exist on 1.16.5.</p>
+            </section>
+          </div>
+          <dl class="dl-facts">
+            <div><dt>Java</dt><dd>8 or newer</dd></div>
+            <div><dt>Recipe viewers</dt><dd>JEI</dd></div>
+            <div><dt>Not on 1.16.5</dt><dd>The hanging sign, the boat with chest, the tinted bong, the shelf, the harness, canvas bundles, lush caves, goats, archaeology and outfit trims. Recipes that want copper take iron, and the Grow Lamp takes purple stained glass for amethyst</dd></div>
+            <div><dt>On the wiki</dt><dd><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Minecraft-1.16.5-and-GanjaCraft" target="_blank" rel="noopener noreferrer">Minecraft 1.16.5 and GanjaCraft</a></dd></div>
+          </dl>
+        </article>
+
+      </div>
+      <p class="small dl-cf-hint">On CurseForge, filter by your Minecraft version and take the file named as above. The older GanjaCraft files still listed there are a different mod.</p>
+
+      <ol class="dl-steps" aria-label="Installing">
+        <li><b>Install the loader</b> for your Minecraft version: <a href="https://fabricmc.net/use/installer/" target="_blank" rel="noopener noreferrer">Fabric</a>, <a href="https://neoforged.net/" target="_blank" rel="noopener noreferrer">NeoForge</a> or <a href="https://files.minecraftforge.net/" target="_blank" rel="noopener noreferrer">Forge</a>. Most launchers do it for you.</li>
+        <li><b>On Fabric only,</b> put <a href="https://modrinth.com/mod/fabric-api" target="_blank" rel="noopener noreferrer">Fabric API</a> in your <code>mods</code> folder.</li>
+        <li><b>Drop the Hempdustry jar</b> in <code>mods</code> and start the game. A Hempdustry tab in the creative inventory means it loaded.</li>
+      </ol>
+      <p class="small dl-steps-note">On a server, the same jar goes on the server and on every player's game. Updating is swapping the jar: a world from any Hempdustry 2 version opens on every later one, nothing to do.</p>
+
+      <div id="old-worlds" class="old-worlds">
+        <h3>Got an old GanjaCraft or Hemp-Craft world?</h3>
+        <p class="old-worlds-lede">Keep it. The Forge builds open it and turn it into a Hempdustry world as it loads. No tool to run, nothing to set up.</p>
+        <div class="old-worlds-grid">
+          <article class="old-world">
+            <span class="slot slot-lg"><img src="assets/icons/indica_buds.png" alt="" width="16" height="16"></span>
+            <div>
+              <h4>GanjaCraft, Minecraft 1.16.5</h4>
+              <p>Every Forge 1.16.5 build opens: the original BETA v0.4 to v0.5.1 and NotTyzo's 1.0.0 to 1.0.6. Crops keep their stage, blocks keep their shape, signs keep their text, and a packed bong stays packed.</p>
+              <p class="old-world-actions"><label class="button button-primary" for="mc-1165">Get the 1.16.5 file</label><a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Minecraft-1.16.5-and-GanjaCraft" target="_blank" rel="noopener noreferrer">What each thing becomes</a></p>
+            </div>
+          </article>
+          <article class="old-world">
+            <span class="slot slot-lg"><img src="assets/icons/hemp_bale.png" alt="" width="16" height="16"></span>
+            <div>
+              <h4>Hemp-Craft, Minecraft 1.18</h4>
+              <p>All three Hemp-Craft builds open on the 1.18.2 file, and so does a GanjaCraft 1.16.5 world. Seeds, crops, blocks, signs with their text and packed gear come through, and a Hemp Farmer carries on as a vanilla Farmer.</p>
+              <p class="old-world-actions"><label class="button button-primary" for="mc-1182">Get the 1.18.2 file</label><a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Minecraft-1.18.2-and-Hemp-Craft" target="_blank" rel="noopener noreferrer">Read the guide</a></p>
+            </div>
+          </article>
+        </div>
+        <ol class="old-worlds-steps">
+          <li><b>Back the world up.</b> The conversion only goes one way.</li>
+          <li><b>Take the old jar out</b> of <code>mods</code>. Don't run both mods together.</li>
+          <li><b>Put the Hempdustry Forge jar in</b> and open the world.</li>
+        </ol>
+        <p class="small">A converted 1.16.5 world can move on up to the newer Minecraft versions too. The wiki says what to know first.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="wiki" class="wiki" aria-labelledby="wiki-title">
+    <div class="container">
+      <h2 id="wiki-title">The wiki</h2>
+      <p class="lede">The site is the tour. The wiki has the numbers: grow times, effect lengths, recipes, every config key, the tags and the addon API. 41 pages, for players, server owners and pack makers.</p>
+
+      <div class="wiki-cols">
+        <div class="wiki-col">
+          <h3>Start here</h3>
+          <ul>
+            <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Installation" target="_blank" rel="noopener noreferrer"><span class="slot"><img src="assets/icons/indica_seeds.png" alt="" width="16" height="16"></span><span><b>Installation</b>Which file, what you need, updating</span></a></li>
+            <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Getting-Started" target="_blank" rel="noopener noreferrer"><span class="slot"><img src="assets/icons/hemp_leaf.png" alt="" width="16" height="16"></span><span><b>Getting Started</b>Your first hour, seed to first hit</span></a></li>
+            <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/FAQ" target="_blank" rel="noopener noreferrer"><span class="slot"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"></span><span><b>FAQ</b>The questions everybody asks</span></a></li>
+            <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Items-and-Blocks" target="_blank" rel="noopener noreferrer"><span class="slot"><img src="assets/icons/hemp_fiber.png" alt="" width="16" height="16"></span><span><b>Items and Blocks</b>Everything the mod adds, in one list</span></a></li>
+          </ul>
+        </div>
+        <div class="wiki-col">
+          <h3>Play</h3>
+          <ul>
+            <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Growing-Hemp" target="_blank" rel="noopener noreferrer"><span class="slot"><img src="assets/icons/sativa_seeds.png" alt="" width="16" height="16"></span><span><b>Growing Hemp</b>Soil, light, trimming, harvests</span></a></li>
+            <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Smoking" target="_blank" rel="noopener noreferrer"><span class="slot"><img src="assets/icons/wooden_pipe.png" alt="" width="16" height="16"></span><span><b>Smoking</b>Effects, levels and green-outs</span></a></li>
+            <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Hash-and-Concentrates" target="_blank" rel="noopener noreferrer"><span class="slot"><img src="assets/icons/hashish.png" alt="" width="16" height="16"></span><span><b>Hash and Concentrates</b>Sifting, ice wash, the press</span></a></li>
+            <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Edibles" target="_blank" rel="noopener noreferrer"><span class="slot"><img src="assets/icons/space_cake.png" alt="" width="16" height="16"></span><span><b>Edibles</b>When they hit, and how hard</span></a></li>
+          </ul>
+        </div>
+        <div class="wiki-col">
+          <h3>Servers and packs</h3>
+          <ul>
+            <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Server-Guide" target="_blank" rel="noopener noreferrer"><span class="slot"><img src="assets/icons/bell.png" alt="" width="16" height="16"></span><span><b>Server Guide</b>Setting it up for everyone</span></a></li>
+            <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Configuration" target="_blank" rel="noopener noreferrer"><span class="slot"><img src="assets/icons/clock.png" alt="" width="16" height="16"></span><span><b>Configuration</b>Every switch in the config file</span></a></li>
+            <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Modpack-Guide" target="_blank" rel="noopener noreferrer"><span class="slot"><img src="assets/icons/hemp_bale.png" alt="" width="16" height="16"></span><span><b>Modpack Guide</b>Jars, tags, pipes, recipes, loot</span></a></li>
+            <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Custom-Strains" target="_blank" rel="noopener noreferrer"><span class="slot"><img src="assets/icons/beldia_buds.png" alt="" width="16" height="16"></span><span><b>Custom Strains</b>Add your own with a datapack</span></a></li>
+          </ul>
+        </div>
+        <div class="wiki-col">
+          <h3>Make and help</h3>
+          <ul>
+            <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Addon-Development" target="_blank" rel="noopener noreferrer"><span class="slot"><img src="assets/icons/emerald.png" alt="" width="16" height="16"></span><span><b>Addon Development</b>Events and the API, both loaders</span></a></li>
+            <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Stability-Promise" target="_blank" rel="noopener noreferrer"><span class="slot"><img src="assets/icons/hempcrete_block.png" alt="" width="16" height="16"></span><span><b>Stability Promise</b>What never breaks between versions</span></a></li>
+            <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Translating" target="_blank" rel="noopener noreferrer"><span class="slot"><img src="assets/icons/lead.png" alt="" width="16" height="16"></span><span><b>Translating</b>Check, fix or finish a language</span></a></li>
+            <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Contributing" target="_blank" rel="noopener noreferrer"><span class="slot"><img src="assets/icons/hemp_planks.png" alt="" width="16" height="16"></span><span><b>Contributing</b>Bugs, ideas and pull requests</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="cta"><a class="button button-primary" href="https://github.com/warlon-mhite/hempdustry-fabric/wiki" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>Open the wiki</a></p>
     </div>
   </section>
 
@@ -653,6 +957,8 @@
           <li><img src="assets/icons/sativa_seeds.png" alt="" width="16" height="16"><b>Breeding.</b> Cross two strains into a hybrid.</li>
         </ul>
       </div>
+
+      <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Roadmap" target="_blank" rel="noopener noreferrer">Roadmap</a></p>
     </div>
   </section>
 
@@ -679,7 +985,7 @@
 
       <p>Somewhere in there, NotTyzo rewrote GanjaCraft for its Reforged Network server. He picked up the cannabis-mod idea and rewrote it properly in Java, starting for 1.16 and quickly bringing it up to speed with newer versions like 1.18, all with my permission, and even worked with me on some details. Around that time the mod got banned from CurseForge for having "ganja" in the name. It thus got renamed to Hempdustry, and shortly after became <a href="https://www.curseforge.com/minecraft/mc-mods/hempcraft-plus" target="_blank" rel="noopener noreferrer">Hemp-Craft</a>, which is still maintained under various mod loaders.</p>
 
-      <p>In 2025 I started my own from-scratch rewrite for Fabric 1.21, mostly to relearn real Java modding, and after another long gap decided to actually finish it properly. Hempdustry 2 is that mod: the name is a small nod to the version that came after mine and didn't make it. Since 2.1 it runs on NeoForge too, so it's back on the Forge side of the fence where GanjaCraft started.</p>
+      <p>In 2025 I started my own from-scratch rewrite for Fabric 1.21, mostly to relearn real Java modding, and after another long gap decided to actually finish it properly. Hempdustry 2 is that mod: the name is a small nod to the version that came after mine and didn't make it. Since 2.1 it runs on NeoForge too, so it's back on the Forge side of the fence where GanjaCraft started, and on old Forge itself for 1.16.5 and 1.18.2, where it can pick up a GanjaCraft or Hemp-Craft world right where you left it.</p>
 
       <p>While Hemp-Craft and Hempdustry 2 share some mechanics and textures, the two mods are completely different projects now. Hemp-Craft is not published under a Free Software license. NotTyzo worked hard on reimplementing all my ideas without MCreator, and had my authorization to use the textures and initial CurseForge page and branding. During my rewrite of Hempdustry 2, I changed multiple things, reworking some mechanics and adding new ones to make the mod more complete and more aligned with real-world usage and science. But of course, this is still a Minecraft mod, so it's nowhere near realistic.</p>
     </div>
@@ -702,36 +1008,36 @@
 
         <li>
           <details class="faq-item">
-            <summary>Fabric or NeoForge?</summary>
-            <p>Both, since 2.1.0. Same mod, same blocks, same numbers. Each loader has its own download for every Minecraft version (26.3, 26.2, 1.21.11 and 1.21.1), so pick the one that matches your game.</p>
+            <summary>Fabric, NeoForge or Forge?</summary>
+            <p>All three. Fabric and NeoForge on Minecraft 26.3, 26.2, 1.21.11 and 1.21.1, Forge on 1.18.2 and 1.16.5. Same mod, same blocks, same numbers. Each loader has its own file for each version, so pick the one that matches your game: the <a href="#download">download picker</a> lists them all.</p>
           </details>
         </li>
 
         <li>
           <details class="faq-item">
             <summary>Which Minecraft version should I pick?</summary>
-            <p>Whichever your world or modpack is on. Every build has the whole mod. 26.2 and 26.3 add <a href="#minecraft-26">a few extras</a> only the new Minecraft can do, and 1.21.1 misses the shelf, the harness and canvas bundles. Moving a world up a version keeps everything in it.</p>
+            <p>Whichever your world or modpack is on. Every build has the whole mod, minus what its Minecraft can't hold. 26.2 and 26.3 add <a href="#minecraft-26">a few extras</a> only the new Minecraft can do, 1.21.1 misses the shelf, the harness and canvas bundles, and 1.18.2 and 1.16.5 miss a few more, <a href="#download">listed with each file</a>. Coming from GanjaCraft or Hemp-Craft, take the Forge build that <a href="#old-worlds">opens your world</a>. Moving a world up a version keeps everything in it.</p>
           </details>
         </li>
 
         <li>
           <details class="faq-item">
             <summary>Do I need any other mods for this to work?</summary>
-            <p>On Fabric, just Fabric API, on both client and server. On NeoForge, nothing. JEI and REI are optional and get their own recipe pages on both loaders, EMI too on 1.21.1. On NeoForge 26.2 it's JEI only, since REI doesn't run there yet. It's built to not fight with the usual kitchen-sink modpacks.</p>
+            <p>On Fabric, just Fabric API, on both client and server. On NeoForge and Forge, nothing. JEI and REI are optional and get their own recipe pages, EMI too on 1.21.1. On NeoForge 26.2 and on 1.16.5 it's JEI only, since REI doesn't run there. It's built to not fight with the usual kitchen-sink modpacks.</p>
           </details>
         </li>
 
         <li>
           <details class="faq-item">
             <summary>Is it stable?</summary>
-            <p>Yes. 2.1.0 is a stable release on both loaders, played in a real client on every build before it went out. A world made with any version of Hempdustry 2 opens on every later one, with nothing for you to do. Bug reports are still welcome.</p>
+            <p>Yes. 2.1.0 is a stable release on all three loaders, played in a real client on every build before it went out. A world made with any version of Hempdustry 2 opens on every later one, with nothing for you to do. Bug reports are still welcome.</p>
           </details>
         </li>
 
         <li>
           <details class="faq-item">
             <summary>Is there a weed mod for Bedrock, Forge or older versions?</summary>
-            <p>Hempdustry 2 is Java Edition only, on Fabric and NeoForge for 26.3, 26.2, 1.21.11 and 1.21.1. No Bedrock or Pocket Edition. The old Forge builds for 1.16.5 and 1.18 are still on the CurseForge page, but they're a different mod from this one.</p>
+            <p>Hempdustry 2 is Java Edition only: Fabric and NeoForge for 26.3, 26.2, 1.21.11 and 1.21.1, and Forge for 1.18.2 and 1.16.5. No Bedrock or Pocket Edition, and no build for the versions in between. The CurseForge page also still holds the old GanjaCraft files for 1.16.5 and 1.18; they're a different mod. The Hempdustry files are the ones named <code>hempdustry-…</code>.</p>
           </details>
         </li>
 
@@ -745,7 +1051,7 @@
         <li>
           <details class="faq-item">
             <summary>What happened to GanjaCraft?</summary>
-            <p>Same mod, new name. Platforms weren't fond of "ganja" in a listing title, so this rewrite ships as Hempdustry 2. The old GanjaCraft still exists as a historical footnote, not a separate project.</p>
+            <p>Same mod, new name. Platforms weren't fond of "ganja" in a listing title, so this rewrite ships as Hempdustry 2. The old GanjaCraft still exists as a historical footnote, not a separate project. Still got a GanjaCraft world, or a Hemp-Craft one? The Forge builds <a href="#old-worlds">open it and convert it</a>.</p>
           </details>
         </li>
 
@@ -766,12 +1072,12 @@
   <div class="container footer-inner">
     <nav class="footer-links" aria-label="Footer">
       <ul>
-        <li><a href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft" target="_blank" rel="noopener noreferrer">CurseForge</a></li>
-        <li><a href="https://www.nexusmods.com/minecraft/mods/218" target="_blank" rel="noopener noreferrer">NexusMods</a></li>
-        <li><a href="https://github.com/warlon-mhite/hempdustry-fabric" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki" target="_blank" rel="noopener noreferrer">Wiki</a></li>
-        <li><span class="button-disabled" aria-disabled="true">Modrinth (soon)</span></li>
-        <li><a href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer">Discord</a></li>
+        <li><a href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>CurseForge</a></li>
+        <li><a href="https://www.nexusmods.com/minecraft/mods/218" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-nexusmods"></use></svg>NexusMods</a></li>
+        <li><a href="https://github.com/warlon-mhite/hempdustry-fabric" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>GitHub</a></li>
+        <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki" target="_blank" rel="noopener noreferrer"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16">Wiki</a></li>
+        <li><span class="button-disabled" aria-disabled="true"><svg class="logo" aria-hidden="true"><use href="#logo-modrinth"></use></svg>Modrinth (soon)</span></li>
+        <li><a href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-discord"></use></svg>Discord</a></li>
       </ul>
     </nav>
     <p class="license">Hempdustry 2, formerly GanjaCraft. Code licensed AGPL-3.0; art and music CC BY-NC-SA 4.0.<br>Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</p>
@@ -779,6 +1085,38 @@
 </footer>
 
 <script>
+  // Light up the nav link of the section on screen.
+  (function () {
+    var links = {};
+    document.querySelectorAll('.site-nav a[href^="#"]').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+    if (!('IntersectionObserver' in window)) return;
+    var current = null;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var link = links[entry.target.id];
+        if (current) current.removeAttribute('aria-current');
+        current = link || null;
+        if (current) {
+          current.setAttribute('aria-current', 'true');
+          // On phones the nav scrolls sideways: bring the lit link into it, without touching the page's own scroll.
+          var nav = current.closest('.site-nav');
+          var a = current.getBoundingClientRect(), n = nav.getBoundingClientRect();
+          var left = nav.scrollLeft + (a.left - n.left) - n.width / 2 + a.width / 2;
+          nav.scrollTo({ left: Math.max(0, left), behavior: 'smooth' });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('main > section[id], #old-worlds').forEach(function (s) { observer.observe(s); });
+  })();
+
+  // "Get the 1.16.5 file" picks that version; take the reader up to the picker to see it.
+  document.querySelectorAll('.old-world-actions label[for]').forEach(function (label) {
+    label.addEventListener('click', function () {
+      setTimeout(function () { document.querySelector('.dl-heading').scrollIntoView({ block: 'start' }); }, 0);
+    });
+  });
+
   // SoundCloud's widget lays itself out on load; loading it while hidden draws it broken.
   document.querySelector('.player-toggle').addEventListener('change', function (e) {
     if (e.target.value !== 'soundcloud') return;

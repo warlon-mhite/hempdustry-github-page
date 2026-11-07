@@ -1,16 +1,18 @@
 # Hempdustry 2
 
-> Hempdustry 2 (formerly GanjaCraft) is a free, open-source cannabis mod for Minecraft Java Edition on Fabric and NeoForge, for Minecraft 26.3, 26.2, 1.21.11 and 1.21.1. You grow weed (cannabis, marijuana, hemp) in fields, grow pots or hydro trays, smoke it in a spliff, pipe, bong or vaporizer, sift and press it into hash and rosin, cook edibles from cannabutter, and build with hempcrete, hemp bricks and hemp planks. It is designed as a Vanilla+ mod: everything is meant to feel like Mojang shipped it. Current version: 2.1.0, stable (October 2026 on 1.21.x; on 26.2 since 2 November 2026 and on 26.3 since 4 November 2026). Made by Warlon Mhite.
+> Hempdustry 2 (formerly GanjaCraft) is a free, open-source cannabis mod for Minecraft Java Edition on Fabric and NeoForge (Minecraft 26.3, 26.2, 1.21.11 and 1.21.1) and on Forge (Minecraft 1.18.2 and 1.16.5). You grow weed (cannabis, marijuana, hemp) in fields, grow pots or hydro trays, smoke it in a spliff, pipe, bong or vaporizer, sift and press it into hash and rosin, cook edibles from cannabutter, and build with hempcrete, hemp bricks and hemp planks. It is designed as a Vanilla+ mod: everything is meant to feel like Mojang shipped it. Current version: 2.1.0, stable (October 2026 on 1.21.x; on 26.2 since 2 November 2026, on 26.3 since 4 November 2026, on 1.16.5 and 1.18.2 since 7 November 2026). Made by Warlon Mhite.
 
 ## Facts
 
 - Game: Minecraft Java Edition only. No Bedrock or Pocket Edition.
-- Loaders: Fabric (needs Fabric API) and NeoForge (needs nothing else), since 2.1.0. Install on client and server.
-- Minecraft versions: 26.3, 26.2, 1.21.11 and 1.21.1, one download per loader and version. The 1.21.1 builds lack the Hemp Shelf, the Hemp Harness and canvas bundles. The 26.2 and 26.3 builds have a few extras (below) and need Java 25.
+- Loaders: Fabric (needs Fabric API) and NeoForge (needs nothing else) since 2.1.0, and Forge (needs nothing else) on 1.18.2 and 1.16.5. Install on client and server.
+- Minecraft versions: 26.3, 26.2, 1.21.11 and 1.21.1 on Fabric and NeoForge, 1.18.2 and 1.16.5 on Forge; one download per loader and version, named `hempdustry-<loader>-2.1.0+<minecraft>.jar`. The 1.21.1 builds lack the Hemp Shelf, the Hemp Harness and canvas bundles. The 26.2 and 26.3 builds have a few extras (below) and need Java 25. The 1.18.2 build (Java 17) also lacks the hanging sign, the boat with chest, archaeology finds and outfit trims; the 1.16.5 build (Java 8) lacks those plus the tinted bong, lush caves and goats, and uses iron where newer versions use copper. No build for Bedrock or for the versions in between.
+- Old worlds: the 1.16.5 Forge build opens every GanjaCraft 1.16.5 world (BETA v0.4 to v0.5.1, and 1.0.0 to 1.0.6) and converts it as it loads. The 1.18.2 Forge build opens Hemp-Craft worlds (all three of its builds) and GanjaCraft 1.16.5 worlds. Back up the world, remove the old mod's jar, add Hempdustry, open the world. The old GanjaCraft files still listed on the CurseForge page are a different mod.
 - License: code AGPL-3.0, art and music CC BY-NC-SA 4.0. Free, nothing paywalled. Allowed in modpacks, monetized ones included.
 - Languages: 12 (English US/UK/CA/AU/NZ, French FR/CA/CH, German DE/AT/CH, Russian). Russian does not cover 2.1 yet.
-- Optional: JEI and REI recipe pages on both loaders (REI on NeoForge needs 26.3 or 1.21.x; on 26.3 with Architectury API 22.0.5 or newer), EMI on 1.21.1. Server owners can switch off every drug effect in config/hempdustry.json and keep only industrial hemp.
+- Optional: JEI and REI recipe pages on both loaders (REI on NeoForge needs 26.3 or 1.21.x; on 26.3 with Architectury API 22.0.5 or newer), EMI on 1.21.1, JEI 10 or REI 8 on 1.18.2, JEI on 1.16.5. Server owners can switch off every drug effect in config/hempdustry.json and keep only industrial hemp.
 - Worlds from any Hempdustry 2 version open on every later one.
+- Documentation: the wiki (41 pages) has the numbers: installation per version, grow times, effects, recipes, every config key, tags, datapacks, custom strains and the addon API.
 
 ## What's in 2.1.0
 
@@ -43,7 +45,11 @@ Warped Kush and Crimson (Nether strains), Ruderalis, Industrial Hemp and Ditchwe
 
 - [Website](https://warlon-mhite.github.io/hempdustry-github-page/)
 - [Download on CurseForge](https://www.curseforge.com/minecraft/mc-mods/ganjacraft)
+- [Which file to download, per Minecraft version and loader](https://warlon-mhite.github.io/hempdustry-github-page/#download)
 - [NexusMods](https://www.nexusmods.com/minecraft/mods/218)
 - [Source code and releases on GitHub](https://github.com/warlon-mhite/hempdustry-fabric)
 - [Wiki](https://github.com/warlon-mhite/hempdustry-fabric/wiki)
+- [Wiki: Installation](https://github.com/warlon-mhite/hempdustry-fabric/wiki/Installation)
+- [Wiki: Minecraft 1.16.5 and GanjaCraft](https://github.com/warlon-mhite/hempdustry-fabric/wiki/Minecraft-1.16.5-and-GanjaCraft)
+- [Wiki: Minecraft 1.18.2 and Hemp-Craft](https://github.com/warlon-mhite/hempdustry-fabric/wiki/Minecraft-1.18.2-and-Hemp-Craft)
 - [Discord](https://discord.gg/2UBEb8PzD3)
