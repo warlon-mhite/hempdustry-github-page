@@ -1060,10 +1060,14 @@
             <h3>Brewevolution, and a quiet spell</h3>
             <p>Then came Brewevolution, a beer and tavern RP mod made with a school friend. It did a lot better than GanjaCraft ever did, partly thanks to <a href="https://youtu.be/2H2X_GLtiLI?si=ew3R7CtZucRfBpB-&amp;t=260" target="_blank" rel="noopener noreferrer"><code>bstylia14</code>'s video</a> showcasing it at 4:20 (I don't think that's a coincidence). It's also where MCreator's limits started showing. Life got busy in ways that had nothing to do with Minecraft, and both mods went quiet for a while.</p>
           </div>
-          <div class="chapter-art chapter-art-slots">
-            <span class="slot slot-xl"><img src="assets/icons/clock.png" alt="" width="16" height="16"></span>
-            <p class="chapter-stamp" aria-hidden="true">4:20</p>
-          </div>
+          <figure class="plate chapter-art chapter-video">
+            <a class="yt-facade" href="https://youtu.be/2H2X_GLtiLI?t=260" target="_blank" rel="noopener noreferrer" data-yt="2H2X_GLtiLI" data-start="260" aria-label="Play bstylia14's video from 4:20">
+              <img src="assets/history/bstylia14-video.webp" alt="Thumbnail of bstylia14's video Top 13 underrated mods" width="960" height="540" loading="lazy">
+              <span class="yt-play" aria-hidden="true"></span>
+              <span class="yt-stamp" aria-hidden="true">4:20</span>
+            </a>
+            <figcaption><span>bstylia14</span>Brewevolution comes up at 4:20. The player loads from YouTube when you press play.</figcaption>
+          </figure>
         </li>
 
         <li class="chapter">
@@ -1287,6 +1291,21 @@
     document.querySelectorAll('iframe[data-src]').forEach(function (f) {
       f.src = f.dataset.src;
       f.removeAttribute('data-src');
+    });
+  });
+
+  // The video in the story is a plain link until it's pressed; then YouTube's player (no-cookie domain) takes its place.
+  document.querySelectorAll('.yt-facade').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.yt + '?start=' + a.dataset.start + '&autoplay=1&rel=0';
+      f.title = "bstylia14's video, from 4:20";
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      f.className = 'yt-frame';
+      a.replaceWith(f);
     });
   });
 
