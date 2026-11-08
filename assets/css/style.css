@@ -227,7 +227,8 @@ h2 {
 }
 
 @supports (animation-timeline: view()) {
-  .plate, .strain, .device, .chain li, .block-grid li, .extra-grid li, .soon-grid li {
+  .plate, .strain, .device, .chain li, .block-grid li, .extra-grid li, .soon-grid li,
+  .chapter-art, .discord-why li {
     animation: reveal-up linear both;
     animation-timeline: view();
     animation-range: entry 0% cover 20%;
@@ -1178,29 +1179,306 @@ h2 {
 .later b { color: var(--ink); }
 
 /* ==========================================================================
-   About — editorial measure + drop cap
+   About — the story as a timeline: a rail with a square marker per chapter,
+   the words on one side and a picture from that time on the other
    ========================================================================== */
 
-.about .container { max-width: 46rem; }
-
-.about p {
-  font-size: var(--text-lede);
-  line-height: 1.65;
-  margin-bottom: var(--space-3);
+.story {
+  --rail: 2rem;
+  position: relative;
+  display: grid;
+  gap: var(--space-6);
+  padding-left: var(--rail);
+  max-width: 76rem;
 }
 
-.about h2 { margin-bottom: var(--space-4); }
+.story::before {
+  content: "";
+  position: absolute;
+  left: 0.55rem;
+  top: 0.6rem;
+  bottom: 0.6rem;
+  width: 2px;
+  background: linear-gradient(var(--ink-15), var(--ink-15) 80%, var(--leaf));
+}
 
-.about p:first-of-type::first-letter {
+.chapter {
+  position: relative;
+  display: grid;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+/* the marker sits on the rail, centred on its 2px line */
+.chapter::before {
+  content: "";
+  position: absolute;
+  left: calc(1px - var(--rail));
+  top: 0.15rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  background: var(--paper);
+  border: 3px solid var(--leaf);
+}
+
+.chapter-now::before { background: var(--leaf); box-shadow: 0 0 0 4px var(--leaf-wash); }
+
+@media (min-width: 56rem) {
+  .story { --rail: 3.5rem; }
+  .chapter { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-5); }
+  .chapter:nth-child(even) .chapter-text { order: 2; }
+}
+
+.chapter-when {
+  font-size: var(--text-micro);
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--leaf);
+  margin-bottom: var(--space-1);
+}
+
+.chapter h3 {
+  font-size: clamp(1.75rem, 1.3rem + 1.8vw, 3rem);
   font-weight: 900;
-  font-size: 3.4em;
-  line-height: 0.85;
-  float: left;
-  margin: 0.03em 0.08em 0 0;
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.chapter-text > p:not(.chapter-when) {
+  font-size: 1.075rem;
+  line-height: 1.6;
+  max-width: 54ch;
+  color: var(--ink-85);
+}
+
+.chapter-text > p + p { margin-top: var(--space-2); }
+
+.chapter-link a { font-weight: 700; color: var(--leaf); }
+
+.chapter-actions { display: flex; flex-wrap: wrap; gap: var(--space-1); }
+
+.chapter-art-slots,
+.chapter-loaders {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-3);
+  background: var(--paper-dim);
+  border: 1px solid var(--ink-15);
+}
+
+.chapter-art-slots .slot-xl img { image-rendering: pixelated; }
+
+.chapter-stamp {
+  font-family: "Pixelify Sans", var(--font);
+  font-size: clamp(2.5rem, 1.8rem + 3vw, 4.5rem);
+  line-height: 1;
   color: var(--leaf);
 }
 
-.open-source .lede, .community .lede { margin-bottom: 0; }
+.chapter-loaders { flex-direction: column; gap: var(--space-2); }
+.chapter-loaders p:first-child { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem; }
+.chapter-loaders .loader-tag { font-size: var(--text-small); }
+.chapter-loaders .chapter-stamp { font-size: clamp(2rem, 1.5rem + 2.5vw, 3.5rem); color: var(--ink); }
+
+/* the GanjaCraft logo and the then-and-now strip: plates on a light ground, so the art keeps its colours */
+.chapter-plate { box-shadow: 10px 10px 0 var(--leaf); }
+
+.chapter-plate img {
+  padding: clamp(1rem, 3vw, 2rem);
+  background: var(--leaf-wash);
+}
+
+.then-now { background: var(--paper-dim); box-shadow: 10px 10px 0 var(--leaf); }
+
+.then-now ul {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: center;
+  gap: var(--space-3) var(--space-5);
+  padding: var(--space-5) var(--space-3);
+}
+
+.then-now li { display: flex; align-items: center; gap: 0.6rem; }
+.then-now li .slot { --size: 3rem; }
+.then-now li .slot img { width: 75%; height: 75%; image-rendering: pixelated; }
+.then-now-arrow { font-weight: 800; color: var(--leaf); }
+
+@media (max-width: 30rem) {
+  .then-now ul { gap: var(--space-2) var(--space-3); padding: var(--space-4) var(--space-2); }
+}
+
+@media (max-width: 22.5rem) {
+  .then-now ul { grid-template-columns: max-content; }
+}
+
+/* GanjaCraft, Hempdustry, Hemp-Craft: the names, top to bottom */
+.name-chain {
+  display: grid;
+  justify-items: center;
+  padding: var(--space-4) var(--space-3);
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  box-shadow: 10px 10px 0 var(--leaf);
+  text-align: center;
+}
+
+.name-chain li {
+  font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.name-chain li + li::before {
+  content: "\2193";
+  display: block;
+  margin-block: 0.2rem;
+  font-size: 1.25rem;
+  color: var(--leaf);
+}
+
+.name-chain li:last-child { color: var(--leaf); }
+
+.name-chain s {
+  color: var(--ink-60);
+  text-decoration-color: var(--bad);
+  text-decoration-thickness: 0.12em;
+}
+
+.two-mods {
+  max-width: 76rem;
+  margin-top: var(--space-6);
+  padding: var(--space-3) var(--space-3) var(--space-3) var(--space-4);
+  border-left: 4px solid var(--leaf);
+  background: var(--paper-dim);
+}
+
+.two-mods h3 { font-size: var(--text-h3); font-weight: 800; margin-bottom: 0.4rem; }
+.two-mods p { max-width: 80ch; color: var(--ink-85); line-height: 1.6; }
+
+.open-source .lede { margin-bottom: 0; }
+
+/* ==========================================================================
+   Community — a Discord invite card (counts asked of Discord's public invite)
+   and what the server is for
+   ========================================================================== */
+
+.discord-split {
+  --blurple: #5865f2;
+  display: grid;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+@media (min-width: 60rem) {
+  .discord-split { grid-template-columns: minmax(0, 26rem) minmax(0, 1fr); gap: var(--space-6); }
+}
+
+.discord-card {
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+  box-shadow: 10px 10px 0 var(--blurple);
+}
+
+.discord-band {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: var(--blurple);
+  color: #fff;
+  font-size: var(--text-micro);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.discord-band .logo { width: 1.4em; height: 1.4em; }
+
+.discord-guild {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-3) var(--space-2);
+}
+
+.discord-icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 1.4rem;
+  flex-shrink: 0;
+}
+
+.discord-guild h3 { font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.75rem); font-weight: 900; line-height: 1.05; }
+.discord-guild p { margin-top: 0.25rem; font-size: var(--text-small); color: var(--ink-15); }
+
+.discord-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  padding: 0 var(--space-3);
+  font-size: var(--text-small);
+  color: var(--ink-15);
+}
+
+.discord-counts span { display: inline-flex; align-items: center; gap: 0.45rem; }
+.discord-counts span::before { content: ""; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: #80848e; }
+.discord-counts .discord-online::before { background: #23a55a; }
+.discord-counts b { color: var(--paper); }
+
+.discord-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin: var(--space-3) var(--space-3) 0;
+  background: var(--ink-85);
+  border: 1px solid var(--ink-85);
+}
+
+.discord-facts div { padding: 0.6rem 0.8rem; background: var(--ink); }
+
+.discord-facts dt {
+  font-size: var(--text-micro);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-35);
+}
+
+.discord-facts dd { margin: 0.15rem 0 0; font-weight: 700; }
+
+.button.discord-join {
+  display: flex;
+  margin: var(--space-3);
+  background: var(--blurple);
+  border-color: var(--blurple);
+  color: #fff;
+}
+
+.button.discord-join:hover, .button.discord-join:focus-visible { background: #4752c4; border-color: #4752c4; color: #fff; }
+.discord-card :focus-visible { outline-color: var(--paper); }
+
+.discord-why { display: grid; gap: var(--space-2); }
+
+@media (min-width: 40rem) {
+  .discord-why { grid-template-columns: 1fr 1fr; }
+}
+
+.discord-why li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background: var(--paper);
+  border: 1px solid var(--ink-15);
+}
+
+.discord-why h3 { font-size: var(--text-h3); font-weight: 800; margin-bottom: 0.3rem; }
+.discord-why p { font-size: var(--text-small); color: var(--ink-85); line-height: 1.55; }
 
 /* ==========================================================================
    FAQ

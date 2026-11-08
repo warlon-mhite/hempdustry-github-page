@@ -1024,31 +1024,138 @@
     </div>
   </section>
 
-  <section id="about" class="about">
+  <section id="about" class="about" aria-labelledby="about-title">
     <div class="container">
-      <h2>Who's behind this and the wacky story of the mod</h2>
+      <h2 id="about-title">From GanjaCraft to Hempdustry 2</h2>
+      <p class="lede">A lockdown project, a ban over one word, a fork that went its own way and a rewrite from scratch. The wacky story of the mod, told by the one who made it.</p>
 
-      <p>I go by Warlon Mhite. I've been playing Minecraft since beta 1.7.4, got into modding thanks to Pipix (if memory serves), and started tinkering with game files as a kid thanks to Minecraft texture packs, long before I touched any actual code.</p>
+      <ol class="story">
+        <li class="chapter">
+          <div class="chapter-text">
+            <p class="chapter-when">Beta 1.7.4</p>
+            <h3>Texture packs first</h3>
+            <p>I go by Warlon Mhite. I've played Minecraft since Beta 1.7.4 and was tinkering with its files as a kid, through texture packs, long before I touched any real code. Pipix got me into modding, if memory serves.</p>
+          </div>
+          <div class="chapter-art chapter-art-slots" aria-hidden="true">
+            <span class="slot slot-xl"><img src="assets/icons/dirt.png" alt="" width="16" height="16"></span>
+          </div>
+        </li>
 
-      <p>During the COVID pandemic, bored and admittedly a bit of a stoner myself, I noticed there wasn't a decent cannabis mod for any recent Minecraft version. <a href="https://mcreator.net/" target="_blank" rel="noopener noreferrer">MCreator</a> made that gap easy to fill. I put together a rough but working Forge mod called GanjaCraft. It picked up a small and genuinely enthusiastic crowd.</p>
+        <li class="chapter">
+          <div class="chapter-text">
+            <p class="chapter-when">2021 · Forge 1.16.5</p>
+            <h3>GanjaCraft</h3>
+            <p>During the COVID pandemic, bored and admittedly a bit of a stoner, I noticed there wasn't a decent cannabis mod for any recent Minecraft. <a href="https://mcreator.net/" target="_blank" rel="noopener noreferrer">MCreator</a> made that gap easy to fill. GanjaCraft was rough, but it worked, and it found a small and genuinely enthusiastic crowd.</p>
+            <p class="chapter-link"><a href="#old-worlds">Still got a GanjaCraft world? It opens.</a></p>
+          </div>
+          <figure class="plate chapter-art chapter-plate">
+            <img src="assets/history/ganjacraft-logo-2021.webp" alt="The GanjaCraft logo: green blocky letters over cannabis leaves, with the line Plant, harvest, craft, smoke, repeat" width="1200" height="495" loading="lazy">
+            <figcaption><span>2021</span>The logo GanjaCraft shipped with.</figcaption>
+          </figure>
+        </li>
 
-      <p>After that, I teamed up with a school friend on Brewevolution, a beer and tavern RP mod that did a lot better than GanjaCraft ever did, partly thanks to <a href="https://youtu.be/2H2X_GLtiLI?si=ew3R7CtZucRfBpB-&amp;t=260" target="_blank" rel="noopener noreferrer"><code>bstylia14</code>'s video</a> showcasing it at 4:20 (I don't think that's a coincidence). That's also where MCreator's limits started showing. Around the same time my life got busy in ways that had nothing to do with Minecraft, and both mods went quiet for a while.</p>
+        <li class="chapter">
+          <div class="chapter-text">
+            <p class="chapter-when">Next</p>
+            <h3>Brewevolution, and a quiet spell</h3>
+            <p>Then came Brewevolution, a beer and tavern RP mod made with a school friend. It did a lot better than GanjaCraft ever did, partly thanks to <a href="https://youtu.be/2H2X_GLtiLI?si=ew3R7CtZucRfBpB-&amp;t=260" target="_blank" rel="noopener noreferrer"><code>bstylia14</code>'s video</a> showcasing it at 4:20 (I don't think that's a coincidence). It's also where MCreator's limits started showing. Life got busy in ways that had nothing to do with Minecraft, and both mods went quiet for a while.</p>
+          </div>
+          <div class="chapter-art chapter-art-slots">
+            <span class="slot slot-xl"><img src="assets/icons/clock.png" alt="" width="16" height="16"></span>
+            <p class="chapter-stamp" aria-hidden="true">4:20</p>
+          </div>
+        </li>
 
-      <p>Somewhere in there, NotTyzo rewrote GanjaCraft for its Reforged Network server. He picked up the cannabis-mod idea and rewrote it properly in Java, starting for 1.16 and quickly bringing it up to speed with newer versions like 1.18, all with my permission, and even worked with me on some details. Around that time the mod got banned from CurseForge for having "ganja" in the name. It thus got renamed to Hempdustry, and shortly after became <a href="https://www.curseforge.com/minecraft/mc-mods/hempcraft-plus" target="_blank" rel="noopener noreferrer">Hemp-Craft</a>, which is still maintained under various mod loaders.</p>
+        <li class="chapter">
+          <div class="chapter-text">
+            <p class="chapter-when">2022–2023 · Forge 1.16 to 1.18</p>
+            <h3>Hemp-Craft</h3>
+            <p>Meanwhile NotTyzo rewrote GanjaCraft properly in Java for the Reforged Network server, with my permission, starting on 1.16 and bringing it up to 1.18, and even worked with me on some details. Then CurseForge banned the mod for having "ganja" in its name. It became Hempdustry, and shortly after <a href="https://www.curseforge.com/minecraft/mc-mods/hempcraft-plus" target="_blank" rel="noopener noreferrer">Hemp-Craft</a>, which is still maintained on several loaders.</p>
+            <p class="chapter-link"><a href="#old-worlds">Hemp-Craft worlds open too.</a></p>
+          </div>
+          <div class="chapter-art">
+            <ol class="name-chain" aria-label="The mod's names">
+              <li><s>GanjaCraft</s></li>
+              <li>Hempdustry</li>
+              <li>Hemp-Craft</li>
+            </ol>
+          </div>
+        </li>
 
-      <p>In 2025 I started my own from-scratch rewrite for Fabric 1.21, mostly to relearn real Java modding, and after another long gap decided to actually finish it properly. Hempdustry 2 is that mod: the name is a small nod to the version that came after mine and didn't make it. Since 2.1 it runs on NeoForge too, so it's back on the Forge side of the fence where GanjaCraft started, and on old Forge itself for 1.16.5 and 1.18.2, where it can pick up a GanjaCraft or Hemp-Craft world right where you left it.</p>
+        <li class="chapter">
+          <div class="chapter-text">
+            <p class="chapter-when">2025 · Fabric 1.21</p>
+            <h3>Hempdustry 2</h3>
+            <p>In 2025 I started my own rewrite from scratch on Fabric 1.21, mostly to relearn real Java modding, and after another long gap decided to actually finish it properly. The name is a small nod to the Hempdustry that came after mine and didn't make it.</p>
+            <p class="chapter-link"><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Design-Notes" target="_blank" rel="noopener noreferrer">The rules it's built on ↗</a></p>
+          </div>
+          <figure class="plate chapter-art then-now">
+            <ul aria-label="GanjaCraft's 2021 textures next to today's">
+              <li><span class="slot"><img src="assets/history/ganjacraft-bud.png" alt="GanjaCraft bud" width="16" height="16"></span><span class="then-now-arrow" aria-hidden="true">→</span><span class="slot"><img src="assets/icons/indica_buds.png" alt="Purple Kush buds" width="16" height="16"></span></li>
+              <li><span class="slot"><img src="assets/history/ganjacraft-spliff.png" alt="GanjaCraft spliff" width="16" height="16"></span><span class="then-now-arrow" aria-hidden="true">→</span><span class="slot"><img src="assets/icons/indica_spliff.png" alt="Purple Kush spliff" width="16" height="16"></span></li>
+              <li><span class="slot"><img src="assets/history/ganjacraft-bong.png" alt="GanjaCraft bong" width="16" height="16"></span><span class="then-now-arrow" aria-hidden="true">→</span><span class="slot"><img src="assets/icons/bong.png" alt="Bong" width="16" height="16"></span></li>
+              <li><span class="slot"><img src="assets/history/ganjacraft-magiccookie.png" alt="GanjaCraft magic cookie" width="16" height="16"></span><span class="then-now-arrow" aria-hidden="true">→</span><span class="slot"><img src="assets/icons/space_cookie.png" alt="Space cookie" width="16" height="16"></span></li>
+            </ul>
+            <figcaption><span>2021 → now</span>GanjaCraft's textures, and the same things today.</figcaption>
+          </figure>
+        </li>
 
-      <p>While Hemp-Craft and Hempdustry 2 share some mechanics and textures, the two mods are completely different projects now. Hemp-Craft is not published under a Free Software license. NotTyzo worked hard on reimplementing all my ideas without MCreator, and had my authorization to use the textures and initial CurseForge page and branding. During my rewrite of Hempdustry 2, I changed multiple things, reworking some mechanics and adding new ones to make the mod more complete and more aligned with real-world usage and science. But of course, this is still a Minecraft mod, so it's nowhere near realistic.</p>
+        <li class="chapter chapter-now">
+          <div class="chapter-text">
+            <p class="chapter-when">2026 · Version 2.1</p>
+            <h3>Back where it started</h3>
+            <p>Since 2.1 it runs on NeoForge too, so it's back on the Forge side of the fence where GanjaCraft started, and on old Forge itself for 1.16.5 and 1.18.2, where it picks up a GanjaCraft or Hemp-Craft world right where you left it.</p>
+            <p class="chapter-actions">
+              <a class="button button-primary" href="#download"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>Download</a>
+              <a class="button" href="#old-worlds">Bring an old world</a>
+            </p>
+          </div>
+          <div class="chapter-art chapter-loaders">
+            <p><span class="loader-tag loader-fabric">Fabric</span><span class="loader-tag loader-neoforge">NeoForge</span><span class="loader-tag loader-forge">Forge</span></p>
+            <p class="chapter-stamp">1.16.5 → 26.3</p>
+          </div>
+        </li>
+      </ol>
+
+      <aside class="two-mods">
+        <h3>Two mods, one root</h3>
+        <p>Hemp-Craft and Hempdustry 2 share some mechanics and textures, but they're completely different projects now. NotTyzo worked hard on reimplementing my ideas without MCreator, and had my go-ahead to use the textures and the original CurseForge page and branding. Hemp-Craft is not published under a free software licence. In Hempdustry 2 I reworked some mechanics and added new ones, to make the mod more complete and closer to real-world use and science. It's still a Minecraft mod, though, so it's nowhere near realistic.</p>
+      </aside>
+
+      <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/About" target="_blank" rel="noopener noreferrer">About and credits</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Design-Notes" target="_blank" rel="noopener noreferrer">Design Notes</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Minecraft-1.16.5-and-GanjaCraft" target="_blank" rel="noopener noreferrer">1.16.5 and GanjaCraft</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Minecraft-1.18.2-and-Hemp-Craft" target="_blank" rel="noopener noreferrer">1.18.2 and Hemp-Craft</a></p>
     </div>
   </section>
 
-  <section id="community" class="community">
+  <section id="community" class="community" aria-labelledby="community-title">
     <div class="container">
-      <h2>Come hang out</h2>
+      <h2 id="community-title">Come hang out</h2>
       <p class="lede">The Discord from the GanjaCraft days never closed. It's quiet, but it's the easiest place to report a bug, suggest a feature, or tell me the Lemon Haze grow time is too slow (get a hydro tray).</p>
-      <p class="cta">
-        <a class="button button-primary" href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer">Join the Discord</a>
-      </p>
+
+      <div class="discord-split">
+        <article class="discord-card" aria-labelledby="discord-name">
+          <p class="discord-band"><svg class="logo" aria-hidden="true"><use href="#logo-discord"></use></svg>Discord server</p>
+          <div class="discord-guild">
+            <img class="discord-icon" src="assets/discord/server-icon.webp" alt="" width="128" height="128">
+            <div>
+              <h3 id="discord-name">Warlon's mods</h3>
+              <p>Hempdustry 2 + Brewevolution</p>
+            </div>
+          </div>
+          <p class="discord-counts" data-discord-counts hidden><span class="discord-online"><b data-online></b> online</span><span class="discord-members"><b data-members></b> members</span></p>
+          <dl class="discord-facts">
+            <div><dt>Open since</dt><dd>July 2021</dd></div>
+            <div><dt>You land in</dt><dd># general</dd></div>
+          </dl>
+          <a class="button discord-join" href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-discord"></use></svg>Join the server</a>
+        </article>
+
+        <ul class="discord-why">
+          <li><span class="slot"><img src="assets/icons/schwag.png" alt="" width="16" height="16"></span><div><h3>Report a bug</h3><p>Something crashed, broke or looks wrong. Say which loader and Minecraft version, and a log if there is one.</p></div></li>
+          <li><span class="slot"><img src="assets/icons/warped_kush_buds.png" alt="" width="16" height="16"></span><div><h3>Suggest a feature</h3><p>Ideas are welcome. <a href="#roadmap">Coming next</a> shows what's already planned.</p></div></li>
+          <li><span class="slot"><img src="assets/icons/grow_lamp.png" alt="" width="16" height="16"></span><div><h3>Show your grow</h3><p>Fields, grow rooms, hash labs, hempcrete houses. Screenshots welcome.</p></div></li>
+          <li><span class="slot"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"></span><div><h3>Packs and servers</h3><p>Install trouble, configs, a modpack that won't start. The <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki" target="_blank" rel="noopener noreferrer">wiki</a> answers most of it first.</p></div></li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -1182,6 +1289,28 @@
       f.removeAttribute('data-src');
     });
   });
+
+  // The Discord card's member and online counts, asked of Discord's public invite once the card is near.
+  // No cookies are sent; if the request fails the line simply stays hidden.
+  (function () {
+    var counts = document.querySelector('[data-discord-counts]');
+    if (!counts || !('IntersectionObserver' in window) || !window.fetch) return;
+    var fmt = new Intl.NumberFormat('en');
+    var observer = new IntersectionObserver(function (entries) {
+      if (!entries.some(function (e) { return e.isIntersecting; })) return;
+      observer.disconnect();
+      fetch('https://discord.com/api/v10/invites/2UBEb8PzD3?with_counts=true', { credentials: 'omit', referrerPolicy: 'no-referrer' })
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+        .then(function (d) {
+          if (typeof d.approximate_member_count !== 'number') return;
+          counts.querySelector('[data-online]').textContent = fmt.format(d.approximate_presence_count || 0);
+          counts.querySelector('[data-members]').textContent = fmt.format(d.approximate_member_count);
+          counts.hidden = false;
+        })
+        .catch(function () {});
+    }, { rootMargin: '400px 0px' });
+    observer.observe(counts.closest('.discord-card'));
+  })();
 </script>
 </body>
 </html>
