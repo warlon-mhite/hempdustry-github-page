@@ -344,4 +344,12 @@
   mount.hidden = false;
   document.querySelectorAll('[data-cfg-static]').forEach(s => { s.hidden = true; });
   render();
+
+  // A link to #config-builder (the wiki has them) arrives before the builder exists, so the browser's own jump
+  // misses: aim again now, and once the page around it has finished loading.
+  if (location.hash === '#' + mount.id) {
+    const go = () => mount.scrollIntoView({ behavior: 'instant', block: 'start' });
+    requestAnimationFrame(go);
+    if (document.readyState !== 'complete') addEventListener('load', () => requestAnimationFrame(go), { once: true });
+  }
 })();
