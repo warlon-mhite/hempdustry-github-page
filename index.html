@@ -75,6 +75,7 @@
               <li><a href="#kitchen"><span class="slot"><img src="assets/icons/space_cake.png" alt="" width="16" height="16"></span>Kitchen</a></li>
               <li><a href="#build"><span class="slot"><img src="assets/icons/hemp_bricks_block.png" alt="" width="16" height="16"></span>Build</a></li>
               <li><a href="#minecraft-26"><span class="slot"><img src="assets/icons/clock.png" alt="" width="16" height="16"></span>Minecraft 26.x</a></li>
+              <li><a href="#servers"><span class="slot"><img src="assets/icons/hemp_press.png" alt="" width="16" height="16"></span>Servers and packs</a></li>
               <li><a href="#soundtrack"><span class="slot"><img src="assets/discs/music_disc_moonlight.png" alt="" width="16" height="16"></span>Music</a></li>
               <li><a href="#roadmap"><span class="slot"><img src="assets/icons/warped_kush_buds.png" alt="" width="16" height="16"></span>Coming next</a></li>
             </ul>
@@ -557,20 +558,64 @@
         <li><span class="slot"><img src="assets/icons/decarboxylated_hemp.png" alt="" width="16" height="16"></span><h3>JEI, REI &amp; EMI pages</h3><p>Every machine, both cauldron steps, and an "In the World" page for the stuff that has no recipe. EMI on 1.21.1.</p></li>
       </ul>
 
-      <details class="nerd">
-        <summary>For server owners and pack makers</summary>
-        <ul>
-          <li>Fabric or NeoForge on Minecraft 26.3, 26.2, 1.21.11 or 1.21.1, Forge on 1.18.2 or 1.16.5. Install it on both client and server. The 1.21.1 builds have everything except what that version can't hold: the shelf, the harness and canvas bundles. The 26.x builds add <a href="#minecraft-26">a few things of their own</a> and need Java 25, like Minecraft 26.x itself. The Forge builds run on Java 17 (1.18.2) and Java 8 (1.16.5) and skip what those versions can't hold, <a href="#download">listed with each file</a>.</li>
-          <li><code>config/hempdustry.json</code> can switch off every drug effect ("industrial hemp only"), green-outs, nausea, loot and the wandering creepers, or speed up crops and machines. On 26.x, <code>world.mildew</code> turns mildew off. <code>/hempdustry reload</code> applies it.</li>
-          <li>Strains (hash included) are a datapack registry. Edit the shipped ones or add your own. They load with the world, not on <code>/reload</code>.</li>
-          <li>The Decarboxylator, the Infuser and the Hemp Press run on datapack recipes, so KubeJS and CraftTweaker can rebalance them. Grow pots and trays take anything in <code>#c:fertilizers</code>.</li>
-          <li>The Infuser and the Hemp Press pour into chests, hoppers and anything with storage, AE2 included. Dispensers can water pots and fill trays.</li>
-          <li>Addon events (smoke, eat, infuse, and a veto) on both loaders.</li>
-          <li>A world from any Hempdustry 2 version opens on every later one. Moving a world between Fabric and NeoForge isn't promised. A GanjaCraft or Hemp-Craft server converts its world on its own once the old jar is swapped for the Forge build (<a href="#old-worlds">below</a>).</li>
-        </ul>
-      </details>
+      <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Advancements" target="_blank" rel="noopener noreferrer">Advancements</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Items-and-Blocks" target="_blank" rel="noopener noreferrer">Items and Blocks</a></p>
+    </div>
+  </section>
 
-      <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Advancements" target="_blank" rel="noopener noreferrer">Advancements</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Server-Guide" target="_blank" rel="noopener noreferrer">Server Guide</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Configuration" target="_blank" rel="noopener noreferrer">Configuration</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Modpack-Guide" target="_blank" rel="noopener noreferrer">Modpack Guide</a></p>
+  <section id="servers" class="servers">
+    <div class="container">
+      <h2>For servers and modpacks</h2>
+      <p class="lede">Every mechanic has a switch, the machines talk to pipes, and the recipes and strains are plain data. Built to sit in a kitchen-sink pack without a fight.</p>
+
+      <div class="config-split">
+        <figure class="config-card">
+          <figcaption><span class="config-dots" aria-hidden="true"></span><code>config/hempdustry.json</code></figcaption>
+<pre><code>{
+  <span class="k">"effects"</span>: {
+    <span class="k">"enabled"</span>: <span class="v">false</span>,
+    <span class="k">"greenOut"</span>: <span class="v">false</span>
+  }
+}</code></pre>
+          <p class="config-note"><b>Hemp only.</b> Smoking and edibles give no effects, nobody greens out, and the farming, building and food all stay. <code>/hempdustry reload</code> applies it, no restart.</p>
+        </figure>
+        <div class="config-keys">
+          <h3>One file, every switch</h3>
+          <p class="small">Read by the server (one small client section aside), with the same keys on every loader and version. A value out of range is pulled back into it and logged.</p>
+          <ul class="chips" aria-label="What the config can switch off or scale">
+            <li class="chip">Effects on or off</li>
+            <li class="chip">Green-outs</li>
+            <li class="chip">Nausea</li>
+            <li class="chip">Munchies</li>
+            <li class="chip">Every debuff</li>
+            <li class="chip">Effect level caps</li>
+            <li class="chip">Effect length</li>
+            <li class="chip">Cooldowns</li>
+            <li class="chip">Edible onset</li>
+            <li class="chip">Crop growth speed</li>
+            <li class="chip">Machine speed</li>
+            <li class="chip">Infuser times</li>
+            <li class="chip">Loot</li>
+            <li class="chip">Creepers in fields</li>
+            <li class="chip">Mildew (26.x)</li>
+            <li class="chip">Update notice (client)</li>
+          </ul>
+          <p class="small">Ready-made presets (hemp only, no green-outs, fast farming, no loot) are on the <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Server-Guide#presets" target="_blank" rel="noopener noreferrer">Server Guide</a>.</p>
+        </div>
+      </div>
+
+      <ul class="soon-grid server-grid">
+        <li><span class="slot"><img src="assets/icons/hemp_leaf.png" alt="" width="16" height="16"></span><h3>Same jar, both sides</h3><p>The server and every player run the same file. Fabric needs Fabric API, NeoForge and Forge nothing. Java 25 on 26.x, 21 on 1.21, 17 on 1.18.2, 8 on 1.16.5. <a href="#download">Pick the file.</a></p></li>
+        <li><span class="slot"><img src="assets/icons/decarboxylated_hemp.png" alt="" width="16" height="16"></span><h3>Recipes are data</h3><p>Every recipe, the Decarboxylator, Infuser and Hemp Press included, is a datapack recipe. KubeJS, CraftTweaker or a plain datapack can rebalance any of them.</p></li>
+        <li><span class="slot"><img src="assets/icons/beldia_buds.png" alt="" width="16" height="16"></span><h3>Strains are data</h3><p>Strains, hash included, are a datapack registry. Edit the shipped ones or add your own. They load with the world, not on <code>/reload</code>.</p></li>
+        <li><span class="slot"><img src="assets/icons/hemp_press.png" alt="" width="16" height="16"></span><h3>Pipes and hoppers</h3><p>The Infuser and the Hemp Press pour into chests, hoppers and any storage, AE2 included. Dispensers water pots, fill trays and pour milk into the Infuser.</p></li>
+        <li><span class="slot"><img src="assets/icons/hydro_tray.png" alt="" width="16" height="16"></span><h3>Other mods' stuff</h3><p>Grow pots and trays take anything in <code>#c:fertilizers</code>. Convention tags, compost and fuel hook into the rest of a pack with no code.</p></li>
+        <li><span class="slot"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"></span><h3>JEI on a server</h3><p>Since 1.21.2 a server doesn't send players its recipes, so on 1.21.11 and 26.x JEI shows the crafting recipes only if it's on the server too. The machine pages show either way.</p></li>
+        <li><span class="slot"><img src="assets/icons/emerald.png" alt="" width="16" height="16"></span><h3>Addon events</h3><p>Smoke, eat and infuse events, and a veto, on Fabric and on NeoForge. What addons build on stays put from one version to the next.</p></li>
+        <li><span class="slot"><img src="assets/icons/hempcrete_block.png" alt="" width="16" height="16"></span><h3>Worlds keep</h3><p>A world from any Hempdustry 2 version opens on every later one. A GanjaCraft or Hemp-Craft server converts on the <a href="#old-worlds">Forge builds</a>. Moving between Fabric and NeoForge isn't promised.</p></li>
+        <li><span class="slot"><img src="assets/icons/hemp_bale.png" alt="" width="16" height="16"></span><h3>In your modpack</h3><p>Allowed, monetized packs included, as long as the launcher downloads it. Set <code>client.updateCheck</code> to <code>false</code> so players aren't told about updates the pack can't take yet.</p></li>
+      </ul>
+
+      <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Server-Guide" target="_blank" rel="noopener noreferrer">Server Guide</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Configuration" target="_blank" rel="noopener noreferrer">Configuration</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Commands" target="_blank" rel="noopener noreferrer">Commands</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Modpack-Guide" target="_blank" rel="noopener noreferrer">Modpack Guide</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Tags" target="_blank" rel="noopener noreferrer">Tags</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Datapacks" target="_blank" rel="noopener noreferrer">Datapacks</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Custom-Strains" target="_blank" rel="noopener noreferrer">Custom Strains</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Addon-Development" target="_blank" rel="noopener noreferrer">Addon Development</a></p>
     </div>
   </section>
 
@@ -1050,7 +1095,7 @@
         <li>
           <details class="faq-item">
             <summary>Can I have the hemp without the weed?</summary>
-            <p>Yes. Set <code>effects.enabled</code> to <code>false</code> in <code>config/hempdustry.json</code> and nothing gets anyone high, green-outs included. The farming, building and food all stay.</p>
+            <p>Yes. Set <code>effects.enabled</code> and <code>effects.greenOut</code> to <code>false</code> in <code>config/hempdustry.json</code> and nothing gets anyone high or greens anyone out. The farming, building and food all stay. <a href="#servers">More switches.</a></p>
           </details>
         </li>
 
