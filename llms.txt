@@ -43,9 +43,9 @@ Warped Kush and Crimson (Nether strains), Ruderalis, Industrial Hemp and Ditchwe
 
 ## Links
 
-- [Website](https://warlon-mhite.github.io/hempdustry-github-page/)
+- [Website](https://hempdustry.fun/)
 - [Download on CurseForge](https://www.curseforge.com/minecraft/mc-mods/ganjacraft)
-- [Which file to download, per Minecraft version and loader](https://warlon-mhite.github.io/hempdustry-github-page/#download)
+- [Which file to download, per Minecraft version and loader](https://hempdustry.fun/#download)
 - [NexusMods](https://www.nexusmods.com/minecraft/mods/218)
 - [Source code and releases on GitHub](https://github.com/warlon-mhite/hempdustry-fabric)
 - [Wiki](https://github.com/warlon-mhite/hempdustry-fabric/wiki)
