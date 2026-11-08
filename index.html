@@ -567,7 +567,7 @@
       <h2>For servers and modpacks</h2>
       <p class="lede">Every mechanic has a switch, the machines talk to pipes, and the recipes and strains are plain data. Built to sit in a kitchen-sink pack without a fight.</p>
 
-      <div class="config-split">
+      <div class="config-split" data-cfg-static>
         <figure class="config-card">
           <figcaption><span class="config-dots" aria-hidden="true"></span><code>config/hempdustry.json</code></figcaption>
 <pre><code>{
@@ -601,6 +601,11 @@
           </ul>
           <p class="small">Ready-made presets (hemp only, no green-outs, fast farming, no loot) are on the <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Server-Guide#presets" target="_blank" rel="noopener noreferrer">Server Guide</a>.</p>
         </div>
+      </div>
+
+      <div class="cfg" data-cfg-tool hidden>
+        <h3 class="cfg-title">Build your config file</h3>
+        <p class="small cfg-intro">Every key in <code>config/hempdustry.json</code>, the same on every loader and version. Change what you need: the file keeps only that, and the mod fills in the rest at its defaults. Every key is explained on the <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Configuration" target="_blank" rel="noopener noreferrer">Configuration</a> page.</p>
       </div>
 
       <ul class="soon-grid server-grid">
@@ -1246,6 +1251,7 @@
   </div>
 </footer>
 
+<script src="assets/js/config-tool.js" defer></script>
 <script>
   // Light up what the reader is on: the section's own link, or "Explore" for a section listed in its menu,
   // or the Download button.
