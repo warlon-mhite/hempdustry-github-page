@@ -63,19 +63,26 @@
   <div class="container header-inner">
     <a class="brand" href="#top"><img src="assets/icons/hemp_leaf.png" alt="" width="16" height="16"><span class="brand-text">Hempdustry 2</span></a>
     <nav class="site-nav" aria-label="Primary">
-      <ul>
-        <li><a href="#grow">Grow</a></li>
-        <li><a href="#smoke">Smoke</a></li>
-        <li><a href="#hash">Hash</a></li>
-        <li><a href="#kitchen">Kitchen</a></li>
-        <li><a href="#build">Build</a></li>
-        <li><a href="#minecraft-26">26.x</a></li>
-        <li><a href="#old-worlds">Old worlds</a></li>
-        <li><a href="#wiki">Wiki</a></li>
-        <li><a href="#soundtrack">Music</a></li>
-        <li><a href="#roadmap">Coming next</a></li>
+      <ul class="nav-main">
+        <li>
+          <details class="nav-explore">
+            <summary>Explore<span class="chev" aria-hidden="true"></span></summary>
+            <ul class="explore-menu">
+              <li><a href="#grow"><span class="slot"><img src="assets/icons/indica_seeds.png" alt="" width="16" height="16"></span>Grow</a></li>
+              <li><a href="#indoor"><span class="slot"><img src="assets/icons/grow_lamp.png" alt="" width="16" height="16"></span>Grow indoors</a></li>
+              <li><a href="#smoke"><span class="slot"><img src="assets/icons/bong.png" alt="" width="16" height="16"></span>Smoke</a></li>
+              <li><a href="#hash"><span class="slot"><img src="assets/icons/hashish.png" alt="" width="16" height="16"></span>Hash</a></li>
+              <li><a href="#kitchen"><span class="slot"><img src="assets/icons/space_cake.png" alt="" width="16" height="16"></span>Kitchen</a></li>
+              <li><a href="#build"><span class="slot"><img src="assets/icons/hemp_bricks_block.png" alt="" width="16" height="16"></span>Build</a></li>
+              <li><a href="#minecraft-26"><span class="slot"><img src="assets/icons/clock.png" alt="" width="16" height="16"></span>Minecraft 26.x</a></li>
+              <li><a href="#soundtrack"><span class="slot"><img src="assets/discs/music_disc_moonlight.png" alt="" width="16" height="16"></span>Music</a></li>
+              <li><a href="#roadmap"><span class="slot"><img src="assets/icons/warped_kush_buds.png" alt="" width="16" height="16"></span>Coming next</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki" target="_blank" rel="noopener noreferrer">Wiki<span class="ext" aria-hidden="true">&nbsp;&#8599;</span></a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer">Discord</a></li>
+        <li><a href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer" aria-label="Discord"><svg class="logo" aria-hidden="true"><use href="#logo-discord"></use></svg><span class="nav-label">Discord</span></a></li>
       </ul>
     </nav>
     <a class="button button-primary header-cta" href="#download"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>Download</a>
@@ -599,7 +606,7 @@
   <section id="download" class="download" aria-labelledby="download-title">
     <div class="container">
       <h2 id="download-title">Download</h2>
-      <p class="lede">Version 2.1.0, stable and free. The same files are on every site, one per Minecraft version and loader.</p>
+      <p class="lede">Version 2.1.0, stable and free. One file per Minecraft version and loader, and CurseForge always has the newest.</p>
 
       <div class="dl-platforms">
         <a class="dl-main" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft" target="_blank" rel="noopener noreferrer">
@@ -608,7 +615,7 @@
           <span class="dl-main-arrow" aria-hidden="true">&rarr;</span>
         </a>
         <ul class="dl-mirrors" aria-label="Also on">
-          <li><a class="dl-mirror dl-nexus" href="https://www.nexusmods.com/minecraft/mods/218" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-nexusmods"></use></svg><b>NexusMods</b><span>The same files</span></a></li>
+          <li><a class="dl-mirror dl-nexus" href="https://www.nexusmods.com/minecraft/mods/218" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-nexusmods"></use></svg><b>NexusMods</b><span>Alternative download, updates may arrive later</span></a></li>
           <li><a class="dl-mirror dl-github" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/latest" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg><b>GitHub</b><span>Every jar, with checksums</span></a></li>
           <li><span class="dl-mirror dl-modrinth is-soon" aria-disabled="true"><svg class="logo" aria-hidden="true"><use href="#logo-modrinth"></use></svg><b>Modrinth</b><span>In review, coming soon</span></span></li>
         </ul>
@@ -1085,29 +1092,35 @@
 </footer>
 
 <script>
-  // Light up the nav link of the section on screen.
+  // Light up what the reader is on: the section's own link, or "Explore" for a section listed in its menu,
+  // or the Download button.
   (function () {
-    var links = {};
-    document.querySelectorAll('.site-nav a[href^="#"]').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+    var explore = document.querySelector('.nav-explore');
+    var summary = explore.querySelector('summary');
+    var cta = document.querySelector('.header-cta');
+    var targets = {};
+    document.querySelectorAll('.nav-main > li > a[href^="#"]').forEach(function (a) { targets[a.getAttribute('href').slice(1)] = [a]; });
+    explore.querySelectorAll('a[href^="#"]').forEach(function (a) { targets[a.getAttribute('href').slice(1)] = [summary, a]; });
+    targets.download = [cta];
+
+    // The menu closes on a pick, a click elsewhere, or Escape.
+    explore.addEventListener('click', function (e) { if (e.target.closest('.explore-menu a')) explore.open = false; });
+    document.addEventListener('click', function (e) { if (explore.open && !explore.contains(e.target)) explore.open = false; });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && explore.open) { explore.open = false; summary.focus(); }
+    });
+
     if (!('IntersectionObserver' in window)) return;
-    var current = null;
+    var lit = [];
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        var link = links[entry.target.id];
-        if (current) current.removeAttribute('aria-current');
-        current = link || null;
-        if (current) {
-          current.setAttribute('aria-current', 'true');
-          // On phones the nav scrolls sideways: bring the lit link into it, without touching the page's own scroll.
-          var nav = current.closest('.site-nav');
-          var a = current.getBoundingClientRect(), n = nav.getBoundingClientRect();
-          var left = nav.scrollLeft + (a.left - n.left) - n.width / 2 + a.width / 2;
-          nav.scrollTo({ left: Math.max(0, left), behavior: 'smooth' });
-        }
+        lit.forEach(function (el) { el.removeAttribute('aria-current'); });
+        lit = targets[entry.target.id] || [];
+        lit.forEach(function (el) { el.setAttribute('aria-current', 'true'); });
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
-    document.querySelectorAll('main > section[id], #old-worlds').forEach(function (s) { observer.observe(s); });
+    document.querySelectorAll('main > section[id]').forEach(function (s) { observer.observe(s); });
   })();
 
   // "Get the 1.16.5 file" picks that version; take the reader up to the picker to see it.

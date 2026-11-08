@@ -315,7 +315,8 @@ h2 {
 }
 
 /* ==========================================================================
-   Header — one row at every width; the nav scrolls sideways on phones
+   Header — one row at every width: Explore (a menu of the page), Wiki, FAQ,
+   Discord, and the Download button
    ========================================================================== */
 
 .site-header {
@@ -346,42 +347,40 @@ h2 {
 
 .brand img { width: 24px; height: 24px; }
 
-.site-nav {
-  flex: 1;
-  min-width: 0;
-  overflow-x: auto;
-  scrollbar-width: none;
-  mask-image: linear-gradient(to right, #000 85%, transparent);
-}
+.site-nav { flex: 1; min-width: 0; }
 
-.site-nav::-webkit-scrollbar { display: none; }
-
-.site-nav ul {
+.nav-main {
   display: flex;
-  gap: var(--space-3);
+  align-items: center;
+  justify-content: safe flex-end;
+  gap: var(--space-4);
   white-space: nowrap;
-  padding-block: 0.5rem;
-  padding-right: var(--space-4);
 }
 
-@media (min-width: 72rem) {
-  .site-nav { mask-image: none; }
-  .site-nav ul { justify-content: center; padding-right: 0; }
+@media (min-width: 64rem) {
+  .nav-main { justify-content: center; }
 }
 
-.site-nav a {
+.nav-main > li > a,
+.nav-explore summary {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding-block: 0.5rem;
   font-size: var(--text-small);
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.site-nav a::after {
+.nav-main > li > a::after,
+.nav-explore summary::after {
   content: "";
   position: absolute;
-  inset: auto 0 -0.35em 0;
+  inset: auto 0 0.15rem 0;
   height: 2px;
   background: var(--leaf);
   transform: scaleX(0);
@@ -389,22 +388,107 @@ h2 {
   transition: transform 0.2s ease;
 }
 
-.site-nav a:hover::after,
-.site-nav a:focus-visible::after,
-.site-nav a[aria-current]::after { transform: scaleX(1); }
+.nav-main > li > a:hover::after,
+.nav-main > li > a:focus-visible::after,
+.nav-main > li > a[aria-current]::after,
+.nav-explore summary:hover::after,
+.nav-explore summary:focus-visible::after,
+.nav-explore summary[aria-current]::after,
+.nav-explore[open] summary::after { transform: scaleX(1); }
 
-.site-nav a[aria-current] { color: var(--leaf); }
+.nav-main > li > a[aria-current],
+.nav-explore summary[aria-current] { color: var(--leaf); }
+
+.nav-main .ext { color: var(--leaf); }
+.nav-main .logo { width: 1.25em; height: 1.25em; }
+
+/* Explore: a details/summary menu, so it opens without JavaScript too */
+.nav-explore { position: relative; }
+
+.nav-explore summary { list-style: none; }
+.nav-explore summary::-webkit-details-marker { display: none; }
+
+.chev {
+  width: 0.45em;
+  height: 0.45em;
+  margin-top: -0.2em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  rotate: 45deg;
+  transition: rotate 0.2s ease, margin 0.2s ease;
+}
+
+.nav-explore[open] .chev { rotate: 225deg; margin-top: 0.25em; }
+
+.explore-menu {
+  position: absolute;
+  top: calc(100% + 0.95rem);
+  left: -1rem;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 0.25rem;
+  padding: 0.6rem;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--leaf);
+  white-space: nowrap;
+}
+
+.explore-menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.45rem 1rem 0.45rem 0.45rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.explore-menu .slot { --size: 2.25rem; border-width: 2px; }
+.explore-menu a:hover, .explore-menu a:focus-visible { background: var(--leaf-wash); }
+.explore-menu a[aria-current] { background: var(--leaf-wash); color: var(--leaf); }
 
 .header-cta { flex-shrink: 0; }
+.header-cta[aria-current] { box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--leaf); }
+
+@media (max-width: 52rem) {
+  .nav-main { gap: var(--space-3); }
+  .nav-label { display: none; }
+}
+
+/* below a laptop the menu hangs from the whole header, inside the page margins */
+@media (max-width: 63.99rem) {
+  .nav-explore { position: static; }
+  .explore-menu {
+    top: 100%;
+    left: var(--container-pad);
+    right: var(--container-pad);
+    grid-template-columns: repeat(3, 1fr);
+    white-space: normal;
+  }
+}
 
 @media (max-width: 40rem) {
   .header-inner { gap: var(--space-2); }
   .brand { font-size: 1rem; }
   .header-cta { padding: 0.6em 0.9em; }
+  .nav-main { gap: 1.1rem; }
+  .nav-main .ext { display: none; }
+  .explore-menu { grid-template-columns: 1fr 1fr; }
 }
 
+/* a phone: the hero names the mod right below, so the header keeps only the four links and the button */
 @media (max-width: 30rem) {
-  .brand-text { display: none; }
+  .brand { display: none; }
+  .header-cta .logo { display: none; }
+  .header-cta { padding: 0.6em 0.8em; }
+  .nav-main { gap: 0.95rem; justify-content: safe flex-start; }
+  .nav-main > li > a, .nav-explore summary { font-size: 0.8rem; letter-spacing: 0.02em; }
+}
+
+@media (max-width: 22.5rem) {
+  .nav-main > li:last-child { display: none; }
 }
 
 /* ==========================================================================
@@ -503,6 +587,14 @@ h2 {
 }
 
 .loop img { width: clamp(40px, 7vw, 64px); height: auto; }
+
+/* six steps must fit a phone: smaller type, tighter steps, smaller icons */
+@media (max-width: 30rem) {
+  .loop { gap: 0.5rem; }
+  .loop li { min-width: 0; font-size: 0.6rem; letter-spacing: 0.02em; }
+  .loop img { width: 32px; }
+  .loop li + li::before { left: -0.25rem; top: 0; font-size: 0.9rem; }
+}
 
 .loop li + li::before {
   content: "\2192";
