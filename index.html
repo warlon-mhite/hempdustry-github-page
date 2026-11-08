@@ -43,6 +43,18 @@
   ]
 }
 </script>
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f5f2ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15130e" media="(prefers-color-scheme: dark)">
+<script>
+  // Day or night before the first paint: the reader's own pick if they made one, else their system's.
+  (function () {
+    var t;
+    try { t = localStorage.getItem('hempdustry-theme'); } catch (e) {}
+    if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.dataset.theme = t;
+  })();
+</script>
 <link rel="icon" href="assets/icons/hemp_leaf.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,6 +90,7 @@
               <li><a href="#servers"><span class="slot"><img src="assets/icons/hemp_press.png" alt="" width="16" height="16"></span>Servers and packs</a></li>
               <li><a href="#soundtrack"><span class="slot"><img src="assets/discs/music_disc_moonlight.png" alt="" width="16" height="16"></span>Music</a></li>
               <li><a href="#roadmap"><span class="slot"><img src="assets/icons/warped_kush_buds.png" alt="" width="16" height="16"></span>Coming next</a></li>
+              <li class="explore-theme"><button class="theme-toggle theme-toggle-row" type="button" aria-pressed="false" hidden><span class="theme-sky" aria-hidden="true"><span class="theme-orbit"><img class="theme-sun" src="assets/icons/sun.png" alt="" width="32" height="32"><img class="theme-moon" src="assets/icons/moon.png" alt="" width="32" height="32"></span></span><span>Night theme</span><span class="theme-state" aria-hidden="true">Off</span></button></li>
             </ul>
           </details>
         </li>
@@ -86,6 +99,7 @@
         <li><a href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer" aria-label="Discord"><svg class="logo" aria-hidden="true"><use href="#logo-discord"></use></svg><span class="nav-label">Discord</span></a></li>
       </ul>
     </nav>
+    <button class="theme-toggle" type="button" aria-label="Night theme" aria-pressed="false" hidden><span class="theme-sky" aria-hidden="true"><span class="theme-orbit"><img class="theme-sun" src="assets/icons/sun.png" alt="" width="32" height="32"><img class="theme-moon" src="assets/icons/moon.png" alt="" width="32" height="32"></span></span></button>
     <a class="button button-primary header-cta" href="#download"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>Download</a>
   </div>
 </header>
@@ -1346,6 +1360,54 @@
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     document.querySelectorAll('main > section[id]').forEach(function (s) { observer.observe(s); });
+  })();
+
+  // Day/night switch. A pick that matches the system setting is forgotten, so the page follows the system
+  // again from then on; any other pick is remembered on this browser.
+  (function () {
+    var root = document.documentElement;
+    var toggles = document.querySelectorAll('.theme-toggle');
+    var system = matchMedia('(prefers-color-scheme: dark)');
+    var key = 'hempdustry-theme';
+    var bars = document.querySelectorAll('meta[name="theme-color"]');
+    function show(theme) {
+      var night = theme === 'dark';
+      root.dataset.theme = theme;
+      toggles.forEach(function (t) {
+        t.setAttribute('aria-pressed', night ? 'true' : 'false');
+        t.title = night ? 'Night theme: switch to day' : 'Day theme: switch to night';
+        var state = t.querySelector('.theme-state');
+        if (state) state.textContent = night ? 'On' : 'Off';
+      });
+      bars.forEach(function (m) { m.content = night ? '#15130e' : '#f5f2ea'; });
+      // Bandcamp's player has a light and a dark skin, picked by its bgcol
+      document.querySelectorAll('.track-player-frame-bandcamp').forEach(function (f) {
+        var src = f.src.replace(/bgcol=[0-9a-f]{6}/, 'bgcol=' + (theme === 'dark' ? '333333' : 'ffffff'));
+        if (src !== f.src) f.src = src;
+      });
+    }
+    show(root.dataset.theme === 'dark' ? 'dark' : 'light');
+    toggles.forEach(function (t) {
+      t.hidden = false;
+      t.addEventListener('click', function () {
+        var theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        // the whole page fades over in one go where the browser can (and the reader allows motion)
+        if (document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.startViewTransition(function () { show(theme); });
+        } else {
+          show(theme);
+        }
+        try {
+          if (theme === (system.matches ? 'dark' : 'light')) localStorage.removeItem(key);
+          else localStorage.setItem(key, theme);
+        } catch (e) {}
+      });
+    });
+    system.addEventListener('change', function () {
+      var saved = null;
+      try { saved = localStorage.getItem(key); } catch (e) {}
+      if (!saved) show(system.matches ? 'dark' : 'light');
+    });
   })();
 
   // "Get the 1.16.5 file" picks that version; take the reader up to the picker to see it.

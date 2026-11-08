@@ -6,19 +6,17 @@
    ========================================================================== */
 
 :root {
-  /* ---- colour ---- */
-  --ink: #17140f;
-  --paper: #f5f2ea;
-  --leaf: #2f6b1f;
-  --leaf-bright: #4c9a2a;
-  --ink-85: color-mix(in oklab, var(--ink) 85%, var(--paper));
-  --ink-60: color-mix(in oklab, var(--ink) 60%, var(--paper));
-  --ink-35: color-mix(in oklab, var(--ink) 35%, var(--paper));
-  --ink-15: color-mix(in oklab, var(--ink) 15%, var(--paper));
-  --paper-dim: color-mix(in oklab, var(--paper) 93%, var(--ink));
-  --leaf-wash: color-mix(in oklab, var(--leaf) 10%, var(--paper));
-  --bad: #9b2d20;
-  --bad-wash: color-mix(in oklab, var(--bad) 10%, var(--paper));
+  /* ---- colour ----
+     Each colour is light-dark(day, night). The page follows the reader's system setting
+     (color-scheme: light dark); the sun/moon switch in the header pins one with data-theme. */
+  color-scheme: light dark;
+  --ink: light-dark(#17140f, #ebe4d3);
+  --paper: light-dark(#f5f2ea, #15130e);
+  --leaf: light-dark(#2f6b1f, #7cc35a);
+  --leaf-bright: light-dark(#4c9a2a, #94d870);
+  --bad: light-dark(#9b2d20, #ec8a74);
+  /* text on a leaf ground (buttons); paper by day, ink-dark by night */
+  --on-leaf: light-dark(#f5f2ea, #15130e);
 
   /* ---- Minecraft inventory slot, used as the frame for pixel icons ---- */
   --slot-bg: #8b8b8b;
@@ -47,6 +45,46 @@
   --container-max: 90rem;
   --container-pad: clamp(1rem, 4vw, 3rem);
   --pixel-grid: 16px;
+}
+
+/* a browser from before light-dark() (mid-2024) keeps the day colours, and the switch is hidden */
+@supports not (color: light-dark(#000, #fff)) {
+  :root {
+    --ink: #17140f;
+    --paper: #f5f2ea;
+    --leaf: #2f6b1f;
+    --leaf-bright: #4c9a2a;
+    --bad: #9b2d20;
+    --on-leaf: #f5f2ea;
+  }
+  .disclaimer, .config-card, .discord-card, .old-worlds, .cfg-jump, .yt-facade, .yt-frame, .yt-play, .yt-stamp {
+    --ink: #17140f;
+    --paper: #f5f2ea;
+  }
+  .theme-toggle, .explore-theme { display: none !important; }
+}
+
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+
+/* The ink panels (disclaimer, config file, terminal, Discord card, old worlds, video badges) stay dark at
+   night too: inside them ink is a lifted night grey and paper stays cream, so their rules read the same. */
+.disclaimer, .config-card, .discord-card, .old-worlds, .cfg-jump, .yt-facade, .yt-frame, .yt-play, .yt-stamp {
+  --ink: light-dark(#17140f, #25221b);
+  --paper: light-dark(#f5f2ea, #ebe4d3);
+}
+
+/* Shades, worked out again wherever ink or paper is redefined (a custom property keeps the value it got
+   where it was declared, so the panels need their own copy). */
+:root,
+.disclaimer, .config-card, .discord-card, .old-worlds, .cfg-jump, .yt-facade, .yt-frame, .yt-play, .yt-stamp {
+  --ink-85: color-mix(in oklab, var(--ink) 85%, var(--paper));
+  --ink-60: color-mix(in oklab, var(--ink) 60%, var(--paper));
+  --ink-35: color-mix(in oklab, var(--ink) 35%, var(--paper));
+  --ink-15: color-mix(in oklab, var(--ink) 15%, var(--paper));
+  --paper-dim: color-mix(in oklab, var(--paper) 93%, var(--ink));
+  --leaf-wash: color-mix(in oklab, var(--leaf) 10%, var(--paper));
+  --bad-wash: color-mix(in oklab, var(--bad) 10%, var(--paper));
 }
 
 /* ==========================================================================
@@ -291,12 +329,13 @@ h2 {
 .button-primary {
   background: var(--leaf);
   border-color: var(--leaf);
-  color: var(--paper);
+  color: var(--on-leaf);
 }
 
 .button-primary:hover, .button-primary:focus-visible {
   background: var(--ink);
   border-color: var(--ink);
+  color: var(--paper);
 }
 
 .button-disabled {
@@ -450,12 +489,94 @@ h2 {
 .explore-menu a:hover, .explore-menu a:focus-visible { background: var(--leaf-wash); }
 .explore-menu a[aria-current] { background: var(--leaf-wash); color: var(--leaf); }
 
+/* Day/night switch: a window on the Minecraft sky. Sun and moon ride opposite ends of one wheel, as
+   they do in game, so switching sets the sun in the west while the moon rises in the east.
+   It sits in the header on wide screens and as the last row of the Explore menu on narrow ones.
+   Hidden until the script wires it (no script: the page follows the system setting). */
+.theme-toggle {
+  flex-shrink: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.theme-toggle[hidden], .explore-theme:has(.theme-toggle[hidden]) { display: none; }
+
+.theme-sky {
+  --sky-day: #78a7ff;   /* the overworld's daytime sky */
+  --sky-night: #0b0d1a;
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  overflow: hidden;
+  background: var(--sky-day);
+  border: 1.5px solid var(--ink);
+  transition: background-color 0.7s ease;
+}
+[data-theme="dark"] .theme-sky { background: var(--sky-night); }
+
+.theme-orbit {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 150%;
+  transition: rotate 0.7s cubic-bezier(0.45, 0, 0.2, 1);
+}
+[data-theme="dark"] .theme-orbit { rotate: 180deg; }
+
+.theme-orbit img {
+  position: absolute;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  max-width: none;
+  translate: -50% -50%;
+}
+.theme-sun { top: 50%; }
+.theme-moon { top: 250%; rotate: 180deg; }
+
+/* a pointer over it nudges the sky toward the switch */
+@media (hover: hover) {
+  .theme-toggle:hover .theme-orbit { rotate: 14deg; }
+  [data-theme="dark"] .theme-toggle:hover .theme-orbit { rotate: 194deg; }
+}
+
+/* the menu row: the same sky as a slot, then its name and state */
+.explore-theme { grid-column: 1 / -1; border-top: 1px solid var(--ink-15); padding-top: 0.25rem; }
+.theme-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.45rem 1rem 0.45rem 0.45rem;
+  font-weight: 700;
+  text-align: left;
+  transition: background-color 0.15s ease;
+}
+.theme-toggle-row:hover, .theme-toggle-row:focus-visible { background: var(--leaf-wash); }
+.theme-toggle-row .theme-sky { width: 2.25rem; height: 2.25rem; }
+.theme-state { margin-left: auto; font-size: var(--text-micro); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-60); }
+
+/* the header button on wide screens, the menu row on narrow ones */
+@media (min-width: 46rem) {
+  .explore-theme { display: none; }
+}
+@media (max-width: 45.99rem) {
+  .header-inner > .theme-toggle { display: none; }
+}
+
 .header-cta { flex-shrink: 0; }
 .header-cta[aria-current] { box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--leaf); }
 
+@media (max-width: 56rem) {
+  .nav-label { display: none; }
+}
+
 @media (max-width: 52rem) {
   .nav-main { gap: var(--space-3); }
-  .nav-label { display: none; }
 }
 
 /* below a laptop the menu hangs from the whole header, inside the page margins */
@@ -470,13 +591,18 @@ h2 {
   }
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 41rem) {
   .header-inner { gap: var(--space-2); }
   .brand { font-size: 1rem; }
   .header-cta { padding: 0.6em 0.9em; }
   .nav-main { gap: 1.1rem; }
   .nav-main .ext { display: none; }
   .explore-menu { grid-template-columns: 1fr 1fr; }
+}
+
+/* the name would run under the links here: the leaf alone takes you home */
+@media (max-width: 37rem) {
+  .brand-text { display: none; }
 }
 
 /* a phone: the hero names the mod right below, so the header keeps only the four links and the button */
@@ -999,7 +1125,7 @@ h2 {
 }
 .cfg-preset img { width: 16px; height: 16px; image-rendering: pixelated; }
 .cfg-preset:hover { background: var(--paper-dim); }
-.cfg-preset[aria-pressed="true"] { background: var(--leaf); border-color: var(--leaf); color: var(--paper); }
+.cfg-preset[aria-pressed="true"] { background: var(--leaf); border-color: var(--leaf); color: var(--on-leaf); }
 .cfg-preset[aria-pressed="true"]::after { content: "\2713"; }
 .cfg-reset-all { border-style: dashed; color: var(--ink-60); }
 
@@ -1095,7 +1221,7 @@ h2 {
   transition: transform 0.15s ease, background-color 0.15s ease;
 }
 .cfg-switch:checked { background: var(--leaf); border-color: var(--leaf); }
-.cfg-switch:checked::before { background: var(--paper); transform: translateX(1.25rem); }
+.cfg-switch:checked::before { background: var(--on-leaf); transform: translateX(1.25rem); }
 .cfg-switch:focus-visible, .cfg-pair input:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
 .cfg-pair { display: flex; align-items: center; gap: 0.6rem; }
@@ -1124,7 +1250,7 @@ h2 {
 .cfg-actions .button:disabled { opacity: 0.4; cursor: default; }
 .cfg-out .cfg-dl { color: var(--paper); border-color: var(--ink-35); }
 .cfg-out .cfg-dl:hover, .cfg-out .cfg-dl:focus-visible { background: var(--paper); color: var(--ink); }
-.cfg-out .button-primary:hover, .cfg-out .button-primary:focus-visible { background: var(--leaf-bright); border-color: var(--leaf-bright); }
+.cfg-out .button-primary:hover, .cfg-out .button-primary:focus-visible { background: var(--leaf-bright); border-color: var(--leaf-bright); color: var(--on-leaf); }
 .cfg-actions .button:disabled:hover { background: transparent; color: var(--paper); }
 .cfg-actions .button-primary:disabled:hover { background: var(--leaf); }
 
@@ -1709,7 +1835,7 @@ h2 {
 
 .verdict-yes { color: var(--leaf); background: var(--leaf-wash); }
 .verdict-yes::before { content: "\2713\00a0"; }
-.verdict-ask { color: var(--ink); background: #f2c46d; border-color: var(--ink); }
+.verdict-ask { color: #17140f; background: #f2c46d; border-color: var(--ink); }
 .verdict-ask::before { content: "?\00a0"; }
 
 .credit-roll {
@@ -2021,7 +2147,7 @@ h2 {
   padding: var(--space-4);
   background: var(--leaf);
   border: 1.5px solid var(--leaf);
-  color: var(--paper);
+  color: var(--on-leaf);
   text-decoration: none;
   box-shadow: 8px 8px 0 var(--ink);
   transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
@@ -2029,6 +2155,7 @@ h2 {
 
 .dl-main:hover, .dl-main:focus-visible {
   background: var(--ink);
+  color: var(--paper);
   border-color: var(--ink);
   box-shadow: 8px 8px 0 var(--leaf);
 }
@@ -2231,7 +2358,7 @@ a.dl-mirror:hover .logo { color: var(--paper); }
   text-transform: uppercase;
 }
 
-.loader-fabric { color: var(--ink); background: #e6dcc2; border-color: #b9a77a; }
+.loader-fabric { color: #17140f; background: #e6dcc2; border-color: #b9a77a; }
 .loader-neoforge { color: #fff; background: #c4561b; border-color: #c4561b; }
 .loader-forge { color: #fff; background: #2b3f5c; border-color: #2b3f5c; }
 
@@ -2375,7 +2502,7 @@ a.dl-mirror:hover .logo { color: var(--paper); }
 
 .old-worlds .button { color: var(--paper); border-color: var(--paper); }
 .old-worlds .button:hover, .old-worlds .button:focus-visible { background: var(--paper); color: var(--ink); }
-.old-worlds .button-primary { background: var(--leaf); border-color: var(--leaf); }
+.old-worlds .button-primary { background: var(--leaf); border-color: var(--leaf); color: var(--on-leaf); }
 .old-worlds a:not(.button) { text-decoration-color: var(--ink-35); }
 .old-worlds :focus-visible { outline-color: var(--paper); }
 
@@ -2407,7 +2534,7 @@ a.dl-mirror:hover .logo { color: var(--paper); }
   width: 1.75rem;
   height: 1.75rem;
   background: var(--leaf);
-  color: var(--paper);
+  color: var(--on-leaf);
   font-weight: 900;
 }
 
