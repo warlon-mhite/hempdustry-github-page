@@ -1590,7 +1590,157 @@ h2 {
 .two-mods h3 { font-size: var(--text-h3); font-weight: 800; margin-bottom: 0.4rem; }
 .two-mods p { max-width: 80ch; color: var(--ink-85); line-height: 1.6; }
 
-.open-source .lede { margin-bottom: 0; }
+/* ==========================================================================
+   Open source — two licence cards beside a build-it terminal, a "Can I…?"
+   board drawn from CREDITS.md, and the people whose work ships in the jar
+   ========================================================================== */
+
+.oss-split { display: grid; gap: var(--space-5); align-items: start; }
+.oss-split > * { min-width: 0; }
+
+@media (min-width: 64rem) {
+  .oss-split { grid-template-columns: 1fr 1.15fr; }
+}
+
+.oss-licences { display: grid; gap: var(--space-3); }
+
+.licence {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  padding: var(--space-3);
+  border: 1.5px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 6px 6px 0 var(--ink-15);
+}
+
+.licence-what {
+  font-size: var(--text-micro);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--leaf);
+}
+
+.licence-name {
+  font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  margin: 0.2rem 0 0.5rem;
+}
+
+.licence p:not(.licence-what) { color: var(--ink-85); line-height: 1.55; }
+
+.licence-link {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: var(--text-small);
+  font-weight: 700;
+}
+
+.licence-link::after { content: "\00a0\2197"; color: var(--leaf); }
+
+.oss-term pre { white-space: pre; font-size: clamp(0.78rem, 0.68rem + 0.3vw, 0.98rem); }
+.oss-term .p { color: var(--leaf-bright); user-select: none; }
+.oss-term .c { color: var(--ink-35); }
+
+.oss-branches {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin: 0 var(--space-3);
+  background: var(--ink-85);
+  border: 1px solid var(--ink-85);
+}
+
+@media (min-width: 30rem) {
+  .oss-branches { grid-template-columns: repeat(3, 1fr); }
+}
+
+.oss-branches li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.5rem 0.7rem;
+  background: var(--ink);
+  font-size: var(--text-small);
+}
+
+.oss-branches b { color: var(--paper); }
+.oss-branches code { background: none; padding: 0; color: #f2c46d; }
+.oss-term .config-note { padding-top: var(--space-2); }
+.oss-term .config-note a { color: var(--paper); }
+
+.oss-subtitle {
+  font-size: var(--text-h3);
+  font-weight: 800;
+  margin: var(--space-6) 0 var(--space-3);
+}
+
+.oss-can {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
+  gap: 0;
+  border-top: 1.5px solid var(--ink);
+}
+
+.oss-can li {
+  display: flex;
+  gap: var(--space-2);
+  align-items: baseline;
+  padding: var(--space-2) var(--space-1) var(--space-2) 0;
+  border-bottom: 1px solid var(--ink-15);
+}
+
+.oss-can p { color: var(--ink-85); line-height: 1.55; }
+.oss-can b { color: var(--ink); }
+
+.verdict {
+  flex-shrink: 0;
+  min-width: 3.4rem;
+  padding: 0.2em 0.5em;
+  border: 1.5px solid;
+  font-size: var(--text-micro);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.verdict-yes { color: var(--leaf); background: var(--leaf-wash); }
+.verdict-yes::before { content: "\2713\00a0"; }
+.verdict-ask { color: var(--ink); background: #f2c46d; border-color: var(--ink); }
+.verdict-ask::before { content: "?\00a0"; }
+
+.credit-roll {
+  display: grid;
+  gap: var(--space-3);
+}
+
+@media (min-width: 30rem) { .credit-roll { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 48rem) { .credit-roll { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 72rem) { .credit-roll { grid-template-columns: repeat(5, 1fr); } }
+
+@media (max-width: 29.99rem) {
+  .licence { flex-direction: column; gap: var(--space-2); }
+}
+
+.credit-roll li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: var(--space-2) 0 0;
+  border-top: 4px solid var(--leaf);
+}
+
+.credit-roll b { font-size: var(--text-h3); font-weight: 800; }
+.credit-roll span { font-size: var(--text-small); color: var(--ink-60); }
+.credit-roll li:last-child { border-top-color: var(--ink-35); }
+
+.oss-credits-note { margin-top: var(--space-3); max-width: 70ch; }
+
+.open-source .cta { margin-top: var(--space-5); display: flex; flex-wrap: wrap; gap: var(--space-1); }
+.open-source .cta + .wiki-more { margin-top: var(--space-3); }
 
 /* ==========================================================================
    Community — a Discord invite card (counts asked of Discord's public invite)

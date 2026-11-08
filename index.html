@@ -1021,11 +1021,75 @@
   <section id="open-source" class="open-source">
     <div class="container">
       <h2>Free and open source</h2>
-      <p class="lede">Code under AGPL-3.0 since day one, art and music under CC BY-NC-SA 4.0. Read it, fork it, send a pull request. Nothing is behind a paywall. <a href="https://github.com/warlon-mhite/hempdustry-fabric/blob/master/CREDITS.md" target="_blank" rel="noopener noreferrer">CREDITS.md</a> has the full picture.</p>
+      <p class="lede">The code has been open since day one, and nothing is behind a paywall. Read it, fork it, build it yourself, send a pull request.</p>
+
+      <div class="oss-split">
+        <div class="oss-licences">
+          <article class="licence">
+            <span class="slot slot-lg"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"></span>
+            <div>
+              <p class="licence-what">Code and data</p>
+              <h3 class="licence-name">AGPL-3.0</h3>
+              <p>Read it, change it, even sell it. Ship a changed jar and you publish your source too.</p>
+              <a class="licence-link" href="https://github.com/warlon-mhite/hempdustry-fabric/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">The licence</a>
+            </div>
+          </article>
+          <article class="licence">
+            <span class="slot slot-lg"><img src="assets/discs/music_disc_moonlight.png" alt="" width="16" height="16"></span>
+            <div>
+              <p class="licence-what">Art and music</p>
+              <h3 class="licence-name">CC BY&#8209;NC&#8209;SA 4.0</h3>
+              <p>Share and remix the textures, the paintings and both discs. Credit them, keep it non-commercial, pass the same licence on.</p>
+              <a class="licence-link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">The licence</a>
+            </div>
+          </article>
+        </div>
+
+        <figure class="config-card oss-term">
+          <figcaption><span class="config-dots" aria-hidden="true"></span><code>Build it yourself</code></figcaption>
+<pre><code><span class="p">$</span> git clone https://github.com/warlon-mhite/hempdustry-fabric.git
+<span class="p">$</span> cd hempdustry-fabric
+<span class="c"># one branch per Minecraft version, below</span>
+<span class="p">$</span> git switch <span class="v">26.3-2.1</span>
+<span class="p">$</span> ./gradlew build</code></pre>
+          <ul class="oss-branches" aria-label="The branch for each Minecraft version">
+            <li><b>26.3</b><code>26.3-2.1</code></li>
+            <li><b>26.2</b><code>26.2-2.1</code></li>
+            <li><b>1.21.11</b><code>2.1</code></li>
+            <li><b>1.21.1</b><code>1.21.1-2.1</code></li>
+            <li><b>1.18.2</b><code>1.18.2-2.1</code></li>
+            <li><b>1.16.5</b><code>1.16.5-2.1</code></li>
+          </ul>
+          <p class="config-note">Gradle comes with the repository and fetches Minecraft and the loaders itself. You need a JDK: 25 and 21 on 26.x, 21 on 1.21, 17 on 1.18.2, 17 and 8 on 1.16.5. <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Building-from-Source" target="_blank" rel="noopener noreferrer">Building from Source</a> has the rest.</p>
+        </figure>
+      </div>
+
+      <h3 class="oss-subtitle">Can I…?</h3>
+      <ul class="oss-can">
+        <li><span class="verdict verdict-yes">Yes</span><p><b>Put it in my modpack</b>, a monetized one too, when the launcher downloads it. Nothing owed.</p></li>
+        <li><span class="verdict verdict-yes">Yes</span><p><b>Run it on my server</b>, with ads, ranks or a store. Nothing owed.</p></li>
+        <li><span class="verdict verdict-yes">Yes</span><p><b>Fork it or ship a changed jar.</b> Non-commercially, with your source published.</p></li>
+        <li><span class="verdict verdict-yes">Yes</span><p><b>Bundle the jar in a pack file or mirror it.</b> Non-commercially, with CREDITS.md kept beside it.</p></li>
+        <li><span class="verdict verdict-yes">Yes</span><p><b>Use the music or art in a fan video or a wiki.</b> Non-commercially, credited to Nefuß or Hempdustry.</p></li>
+        <li><span class="verdict verdict-ask">Ask</span><p><b>Sell merch or a paid product with the art or music.</b> Ask Nefuß for the music, Warlon for the rest. The answer is usually yes.</p></li>
+      </ul>
+
+      <h3 class="oss-subtitle">Who's in the jar</h3>
+      <ul class="credit-roll">
+        <li><b>Warlon Mhite</b><span>Code, data, most of the art, English and French</span></li>
+        <li><b>Nefuß</b><span>Music discs <i>Moonlight</i> and <i>Robadob</i></span></li>
+        <li><b>Gülps'sch420</b><span>German and Swiss German</span></li>
+        <li><b>MargoxaTheGamer</b><span>Russian</span></li>
+        <li><b>A commissioned pixel artist</b><span>Some of the textures, uncredited by choice</span></li>
+      </ul>
+      <p class="small oss-credits-note">A few textures are Minecraft's own with new colours and stay Mojang's. <a href="https://github.com/warlon-mhite/hempdustry-fabric/blob/master/CREDITS.md" target="_blank" rel="noopener noreferrer">CREDITS.md</a> has the full picture, licence by licence.</p>
+
       <p class="cta">
-        <a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-        <a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/wiki" target="_blank" rel="noopener noreferrer">Read the wiki</a>
+        <a class="button button-primary" href="https://github.com/warlon-mhite/hempdustry-fabric" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>View the source</a>
+        <a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/issues" target="_blank" rel="noopener noreferrer">Report a bug</a>
       </p>
+
+      <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Contributing" target="_blank" rel="noopener noreferrer">Contributing</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Building-from-Source" target="_blank" rel="noopener noreferrer">Building from Source</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Translating" target="_blank" rel="noopener noreferrer">Translating</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Addon-Development" target="_blank" rel="noopener noreferrer">Addon Development</a></p>
     </div>
   </section>
 
