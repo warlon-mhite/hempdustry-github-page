@@ -94,7 +94,7 @@
               <li><a href="#build"><span class="slot"><img src="assets/icons/hemp_bricks_block.png" alt="" width="16" height="16"></span>Build</a></li>
               <li><a href="#minecraft-26"><span class="slot"><img src="assets/icons/clock.png" alt="" width="16" height="16"></span>Minecraft 26.x</a></li>
               <li><a href="#servers"><span class="slot"><img src="assets/icons/hemp_press.png" alt="" width="16" height="16"></span>Servers and packs</a></li>
-              <li><a href="#soundtrack"><span class="slot"><img src="assets/discs/music_disc_moonlight.png" alt="" width="16" height="16"></span>Music</a></li>
+              <li><a href="#extras"><span class="slot"><img src="assets/discs/music_disc_moonlight.png" alt="" width="16" height="16"></span>Music, advancements</a></li>
               <li><a href="#roadmap"><span class="slot"><img src="assets/icons/warped_kush_buds.png" alt="" width="16" height="16"></span>Coming next</a></li>
               <li class="explore-theme"><button class="theme-toggle theme-toggle-row" type="button" aria-pressed="false" hidden><span class="theme-sky" aria-hidden="true"><span class="theme-orbit"><img class="theme-sun" src="assets/icons/sun.png" alt="" width="32" height="32"><img class="theme-moon" src="assets/icons/moon.png" alt="" width="32" height="32"></span></span><span>Night theme</span><span class="theme-state" aria-hidden="true">Off</span></button></li>
             </ul>
@@ -159,7 +159,7 @@
         <li><a href="#grow"><b>3</b> strains</a></li>
         <li><a href="#smoke"><b>4</b> ways to smoke</a></li>
         <li><a href="#hash"><b>5</b> kinds of hash</a></li>
-        <li><a href="#extras"><b>42</b> advancements</a></li>
+        <li><a href="#advancements"><b>42</b> advancements</a></li>
         <li><a href="#languages"><b>12</b> languages</a></li>
         <li><a href="#download"><b>3</b> mod loaders</a></li>
         <li><a href="#download"><b>6</b> Minecraft versions</a></li>
@@ -572,13 +572,125 @@
       </ul>
       <p class="small center">Seven paintings for the walls of your grow house. <i>Marley</i> is the new one.</p>
 
-      <ul class="extra-grid">
-        <li><span class="slot"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"></span><h3>42 advancements</h3><p>A real tree that teaches the mod, with a few jokes hidden in it. Some are hidden for real. One is named after a Paris club where Baudelaire ate dawamesk.</p></li>
-        <li><span class="slot"><img src="assets/discs/music_disc_moonlight.png" alt="" width="16" height="16"></span><h3>Two music discs</h3><p>Original tracks by Nefuß. Creepers drop them. <a href="#soundtrack">Listen below.</a></p></li>
-        <li><span class="slot"><img src="assets/icons/decarboxylated_hemp.png" alt="" width="16" height="16"></span><h3>JEI, REI &amp; EMI pages</h3><p>Every machine, both cauldron steps, and an "In the World" page for the stuff that has no recipe. EMI on 1.21.1.</p></li>
-      </ul>
+      <div id="soundtrack" class="stash-part soundtrack">
+        <h3 class="stash-h"><span class="slot"><img src="assets/discs/music_disc_moonlight.png" alt="" width="16" height="16"></span>Original soundtrack</h3>
+        <p class="stash-lede">Two tracks by Nefuß, written for the mod. Released under CC BY-NC-SA 4.0.</p>
 
-      <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Advancements" target="_blank" rel="noopener noreferrer">Advancements</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Items-and-Blocks" target="_blank" rel="noopener noreferrer">Items and Blocks</a></p>
+        <fieldset class="player-toggle">
+          <legend class="sr-only">Choose which player to show for every track</legend>
+          <label class="player-toggle-option">
+            <input type="radio" name="player-source" value="bandcamp" checked>
+            <span>Bandcamp</span>
+          </label>
+          <label class="player-toggle-option">
+            <input type="radio" name="player-source" value="soundcloud">
+            <span>SoundCloud</span>
+          </label>
+        </fieldset>
+
+        <ul class="track-list">
+          <li class="track-card">
+            <div class="track-art-frame">
+              <img class="track-art" src="assets/discs/music_disc_moonlight.png" alt="" width="16" height="16">
+            </div>
+            <div class="track-players">
+              <h4>Moonlight</h4>
+              <iframe class="track-player-frame track-player-frame-bandcamp" src="https://bandcamp.com/EmbeddedPlayer/track=3477749362/size=small/bgcol=ffffff/linkcol=2ebd35/artwork=none/transparent=true/" title="Moonlight by Nefuß — Bandcamp player" loading="lazy">
+                <a href="https://nefu1.bandcamp.com/track/moonlight">Moonlight by Nefuß</a>
+              </iframe>
+              <div class="track-player-soundcloud">
+                <iframe class="track-player-frame-soundcloud" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" title="Moonlight by Nefuß, SoundCloud player" data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2377503962&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                <p class="track-credit"><a href="https://soundcloud.com/user-427551104" target="_blank" rel="noopener noreferrer">Nefuß</a> · <a href="https://soundcloud.com/user-427551104/moonlight" target="_blank" rel="noopener noreferrer">Moonlight</a></p>
+              </div>
+            </div>
+          </li>
+
+          <li class="track-card">
+            <div class="track-art-frame">
+              <img class="track-art" src="assets/discs/music_disc_robadob.png" alt="" width="16" height="16">
+            </div>
+            <div class="track-players">
+              <h4>Robadob</h4>
+              <iframe class="track-player-frame track-player-frame-bandcamp" src="https://bandcamp.com/EmbeddedPlayer/track=2148164601/size=small/bgcol=ffffff/linkcol=2ebd35/artwork=none/transparent=true/" title="Robadob by Nefuß — Bandcamp player" loading="lazy">
+                <a href="https://nefu1.bandcamp.com/track/robadob-2">Robadob by Nefuß</a>
+              </iframe>
+              <div class="track-player-soundcloud">
+                <iframe class="track-player-frame-soundcloud" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" title="Robadob by Nefuß, SoundCloud player" data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2377525649&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                <p class="track-credit"><a href="https://soundcloud.com/user-427551104" target="_blank" rel="noopener noreferrer">Nefuß</a> · <a href="https://soundcloud.com/user-427551104/robadob" target="_blank" rel="noopener noreferrer">Robadob</a></p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div id="advancements" class="stash-part">
+        <h3 class="stash-h"><span class="slot"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"></span>Advancements</h3>
+        <p class="stash-lede">The mod's own tab, and its progression guide: follow it and you meet every part of the mod in a sensible order. A few jokes are hidden in it, some for real. One is named after a Paris club where Baudelaire ate dawamesk.</p>
+
+        <div class="adv" data-adv hidden>
+          <div class="adv-stage">
+            <div class="adv-window">
+              <img class="adv-tab" src="assets/advancements/tab_above_left_selected.png" alt="" width="28" height="32">
+              <img class="adv-tab-icon" src="assets/icons/indica_seeds.png" alt="" width="16" height="16">
+              <p class="adv-window-title" aria-hidden="true">High Hopes</p>
+              <div class="adv-view" role="group" aria-label="The Hempdustry advancement tree. Arrow keys move along it; Enter on the picked one ticks it."></div>
+              <div class="adv-tips" aria-hidden="true"></div>
+            </div>
+            <p class="adv-help small">Point at one for the game's tooltip, pick it for the tip. Drag to look around. Pick it again to tick it off.</p>
+          </div>
+
+          <aside class="adv-card" aria-live="polite">
+            <div class="adv-card-head">
+              <span class="adv-card-slot"><img class="adv-card-frame" src="assets/advancements/task_frame_unobtained.png" alt="" width="26" height="26"><img class="adv-card-icon" src="assets/icons/indica_seeds.png" alt="" width="16" height="16"></span>
+              <div>
+                <h4 class="adv-card-title">High Hopes</h4>
+                <p class="adv-card-meta"></p>
+              </div>
+            </div>
+            <p class="adv-card-desc"></p>
+            <p class="adv-card-tip"></p>
+            <p class="adv-card-path small"></p>
+            <div class="adv-card-actions">
+              <button class="adv-tick" type="button" data-adv-tick aria-pressed="false"><img src="assets/advancements/task_frame_obtained.png" alt="" width="26" height="26"><span>Mark as earned</span></button>
+              <a class="adv-card-wiki" href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Advancements" target="_blank" rel="noopener noreferrer">On the wiki</a>
+            </div>
+            <div class="adv-card-foot">
+              <p class="adv-progress small"><span class="adv-progress-bar" aria-hidden="true"></span>Ticked: <b data-adv-progress>0 of 43</b> <button class="adv-link" type="button" data-adv-reset hidden>Clear</button></p>
+              <label class="adv-secrets small"><input type="checkbox" data-adv-secrets> Show the four hidden ones <span class="adv-spoiler">spoilers</span></label>
+            </div>
+          </aside>
+        </div>
+        <p class="adv-note small">43 advancements on Minecraft 26.2 and 26.3, 42 on the others: <i>The Munchies</i> needs the new Minecraft. Ticks stay in this browser only.</p>
+        <p class="small" data-adv-fallback>42 advancements (43 on Minecraft 26.2 and 26.3), from <i>High Hopes</i> to <i>Around the World in 80 Grams</i>. The whole tree, with a tip for each, is on the wiki's <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Advancements" target="_blank" rel="noopener noreferrer">Advancements</a> page.</p>
+      </div>
+
+      <div id="languages" class="stash-part languages">
+        <h3 class="stash-h"><span class="slot"><img src="assets/icons/hemp_leaf.png" alt="" width="16" height="16"></span>Speaks your language</h3>
+        <p class="stash-lede">Twelve languages, local slang included.</p>
+
+        <figure class="plate mc-screen">
+          <div class="mc-panel">
+            <p class="mc-title" aria-hidden="true">Language</p>
+            <ul class="mc-list" aria-label="Languages the mod ships in, and who translated each">
+              <li class="is-selected"><span lang="en">English (United States)</span> <small>by Warlon Mhite</small></li>
+              <li><span lang="en">English (United Kingdom)</span> <small>LLM-adapted from Warlon Mhite</small></li>
+              <li><span lang="en">English (Canada)</span> <small>LLM-adapted from Warlon Mhite</small></li>
+              <li><span lang="en">English (Australia)</span> <small>LLM-adapted from Warlon Mhite</small></li>
+              <li><span lang="en">English (New Zealand)</span> <small>LLM-adapted from Warlon Mhite</small></li>
+              <li><span lang="fr">Français (France)</span> <small>by Warlon Mhite</small></li>
+              <li><span lang="fr">Français (Canada)</span> <small>LLM-adapted from Warlon Mhite</small></li>
+              <li><span lang="fr">Français (Suisse)</span> <small>LLM-adapted from Warlon Mhite</small></li>
+              <li><span lang="de">Deutsch (Deutschland)</span> <small>by Gülps'sch420</small></li>
+              <li><span lang="de">Deitsch (Österreich)</span> <small>LLM-adapted from Gülps'sch420</small></li>
+              <li><span lang="de">Schwiizerdütsch (Schwiiz)</span> <small>by Gülps'sch420</small></li>
+              <li><span lang="ru">Русский (Россия)</span> <small>by MargoxaTheGamer</small></li>
+            </ul>
+          </div>
+          <figcaption>The regional variants were adapted with an LLM and no native speaker has read them yet. The Russian translation hasn't caught up with 2.1, so the new stuff shows in English there. Speak one of these and spot a word nobody would say? <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Translating" target="_blank" rel="noopener noreferrer">Translating</a> on the wiki says how to check, fix or finish one, and the <a href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer">Discord</a> is there for questions.</figcaption>
+        </figure>
+      </div>
+
+      <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Advancements" target="_blank" rel="noopener noreferrer">Advancements</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Items-and-Blocks" target="_blank" rel="noopener noreferrer">Items and Blocks</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Translating" target="_blank" rel="noopener noreferrer">Translating</a></p>
     </div>
   </section>
 
@@ -641,34 +753,6 @@
       </ul>
 
       <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Server-Guide" target="_blank" rel="noopener noreferrer">Server Guide</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Configuration" target="_blank" rel="noopener noreferrer">Configuration</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Commands" target="_blank" rel="noopener noreferrer">Commands</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Modpack-Guide" target="_blank" rel="noopener noreferrer">Modpack Guide</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Tags" target="_blank" rel="noopener noreferrer">Tags</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Datapacks" target="_blank" rel="noopener noreferrer">Datapacks</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Custom-Strains" target="_blank" rel="noopener noreferrer">Custom Strains</a> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Addon-Development" target="_blank" rel="noopener noreferrer">Addon Development</a></p>
-    </div>
-  </section>
-
-  <section id="languages" class="languages">
-    <div class="container">
-      <h2>Speaks your language</h2>
-      <p class="lede">Twelve languages, local slang included.</p>
-
-      <figure class="plate mc-screen">
-        <div class="mc-panel">
-          <p class="mc-title" aria-hidden="true">Language</p>
-          <ul class="mc-list" aria-label="Languages the mod ships in, and who translated each">
-            <li class="is-selected"><span lang="en">English (United States)</span> <small>by Warlon Mhite</small></li>
-            <li><span lang="en">English (United Kingdom)</span> <small>LLM-adapted from Warlon Mhite</small></li>
-            <li><span lang="en">English (Canada)</span> <small>LLM-adapted from Warlon Mhite</small></li>
-            <li><span lang="en">English (Australia)</span> <small>LLM-adapted from Warlon Mhite</small></li>
-            <li><span lang="en">English (New Zealand)</span> <small>LLM-adapted from Warlon Mhite</small></li>
-            <li><span lang="fr">Français (France)</span> <small>by Warlon Mhite</small></li>
-            <li><span lang="fr">Français (Canada)</span> <small>LLM-adapted from Warlon Mhite</small></li>
-            <li><span lang="fr">Français (Suisse)</span> <small>LLM-adapted from Warlon Mhite</small></li>
-            <li><span lang="de">Deutsch (Deutschland)</span> <small>by Gülps'sch420</small></li>
-            <li><span lang="de">Deitsch (Österreich)</span> <small>LLM-adapted from Gülps'sch420</small></li>
-            <li><span lang="de">Schwiizerdütsch (Schwiiz)</span> <small>by Gülps'sch420</small></li>
-            <li><span lang="ru">Русский (Россия)</span> <small>by MargoxaTheGamer</small></li>
-          </ul>
-        </div>
-        <figcaption>The regional variants were adapted with an LLM and no native speaker has read them yet. The Russian translation hasn't caught up with 2.1, so the new stuff shows in English there. Speak one of these and spot a word nobody would say? <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Translating" target="_blank" rel="noopener noreferrer">Translating</a> on the wiki says how to check, fix or finish one, and the <a href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer">Discord</a> is there for questions.</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -944,59 +1028,6 @@
       </div>
 
       <p class="cta"><a class="button button-primary" href="https://github.com/warlon-mhite/hempdustry-fabric/wiki" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>Open the wiki</a></p>
-    </div>
-  </section>
-
-  <section id="soundtrack" class="soundtrack">
-    <div class="container">
-      <h2>Original soundtrack</h2>
-      <p class="lede">Two tracks by Nefuß, written for the mod. Released under CC BY-NC-SA 4.0.</p>
-
-      <fieldset class="player-toggle">
-        <legend class="sr-only">Choose which player to show for every track</legend>
-        <label class="player-toggle-option">
-          <input type="radio" name="player-source" value="bandcamp" checked>
-          <span>Bandcamp</span>
-        </label>
-        <label class="player-toggle-option">
-          <input type="radio" name="player-source" value="soundcloud">
-          <span>SoundCloud</span>
-        </label>
-      </fieldset>
-
-      <ul class="track-list">
-        <li class="track-card">
-          <div class="track-art-frame">
-            <img class="track-art" src="assets/discs/music_disc_moonlight.png" alt="" width="16" height="16">
-          </div>
-          <div class="track-players">
-            <h3>Moonlight</h3>
-            <iframe class="track-player-frame track-player-frame-bandcamp" src="https://bandcamp.com/EmbeddedPlayer/track=3477749362/size=small/bgcol=ffffff/linkcol=2ebd35/artwork=none/transparent=true/" title="Moonlight by Nefuß — Bandcamp player" loading="lazy">
-              <a href="https://nefu1.bandcamp.com/track/moonlight">Moonlight by Nefuß</a>
-            </iframe>
-            <div class="track-player-soundcloud">
-              <iframe class="track-player-frame-soundcloud" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" title="Moonlight by Nefuß, SoundCloud player" data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2377503962&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-              <p class="track-credit"><a href="https://soundcloud.com/user-427551104" target="_blank" rel="noopener noreferrer">Nefuß</a> · <a href="https://soundcloud.com/user-427551104/moonlight" target="_blank" rel="noopener noreferrer">Moonlight</a></p>
-            </div>
-          </div>
-        </li>
-
-        <li class="track-card">
-          <div class="track-art-frame">
-            <img class="track-art" src="assets/discs/music_disc_robadob.png" alt="" width="16" height="16">
-          </div>
-          <div class="track-players">
-            <h3>Robadob</h3>
-            <iframe class="track-player-frame track-player-frame-bandcamp" src="https://bandcamp.com/EmbeddedPlayer/track=2148164601/size=small/bgcol=ffffff/linkcol=2ebd35/artwork=none/transparent=true/" title="Robadob by Nefuß — Bandcamp player" loading="lazy">
-              <a href="https://nefu1.bandcamp.com/track/robadob-2">Robadob by Nefuß</a>
-            </iframe>
-            <div class="track-player-soundcloud">
-              <iframe class="track-player-frame-soundcloud" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" title="Robadob by Nefuß, SoundCloud player" data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2377525649&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-              <p class="track-credit"><a href="https://soundcloud.com/user-427551104" target="_blank" rel="noopener noreferrer">Nefuß</a> · <a href="https://soundcloud.com/user-427551104/robadob" target="_blank" rel="noopener noreferrer">Robadob</a></p>
-            </div>
-          </div>
-        </li>
-      </ul>
     </div>
   </section>
 
@@ -1336,6 +1367,7 @@
 </footer>
 
 <script src="assets/js/config-tool.js" defer></script>
+<script src="assets/js/advancements.js" defer></script>
 <script>
   // Light up what the reader is on: the section's own link, or "Explore" for a section listed in its menu,
   // or the Download button.

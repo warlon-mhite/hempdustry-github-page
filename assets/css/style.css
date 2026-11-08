@@ -265,7 +265,7 @@ h2 {
 }
 
 @supports (animation-timeline: view()) {
-  .plate, .strain, .device, .chain li, .block-grid li, .extra-grid li, .soon-grid li,
+  .plate, .strain, .device, .chain li, .block-grid li, .soon-grid li,
   .chapter-art, .discord-why li {
     animation: reveal-up linear both;
     animation-timeline: view();
@@ -970,16 +970,16 @@ h2 {
 .sober h3 { font-size: var(--text-h3); margin-bottom: var(--space-3); }
 
 /* build */
-.block-grid, .extra-grid, .soon-grid {
+.block-grid, .soon-grid {
   display: grid;
   gap: var(--space-4) var(--space-3);
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
 }
 
 /* three and six tiles read best three across */
-.extra-grid, .soon-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); }
+.soon-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); }
 
-.block-grid li, .extra-grid li, .soon-grid li {
+.block-grid li, .soon-grid li {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
@@ -987,9 +987,9 @@ h2 {
   align-items: start;
 }
 
-.block-grid .slot, .extra-grid .slot, .soon-grid .slot { grid-row: span 2; }
-.block-grid h3, .extra-grid h3, .soon-grid h3 { font-size: var(--text-h3); align-self: end; }
-.block-grid p, .extra-grid p, .soon-grid p { color: var(--ink-85); font-size: var(--text-small); }
+.block-grid .slot, .soon-grid .slot { grid-row: span 2; }
+.block-grid h3, .soon-grid h3 { font-size: var(--text-h3); align-self: end; }
+.block-grid p, .soon-grid p { color: var(--ink-85); font-size: var(--text-small); }
 
 /* extras */
 .paintings {
@@ -1270,6 +1270,354 @@ h2 {
 .cfg-import-note { margin: 0.5rem 0 0; }
 
 /* ==========================================================================
+   The rest of the stash — its parts: music, advancements, languages
+   ========================================================================== */
+
+.stash-part {
+  margin-top: var(--space-6);
+  scroll-margin-top: 4.5rem;
+}
+
+.stash-h {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-h2);
+  font-size: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+  line-height: 1.1;
+  margin-bottom: var(--space-2);
+}
+
+.stash-h .slot { --size: 2.75rem; }
+.stash-h .slot img { image-rendering: pixelated; }
+
+.stash-lede {
+  font-size: var(--text-lede);
+  line-height: 1.5;
+  max-width: 52ch;
+  color: var(--ink-85);
+  margin-bottom: var(--space-4);
+}
+
+/* ==========================================================================
+   Advancements — the game's own tab: window, frames, connectors, tooltips.
+   One game pixel is --px of screen; everything below is counted in game pixels.
+   ========================================================================== */
+
+.adv[hidden], [data-adv-fallback][hidden] { display: none !important; }
+
+.adv {
+  --px: 2px;
+  display: grid;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+@media (min-width: 60rem) {
+  .adv { grid-template-columns: minmax(0, 1fr) 21rem; }
+}
+
+@media (min-width: 80rem) {
+  .adv { --px: 3px; }
+}
+
+.adv-stage { min-width: 0; }
+
+.adv-window {
+  position: relative;
+  margin-top: calc(28 * var(--px));
+  padding: calc(18 * var(--px)) calc(9 * var(--px)) calc(9 * var(--px));
+  image-rendering: pixelated;
+  font-family: "Pixelify Sans", var(--font);
+}
+
+/* the window itself, laid over the view so its inner shadow falls on the tree */
+.adv-window::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  border-image: url("../advancements/window.png") 24 15 15 15 / calc(24 * var(--px)) calc(15 * var(--px)) calc(15 * var(--px)) calc(15 * var(--px)) stretch;
+  image-rendering: pixelated;
+}
+
+.adv-tab, .adv-tab-icon {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.adv-tab {
+  left: 0;
+  top: calc(-28 * var(--px));
+  width: calc(28 * var(--px));
+  height: calc(32 * var(--px));
+}
+
+.adv-tab-icon {
+  left: calc(6 * var(--px));
+  top: calc(-19 * var(--px));
+  width: calc(16 * var(--px));
+  height: calc(16 * var(--px));
+}
+
+.adv-window-title {
+  position: absolute;
+  z-index: 4;
+  left: calc(8 * var(--px));
+  top: calc(5 * var(--px));
+  margin: 0;
+  font-size: calc(7 * var(--px));
+  line-height: calc(9 * var(--px));
+  color: #404040;
+}
+
+.adv-view {
+  position: relative;
+  height: clamp(20rem, 62vh, 32rem);
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: #6d6658 url("../advancements/background.png") 0 0 / calc(16 * var(--px)) repeat;
+  cursor: grab;
+  scrollbar-width: thin;
+  scrollbar-color: #8b8b8b #373737;
+  touch-action: pan-x pan-y;
+}
+
+.adv-view.is-dragging { cursor: grabbing; user-select: none; }
+.adv-view.is-dragging .adv-node { cursor: grabbing; }
+
+.adv-canvas {
+  position: relative;
+  width: calc(var(--w) * var(--px));
+  height: calc(var(--h) * var(--px));
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.adv-lines {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(var(--w) * var(--px));
+  height: calc(var(--h) * var(--px));
+  shape-rendering: crispEdges;
+}
+
+.adv-node {
+  position: absolute;
+  left: calc((var(--x) + 3) * var(--px));
+  top: calc(var(--y) * var(--px));
+  width: calc(26 * var(--px));
+  height: calc(26 * var(--px));
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.adv-frame { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.adv-icon, .adv-tip-icon, .adv-card-icon, .adv-tab-icon { image-rendering: pixelated; }
+
+.adv-icon {
+  position: absolute;
+  left: calc(5 * var(--px));
+  top: calc(5 * var(--px));
+  width: calc(16 * var(--px));
+  height: calc(16 * var(--px));
+}
+
+.adv-node.is-selected { outline: var(--px) solid #fff; outline-offset: var(--px); }
+.adv-node:focus-visible { outline: var(--px) solid #ffff55; outline-offset: var(--px); }
+
+/* hidden advancements stay out of the tab, line and all, until asked for */
+.adv:not(.show-secrets) .adv-node.is-secret,
+.adv:not(.show-secrets) .adv-lines .is-secret { display: none; }
+
+.adv-tips {
+  position: absolute;
+  z-index: 2;
+  left: calc(9 * var(--px));
+  top: calc(18 * var(--px));
+  right: calc(9 * var(--px));
+  bottom: calc(9 * var(--px));
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* the hover box: description box and title bar share one grid cell, so it is as wide as the wider */
+.adv-tip {
+  position: absolute;
+  display: grid;
+  font-size: calc(7 * var(--px));
+  line-height: calc(9 * var(--px));
+}
+
+.adv-tip[hidden] { display: none; }
+.adv-tip > * { grid-area: 1 / 1; margin: 0; }
+
+.adv-tip-desc {
+  max-width: min(calc(170 * var(--px)), var(--room, 100vw));
+  padding: calc(29 * var(--px)) calc(6 * var(--px)) calc(5 * var(--px));
+  border-image: url("../advancements/title_box.png") 10 fill / calc(10 * var(--px)) stretch;
+  color: #55ff55;
+}
+
+.adv-tip-challenge .adv-tip-desc { color: #aa00aa; }
+
+.adv-tip-bar {
+  align-self: start;
+  height: calc(26 * var(--px));
+  display: flex;
+  align-items: center;
+  padding: 0 calc(8 * var(--px)) 0 calc(32 * var(--px));
+  border-image: url("../advancements/box_unobtained.png") 10 fill / calc(10 * var(--px)) stretch;
+  color: #fff;
+  text-shadow: var(--px) var(--px) 0 #3f3f3f;
+  white-space: nowrap;
+}
+
+.adv-tip.is-done .adv-tip-bar { border-image-source: url("../advancements/box_obtained.png"); }
+
+.adv-tip-frame, .adv-tip-icon { position: absolute; }
+.adv-tip-frame { left: calc(3 * var(--px)); top: 0; width: calc(26 * var(--px)); height: calc(26 * var(--px)); }
+.adv-tip-icon { left: calc(8 * var(--px)); top: calc(5 * var(--px)); width: calc(16 * var(--px)); height: calc(16 * var(--px)); }
+
+.adv-tip.is-left .adv-tip-bar { padding: 0 calc(32 * var(--px)) 0 calc(8 * var(--px)); justify-content: flex-end; }
+.adv-tip.is-left .adv-tip-frame { left: auto; right: calc(3 * var(--px)); }
+.adv-tip.is-left .adv-tip-icon { left: auto; right: calc(8 * var(--px)); }
+
+.adv-tip.is-free .adv-tip-bar { padding-left: calc(8 * var(--px)); }
+.adv-tip.is-free .adv-tip-frame, .adv-tip.is-free .adv-tip-icon { display: none; }
+
+.adv-tip.is-up .adv-tip-bar { align-self: end; }
+.adv-tip.is-up .adv-tip-desc { padding: calc(5 * var(--px)) calc(6 * var(--px)) calc(29 * var(--px)); }
+.adv-tip.is-up .adv-tip-frame { top: auto; bottom: 0; }
+.adv-tip.is-up .adv-tip-icon { top: auto; bottom: calc(5 * var(--px)); }
+
+.adv-help { margin-top: var(--space-2); max-width: none; }
+
+/* the card: what the picked one asks, and how it is really earned */
+.adv-card {
+  border: 1.5px solid var(--ink);
+  background: var(--paper);
+  padding: var(--space-3);
+  display: grid;
+  gap: var(--space-2);
+}
+
+.adv-card-head { display: flex; gap: var(--space-2); align-items: center; }
+
+.adv-card-slot {
+  position: relative;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  image-rendering: pixelated;
+}
+
+.adv-card-frame { position: absolute; inset: 0; width: 100%; height: 100%; }
+.adv-card-icon { position: absolute; left: 10px; top: 10px; width: 32px; height: 32px; }
+
+.adv-card-title { font-size: var(--text-h3); line-height: 1.2; }
+
+.adv-card-meta { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.35rem; }
+
+.adv-pill {
+  font-size: var(--text-micro);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.45rem;
+  border: 1px solid var(--ink-15);
+  color: var(--ink-60);
+}
+
+.adv-pill-task, .adv-pill-goal { border-color: var(--leaf); color: var(--leaf); }
+.adv-pill-challenge { border-color: light-dark(#7a1f7a, #d77ad7); color: light-dark(#7a1f7a, #d77ad7); }
+
+.adv-card-desc { font-weight: 600; }
+.adv-card-tip { color: var(--ink-85); font-size: var(--text-small); line-height: 1.55; }
+.adv-card-path { max-width: none; line-height: 1.7; }
+
+.adv-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--leaf);
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.adv-link:hover { color: var(--leaf); }
+.adv-link[hidden] { display: none; }
+
+.adv-card-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+
+.adv-tick {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.8rem 0.35rem 0.4rem;
+  border: 1.5px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--text-small);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.adv-tick img { width: 26px; height: 26px; image-rendering: pixelated; filter: grayscale(1) opacity(0.55); }
+.adv-tick[aria-pressed="true"] { background: #b8902f; border-color: #6e5414; color: #fff; }
+.adv-tick[aria-pressed="true"] img { filter: none; }
+.adv-tick:hover { background: var(--ink); color: var(--paper); }
+
+.adv-card-wiki { font-size: var(--text-small); font-weight: 700; }
+.adv-card-wiki::after { content: "\00a0\2197"; color: var(--leaf); }
+
+.adv-card-foot {
+  display: grid;
+  gap: 0.6rem;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--ink-15);
+}
+
+.adv-progress { position: relative; max-width: none; }
+
+.adv-progress-bar {
+  display: block;
+  height: 6px;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #b8902f calc(var(--done, 0) * 100%), var(--ink-15) 0);
+}
+
+.adv-secrets { display: flex; gap: 0.5rem; align-items: center; cursor: pointer; max-width: none; }
+.adv-secrets input { accent-color: var(--leaf); width: 1rem; height: 1rem; }
+
+.adv-spoiler {
+  font-size: var(--text-micro);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.05rem 0.4rem;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.adv-note { margin-top: var(--space-2); max-width: none; }
+
+@media (max-width: 30rem) {
+  .adv-card { padding: var(--space-2); }
+}
+
+/* ==========================================================================
    Languages — Minecraft's own Language screen, dirt and all
    ========================================================================== */
 
@@ -1405,7 +1753,7 @@ h2 {
 @keyframes disc-spin { to { transform: rotate(360deg); } }
 
 .track-players { flex: 1; min-width: 0; }
-.track-players h3 { font-size: var(--text-h3); margin-bottom: var(--space-1); }
+.track-players h4 { font-size: var(--text-h3); margin-bottom: var(--space-1); }
 
 .track-player-frame {
   display: block;
