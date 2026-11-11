@@ -63,6 +63,7 @@
 <meta name="theme-color" content="#15130e" media="(prefers-color-scheme: dark)">
 <script>
   // Day or night before the first paint: the reader's own pick if they made one, else their system's.
+  document.documentElement.classList.add('js');
   (function () {
     var t;
     try { t = localStorage.getItem('hempdustry-theme'); } catch (e) {}
@@ -132,9 +133,9 @@
         <div class="hero-download">
           <div class="hero-actions">
             <a class="button button-primary" href="https://www.curseforge.com/minecraft/mc-mods/ganjacraft" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-curseforge"></use></svg>Download on CurseForge</a>
-            <a class="button" href="https://www.nexusmods.com/minecraft/mods/218" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-nexusmods"></use></svg>NexusMods</a>
-            <a class="button" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/latest" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>GitHub</a>
-            <span class="button button-disabled" aria-disabled="true"><svg class="logo" aria-hidden="true"><use href="#logo-modrinth"></use></svg>Modrinth (soon)</span>
+            <a class="button m-wide-only" href="https://www.nexusmods.com/minecraft/mods/218" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-nexusmods"></use></svg>NexusMods</a>
+            <a class="button m-wide-only" href="https://github.com/warlon-mhite/hempdustry-fabric/releases/latest" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>GitHub</a>
+            <span class="button button-disabled m-wide-only" aria-disabled="true"><svg class="logo" aria-hidden="true"><use href="#logo-modrinth"></use></svg>Modrinth (soon)</span>
           </div>
           <p class="hero-note">Free, open source. On Fabric it only needs <a href="https://modrinth.com/mod/fabric-api" target="_blank" rel="noopener noreferrer">Fabric API</a>. On NeoForge and Forge it needs nothing at all. <a href="#download">Which file do I need?</a></p>
         </div>
@@ -188,7 +189,7 @@
     <div class="container">
       <h2>New in 2.1</h2>
       <p class="lede">The biggest update since the rewrite. Same world, nothing to do: a save from any Hempdustry 2 version opens on 2.1.0.</p>
-      <ul class="soon-grid">
+      <ul class="soon-grid m-rail" aria-label="New in 2.1">
         <li><span class="slot"><img src="assets/icons/hemp_leaf.png" alt="" width="16" height="16"></span><h3>NeoForge and Forge</h3><p>Same mod, same numbers, on Fabric and NeoForge, and on Forge for 1.18.2 and 1.16.5. One download per loader and Minecraft version. <a href="#download">Pick yours.</a></p></li>
         <li><span class="slot"><img src="assets/icons/hemp_bale.png" alt="" width="16" height="16"></span><h3>Old worlds come back</h3><p>The Forge builds open GanjaCraft and Hemp-Craft worlds and turn them into Hempdustry worlds as they load. <a href="#old-worlds">How.</a></p></li>
         <li><span class="slot"><img src="assets/icons/hydro_tray.png" alt="" width="16" height="16"></span><h3>Grow rooms</h3><p>Grow pots, grow lamps and hydro trays. <a href="#indoor">Below.</a></p></li>
@@ -202,7 +203,7 @@
     </div>
   </section>
 
-  <section id="grow" class="feature">
+  <section id="grow" class="feature" data-more="More on growing">
     <div class="container">
       <h2>Grow your own</h2>
       <p class="lede">Three strains, three very different plants.</p>
@@ -236,12 +237,12 @@
         </article>
       </div>
 
-      <figure class="plate plate-wide">
+      <figure class="plate plate-wide m-more">
         <img src="assets/shots/beldia-bank-1600.webp" srcset="assets/shots/beldia-bank-800.webp 800w, assets/shots/beldia-bank-1600.webp 1600w" sizes="(min-width: 90rem) 84rem, 100vw" alt="Ripe Beldía plants growing on the sand either side of a channel off a desert river, a whitewashed house with an orange and white awning behind them, a camel and a wandering trader by the door, and a happy ghast in a hemp harness hanging in the sky." width="1600" height="900" loading="lazy">
         <figcaption><span>Plate 03</span> Beldía on a desert riverbank. The ghast is wearing hemp.</figcaption>
       </figure>
 
-      <ul class="tips">
+      <ul class="tips m-more">
         <li><b>Trim it.</b> Shear a growing plant twice and the harvest leans toward buds. Or don't, it grows anyway.</li>
         <li><b>Find it.</b> Seeds drop from tall grass and turn up in chests and village houses. Wild plants are rare, shear one up for a flower pot.</li>
         <li><b>Farm life.</b> Bees pollinate it. Chickens and parrots eat the seeds. Goats go for the leaves. And now and then a creeper wanders into a grown field and hides in it, so wall and light the big ones.</li>
@@ -251,7 +252,7 @@
     </div>
   </section>
 
-  <section id="indoor" class="feature">
+  <section id="indoor" class="feature" data-more="More on grow rooms">
     <div class="container">
       <h2>Grow it indoors</h2>
       <p class="lede">More buds, faster, and more ways to mess it up.</p>
@@ -261,7 +262,7 @@
         <figcaption><span>Plate 04</span> Hydro trays on the left, grow pots on the right.</figcaption>
       </figure>
 
-      <ol class="chain">
+      <ol class="chain m-rail" aria-label="Grow room gear">
         <li>
           <span class="slot"><img src="assets/icons/grow_pot.png" alt="" width="16" height="16"></span>
           <h3>Grow Pot</h3>
@@ -280,13 +281,13 @@
       </ol>
 
       <div class="split">
-        <figure class="plate">
+        <figure class="plate m-more">
           <img src="assets/shots/stressed-1600.webp" srcset="assets/shots/stressed-800.webp 800w, assets/shots/stressed-1600.webp 1600w" sizes="(min-width: 64rem) 42rem, 100vw" alt="A bed of Lemon Haze in grow pots: the plants in front are deep green, the ones at the back are washed out and yellow, their leaves dying back." width="1600" height="900" loading="lazy">
           <figcaption><span>Plate 05</span> Same strain, same bed. The back row lost its lamp.</figcaption>
         </figure>
         <div>
           <p class="callout"><b>The plant remembers its light.</b> Kill the lamp while it's flowering and it stresses: the colour drains out, the old leaves go brown, and you lose buds. A dry pot, a stopped pump or bone meal on a flowering plant can do it too.</p>
-          <p class="small">A stressed plant also spoils some of its buds into <b>schwag</b>. Seedy, stemmy, weak. Smoke it and you'll probably just get poisoned. There's an advancement for that.</p>
+          <p class="small m-more">A stressed plant also spoils some of its buds into <b>schwag</b>. Seedy, stemmy, weak. Smoke it and you'll probably just get poisoned. There's an advancement for that.</p>
         </div>
       </div>
 
@@ -294,12 +295,12 @@
     </div>
   </section>
 
-  <section id="smoke" class="feature">
+  <section id="smoke" class="feature" data-more="More on smoking">
     <div class="container">
       <h2>Pack a bowl</h2>
       <p class="lede">The device decides how long. The buds decide how hard.</p>
 
-      <ul class="device-grid">
+      <ul class="device-grid m-rail" aria-label="Ways to smoke">
         <li class="device">
           <span class="slot slot-xl"><img src="assets/icons/indica_spliff.png" alt="" width="16" height="16"></span>
           <h3>Spliff</h3>
@@ -322,7 +323,7 @@
         </li>
       </ul>
 
-      <div class="split">
+      <div class="split m-rail m-gallery" aria-label="Bong pictures">
         <figure class="plate">
           <img src="assets/shots/bong-shelf-1600.webp" srcset="assets/shots/bong-shelf-800.webp 800w, assets/shots/bong-shelf-1600.webp 1600w" sizes="(min-width: 64rem) 42rem, 100vw" alt="Two wooden shelves lined with glass bongs in every stained-glass color." width="1600" height="900" loading="lazy">
           <figcaption><span>Plate 06</span> Every color of glass, plus tinted.</figcaption>
@@ -332,7 +333,7 @@
           <figcaption><span>Plate 07</span> Hold to rip. Let go early and you lose nothing.</figcaption>
         </figure>
       </div>
-      <p class="small center">Bongs come in all sixteen stained-glass colors and you can set one down on a table. It's for show: pick it back up to smoke it.</p>
+      <p class="small center m-more">Bongs come in all sixteen stained-glass colors and you can set one down on a table. It's for show: pick it back up to smoke it.</p>
 
       <div class="effects">
         <div class="effect-card">
@@ -369,7 +370,7 @@
             <li class="chip chip-bad">Munchies</li>
           </ul>
         </div>
-        <p class="effect-note">More buds, stronger high, bigger downside. Buffs stop at level II like a beacon. The one way to III: pair a bud with a concentrate, a pinch of hash in a spliff or a moon rock in a bong.</p>
+        <p class="effect-note m-more">More buds, stronger high, bigger downside. Buffs stop at level II like a beacon. The one way to III: pair a bud with a concentrate, a pinch of hash in a spliff or a moon rock in a bong.</p>
       </div>
 
       <p class="callout"><b>Greening out is real.</b> Go big and you might lose the hit and spend a while nauseous instead. At three it also wipes every buff you had and benches you for a minute. A single bud never does that.</p>
@@ -378,12 +379,12 @@
     </div>
   </section>
 
-  <section id="hash" class="feature">
+  <section id="hash" class="feature" data-more="More on hash">
     <div class="container">
       <h2>Make hash</h2>
       <p class="lede">The old ways, the ones that only need a screen, cold water, heat and pressure. No BHO, not happening.</p>
 
-      <div class="bento">
+      <div class="bento m-rail m-gallery" aria-label="Hash pictures">
         <figure class="plate bento-a">
           <img src="assets/shots/lab-1600.webp" srcset="assets/shots/lab-800.webp 800w, assets/shots/lab-1600.webp 1600w" sizes="(min-width: 64rem) 56rem, 100vw" alt="A wooden workshop with a parquet floor: a Sifting Box filled with water inside a jacket of blue ice, a dry Sifting Box full of kief, two Hemp Presses on magma, a chest, and a counter with hash bars under shelves of buds, kief, hash and rosin." width="1600" height="900" loading="lazy">
           <figcaption><span>Plate 08</span> The bench. Ice wash on the left, presses on the right.</figcaption>
@@ -398,7 +399,7 @@
         </figure>
       </div>
 
-      <ol class="chain">
+      <ol class="chain m-rail" aria-label="From bud to rosin">
         <li>
           <span class="slot"><img src="assets/icons/sifting_box.png" alt="" width="16" height="16"></span>
           <h3>Sifting Box</h3>
@@ -421,19 +422,19 @@
         </li>
       </ol>
 
-      <ul class="soon-grid">
+      <ul class="soon-grid m-more">
         <li><span class="slot"><img src="assets/icons/hashish_bar.png" alt="" width="16" height="16"></span><h3>Hash bars</h3><p>Nine pieces pack into a bar you can put on a shelf. Cut pieces off with a sword, five cuts, and watch it shrink.</p></li>
         <li><span class="slot"><img src="assets/icons/charas.png" alt="" width="16" height="16"></span><h3>Charas</h3><p>Shear a ripe plant and sometimes rub off a pinch. The plant lives. Slow Falling.</p></li>
         <li><span class="slot"><img src="assets/icons/moon_rock.png" alt="" width="16" height="16"></span><h3>Moon rocks</h3><p>A bud, rosin and a coat of hash or kief. Bong only, and it reaches level III.</p></li>
         <li><span class="slot"><img src="assets/icons/kief.png" alt="" width="16" height="16"></span><h3>Five kinds</h3><p>Kief, bubble hash, hashish, charas, rosin. Hold all five and there's an advancement in it.</p></li>
       </ul>
-      <p class="small center">Hash is for smoking only. The kitchen still runs on plant matter.</p>
+      <p class="small center m-more">Hash is for smoking only. The kitchen still runs on plant matter.</p>
 
       <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Hash-and-Concentrates" target="_blank" rel="noopener noreferrer">Hash and Concentrates</a></p>
     </div>
   </section>
 
-  <section id="kitchen" class="feature">
+  <section id="kitchen" class="feature" data-more="More from the kitchen">
     <div class="container">
       <h2>The kitchen</h2>
       <p class="lede">Real cannabutter, made the long way. Edibles are the endgame, not a day-one snack.</p>
@@ -443,7 +444,7 @@
         <figcaption><span>Plate 11</span> Oven, rinse, infuse. The farmer is just watching.</figcaption>
       </figure>
 
-      <ol class="chain">
+      <ol class="chain m-rail" aria-label="From leaf to butter">
         <li>
           <span class="slot"><img src="assets/icons/decarboxylator_front_on.png" alt="" width="16" height="16"></span>
           <h3>Decarboxylator</h3>
@@ -467,7 +468,7 @@
       </ol>
 
       <div class="split">
-        <figure class="plate">
+        <figure class="plate m-more">
           <img src="assets/shots/kitchen-table-1600.webp" srcset="assets/shots/kitchen-table-800.webp 800w, assets/shots/kitchen-table-1600.webp 1600w" sizes="(min-width: 64rem) 42rem, 100vw" alt="Top-down view of a kitchen table with a space cake, a brownie, a space cookie and cannabutter toast." width="1600" height="978" loading="lazy">
           <figcaption><span>Plate 12</span> Dinner is served.</figcaption>
         </figure>
@@ -485,9 +486,9 @@
         </div>
       </div>
 
-      <p class="small">Burnt a leaf in the furnace by accident? That's <b>scorched hemp</b>. The Infuser takes it, but four count as one and the butter never gets past the weakest grade.</p>
+      <p class="small m-more">Burnt a leaf in the furnace by accident? That's <b>scorched hemp</b>. The Infuser takes it, but four count as one and the butter never gets past the weakest grade.</p>
 
-      <div class="sober">
+      <div class="sober m-more">
         <h3>And food that won't get you high</h3>
         <ul class="inventory inventory-row">
           <li><span class="slot"><img src="assets/icons/toasted_hemp_seeds.png" alt="" width="16" height="16"></span>Toasted Hemp Seeds</li>
@@ -502,7 +503,7 @@
     </div>
   </section>
 
-  <section id="build" class="feature">
+  <section id="build" class="feature" data-more="Furniture and the outfit">
     <div class="container">
       <h2>Build with it</h2>
       <p class="lede">Hemp was a fiber crop long before it was a vibe. The planks are fireproof, like Crimson and Warped wood.</p>
@@ -512,7 +513,7 @@
         <figcaption><span>Plate 13</span> The building sets, with the paintings up top.</figcaption>
       </figure>
 
-      <ul class="block-grid">
+      <ul class="block-grid m-rail" aria-label="Building blocks">
         <li><span class="slot slot-lg"><img src="assets/icons/hempcrete_block.png" alt="" width="16" height="16"></span><h3>Hempcrete</h3><p>The powder sets in water, like concrete.</p></li>
         <li><span class="slot slot-lg"><img src="assets/icons/hemp_bricks_block.png" alt="" width="16" height="16"></span><h3>Hemp bricks</h3><p>Full set of stairs, slabs and walls.</p></li>
         <li><span class="slot slot-lg"><img src="assets/icons/hemp_planks.png" alt="" width="16" height="16"></span><h3>Hemp planks</h3><p>Doors, trapdoors, fences, signs, boats, a shelf. The works.</p></li>
@@ -520,7 +521,7 @@
         <li><span class="slot slot-lg"><img src="assets/icons/hemp_wool.png" alt="" width="16" height="16"></span><h3>Canvas &amp; wool</h3><p>Stands in for leather and wool. Beds, books and bundles without a sheep or a cow.</p></li>
       </ul>
 
-      <div class="split">
+      <div class="split m-more">
         <figure class="plate">
           <img src="assets/shots/lounge-1600.webp" srcset="assets/shots/lounge-800.webp 800w, assets/shots/lounge-1600.webp 1600w" sizes="(min-width: 64rem) 42rem, 100vw" alt="A hemp-plank room with a parquet floor: a hemp bed under the Marley painting, two banners with the hemp leaf pattern, shelves of glass bongs, a low table with a purple bong, and an armor stand in the hemp outfit." width="1600" height="900" loading="lazy">
           <figcaption><span>Plate 14</span> The 2.1 furniture, and <i>Marley</i> over the bed.</figcaption>
@@ -536,7 +537,7 @@
         </div>
       </div>
 
-      <div class="outfit">
+      <div class="outfit m-more">
         <ul class="inventory inventory-row" aria-label="Hemp outfit">
           <li><span class="slot"><img src="assets/icons/hemp_beanie.png" alt="" width="16" height="16"></span>Beanie</li>
           <li><span class="slot"><img src="assets/icons/hemp_shirt.png" alt="" width="16" height="16"></span>Shirt</li>
@@ -550,12 +551,12 @@
     </div>
   </section>
 
-  <section id="minecraft-26" class="feature">
+  <section id="minecraft-26" class="feature" data-more="Loader notes and mildew">
     <div class="container">
       <h2>Only on Minecraft 26.2 and 26.3</h2>
       <p class="lede">Minecraft 26.1 and 26.2 brought sulfur cubes, potent sulfur, named times for <code>/time</code> and armour cut to a baby's size. The 26.x builds put all of it to work, so these come with the 26.2 and 26.3 downloads only, on Fabric and NeoForge.</p>
 
-      <ul class="soon-grid">
+      <ul class="soon-grid m-rail" aria-label="Only on 26.2 and 26.3">
         <li><span class="slot"><img src="assets/icons/hemp_bale.png" alt="" width="16" height="16"></span><h3>The footbag</h3><p>Feed a hemp bale to a large sulfur cube. It stops bouncing, floats, and a punch pops it up about two blocks instead of away. Get a few friends and keep it in the air. Shears take the bale back.</p></li>
         <li><span class="slot"><img src="assets/icons/schwag.png" alt="" width="16" height="16"></span><h3>Powdery mildew</h3><p>Hemp under a roof, glass included, can catch it. White powder, drifting spores, and it spreads to the plant next door. A quarter of a sick plant's buds come out as schwag. Fields never get it.</p></li>
         <li><span class="slot"><img src="assets/icons/slime_ball.png" alt="" width="16" height="16"></span><h3>Jelly legs</h3><p>A green-out takes the ground from under you. Your feet slide when you stop and a hit sends you further. Standing still is safe. A cliff edge isn't.</p></li>
@@ -565,9 +566,9 @@
         <li><span class="slot"><img src="assets/icons/indica_seeds.png" alt="" width="16" height="16"></span><h3>Other mods' farmland</h3><p>Any soil another mod puts in Minecraft's crop tags takes hemp seeds and grows them like it grows wheat. Nothing to set up.</p></li>
       </ul>
 
-      <p class="small center">On 26.3, REI works on NeoForge too (with Architectury API 22.0.5 or newer), and NeoForge kicks a footbag as hard as Fabric does. On NeoForge 26.2 a footbag gets about half the kick, and jelly legs slide without the extra knockback. A world moved up to 26.2 or 26.3 keeps everything it had. The <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Minecraft-26.x" target="_blank" rel="noopener noreferrer">wiki</a> has the numbers.</p>
+      <p class="small center m-more">On 26.3, REI works on NeoForge too (with Architectury API 22.0.5 or newer), and NeoForge kicks a footbag as hard as Fabric does. On NeoForge 26.2 a footbag gets about half the kick, and jelly legs slide without the extra knockback. A world moved up to 26.2 or 26.3 keeps everything it had. The <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Minecraft-26.x" target="_blank" rel="noopener noreferrer">wiki</a> has the numbers.</p>
 
-      <p class="callout"><b>Sulfur against mildew.</b> Shears clear a sick plant in a trim window. Or put Minecraft's own potent sulfur under water: no plant its gas reaches catches mildew. Gas a plant while it flowers, though, and a tenth of its buds turn to schwag anyway, so take the water away once the flowers show.</p>
+      <p class="callout m-more"><b>Sulfur against mildew.</b> Shears clear a sick plant in a trim window. Or put Minecraft's own potent sulfur under water: no plant its gas reaches catches mildew. Gas a plant while it flowers, though, and a tenth of its buds turn to schwag anyway, so take the water away once the flowers show.</p>
 
       <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Minecraft-26.x" target="_blank" rel="noopener noreferrer">Minecraft 26.2 and 26.3</a></p>
     </div>
@@ -588,7 +589,7 @@
       </ul>
       <p class="small center">Seven paintings for the walls of your grow house. <i>Marley</i> is the new one.</p>
 
-      <div id="soundtrack" class="stash-part soundtrack">
+      <div id="soundtrack" class="stash-part soundtrack m-fold">
         <h3 class="stash-h"><span class="slot"><img src="assets/discs/music_disc_moonlight.png" alt="" width="16" height="16"></span>Original soundtrack</h3>
         <p class="stash-lede">Two tracks by Nefuß, written for the mod. Released under CC BY-NC-SA 4.0.</p>
 
@@ -639,7 +640,7 @@
         </ul>
       </div>
 
-      <div id="advancements" class="stash-part">
+      <div id="advancements" class="stash-part m-fold">
         <h3 class="stash-h"><span class="slot"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"></span>Advancements</h3>
         <p class="stash-lede">The mod's own tab, and its progression guide: follow it and you meet every part of the mod in a sensible order. A few jokes are hidden in it, some for real. One is named after a Paris club where Baudelaire ate dawamesk.</p>
 
@@ -680,7 +681,7 @@
         <p class="small" data-adv-fallback>42 advancements (43 on Minecraft 26.2 and 26.3), from <i>High Hopes</i> to <i>Around the World in 80 Grams</i>. The whole tree, with a tip for each, is on the wiki's <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Advancements" target="_blank" rel="noopener noreferrer">Advancements</a> page.</p>
       </div>
 
-      <div id="languages" class="stash-part languages">
+      <div id="languages" class="stash-part languages m-fold">
         <h3 class="stash-h"><span class="slot"><img src="assets/icons/hemp_leaf.png" alt="" width="16" height="16"></span>Speaks your language</h3>
         <p class="stash-lede">Twelve languages, local slang included.</p>
 
@@ -751,12 +752,12 @@
         </div>
       </div>
 
-      <div class="cfg" id="config-builder" data-cfg-tool hidden>
+      <div class="cfg m-fold" id="config-builder" data-cfg-tool hidden>
         <h3 class="cfg-title">Build your config file</h3>
         <p class="small cfg-intro">Every key in <code>config/hempdustry.json</code>, the same on every loader and version. Change what you need: the file keeps only that, and the mod fills in the rest at its defaults. Every key is explained on the <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Configuration" target="_blank" rel="noopener noreferrer">Configuration</a> page.</p>
       </div>
 
-      <ul class="soon-grid server-grid">
+      <ul class="soon-grid server-grid m-rail" aria-label="What packs and servers get">
         <li><span class="slot"><img src="assets/icons/hemp_leaf.png" alt="" width="16" height="16"></span><h3>Same jar, both sides</h3><p>The server and every player run the same file. Fabric needs Fabric API, NeoForge and Forge nothing. Java 25 on 26.x, 21 on 1.21, 17 on 1.18.2, 8 on 1.16.5. <a href="#download">Pick the file.</a></p></li>
         <li><span class="slot"><img src="assets/icons/decarboxylated_hemp.png" alt="" width="16" height="16"></span><h3>Recipes are data</h3><p>Every recipe, the Decarboxylator, Infuser and Hemp Press included, is a datapack recipe. KubeJS, CraftTweaker or a plain datapack can rebalance any of them.</p></li>
         <li><span class="slot"><img src="assets/icons/beldia_buds.png" alt="" width="16" height="16"></span><h3>Strains are data</h3><p>Strains, hash included, are a datapack registry. Edit the shipped ones or add your own. They load with the world, not on <code>/reload</code>.</p></li>
@@ -968,7 +969,7 @@
       </ol>
       <p class="small dl-steps-note">On a server, the same jar goes on the server and on every player's game. Updating is swapping the jar: a world from any Hempdustry 2 version opens on every later one, nothing to do.</p>
 
-      <div id="old-worlds" class="old-worlds">
+      <div id="old-worlds" class="old-worlds m-fold">
         <h3>Got an old GanjaCraft or Hemp-Craft world?</h3>
         <p class="old-worlds-lede">Keep it. The Forge builds open it and turn it into a Hempdustry world as it loads. No tool to run, nothing to set up.</p>
         <div class="old-worlds-grid">
@@ -1004,7 +1005,7 @@
       <h2 id="wiki-title">The wiki</h2>
       <p class="lede">The site is the tour. The wiki has the numbers: grow times, effect lengths, recipes, every config key, the tags and the addon API. 41 pages, for players, server owners and pack makers.</p>
 
-      <div class="wiki-cols">
+      <div class="wiki-cols m-rail" aria-label="Wiki pages">
         <div class="wiki-col">
           <h3>Start here</h3>
           <ul>
@@ -1052,6 +1053,7 @@
       <h2>Coming next</h2>
       <p class="lede">Ideas for after 2.1. No dates, it's ready when it's ready, and names can change before anything ships.</p>
 
+      <div class="later-rail m-rail" aria-label="Ideas">
       <div class="later">
         <h3>New strains</h3>
         <ul>
@@ -1080,12 +1082,13 @@
           <li><img src="assets/icons/sativa_seeds.png" alt="" width="16" height="16"><b>Breeding.</b> Cross two strains into a hybrid.</li>
         </ul>
       </div>
+      </div>
 
       <p class="wiki-more"><img src="assets/icons/knowledge_book.png" alt="" width="16" height="16"><span>On the wiki:</span> <a href="https://github.com/warlon-mhite/hempdustry-fabric/wiki/Roadmap" target="_blank" rel="noopener noreferrer">Roadmap</a></p>
     </div>
   </section>
 
-  <section id="open-source" class="open-source">
+  <section id="open-source" class="open-source" data-more="Build it, and who made it">
     <div class="container">
       <h2>Free and open source</h2>
       <p class="lede">The code has been open since day one, and nothing is behind a paywall. Read it, fork it, build it yourself, send a pull request.</p>
@@ -1112,7 +1115,7 @@
           </article>
         </div>
 
-        <figure class="config-card oss-term">
+        <figure class="config-card oss-term m-more">
           <figcaption><span class="config-dots" aria-hidden="true"></span><code>Build it yourself</code></figcaption>
 <pre><code><span class="p">$</span> git clone https://github.com/warlon-mhite/hempdustry-fabric.git
 <span class="p">$</span> cd hempdustry-fabric
@@ -1132,7 +1135,7 @@
       </div>
 
       <h3 class="oss-subtitle">Can I…?</h3>
-      <ul class="oss-can">
+      <ul class="oss-can m-rail" aria-label="Can I">
         <li><span class="verdict verdict-yes">Yes</span><p><b>Put it in my modpack</b>, a monetized one too, when the launcher downloads it. Nothing owed.</p></li>
         <li><span class="verdict verdict-yes">Yes</span><p><b>Run it on my server</b>, with ads, ranks or a store. Nothing owed.</p></li>
         <li><span class="verdict verdict-yes">Yes</span><p><b>Fork it or ship a changed jar.</b> Non-commercially, with your source published.</p></li>
@@ -1141,15 +1144,15 @@
         <li><span class="verdict verdict-ask">Ask</span><p><b>Sell merch or a paid product with the art or music.</b> Ask Nefuß for the music, Warlon for the rest. The answer is usually yes.</p></li>
       </ul>
 
-      <h3 class="oss-subtitle">Who's in the jar</h3>
-      <ul class="credit-roll">
+      <h3 class="oss-subtitle m-more">Who's in the jar</h3>
+      <ul class="credit-roll m-more">
         <li><b>Warlon Mhite</b><span>Code, data, most of the art, English and French</span></li>
         <li><b>Nefuß</b><span>Music discs <i>Moonlight</i> and <i>Robadob</i></span></li>
         <li><b>Gülps'sch420</b><span>German and Swiss German</span></li>
         <li><b>MargoxaTheGamer</b><span>Russian</span></li>
         <li><b>A commissioned pixel artist</b><span>Some of the textures, uncredited by choice</span></li>
       </ul>
-      <p class="small oss-credits-note">A few textures are Minecraft's own with new colours and stay Mojang's. <a href="https://github.com/warlon-mhite/hempdustry-fabric/blob/master/CREDITS.md" target="_blank" rel="noopener noreferrer">CREDITS.md</a> has the full picture, licence by licence.</p>
+      <p class="small oss-credits-note m-more">A few textures are Minecraft's own with new colours and stay Mojang's. <a href="https://github.com/warlon-mhite/hempdustry-fabric/blob/master/CREDITS.md" target="_blank" rel="noopener noreferrer">CREDITS.md</a> has the full picture, licence by licence.</p>
 
       <p class="cta">
         <a class="button button-primary" href="https://github.com/warlon-mhite/hempdustry-fabric" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-github"></use></svg>View the source</a>
@@ -1160,7 +1163,7 @@
     </div>
   </section>
 
-  <section id="about" class="about" aria-labelledby="about-title">
+  <section id="about" class="about" aria-labelledby="about-title" data-more="Read the whole story">
     <div class="container">
       <h2 id="about-title">From GanjaCraft to Hempdustry 2</h2>
       <p class="lede">A lockdown project, a ban over one word, a fork that went its own way and a rewrite from scratch. The wacky story of the mod, told by the one who made it.</p>
@@ -1190,7 +1193,7 @@
           </figure>
         </li>
 
-        <li class="chapter">
+        <li class="chapter m-more">
           <div class="chapter-text">
             <p class="chapter-when">Next</p>
             <h3>Brewevolution, and a quiet spell</h3>
@@ -1206,7 +1209,7 @@
           </figure>
         </li>
 
-        <li class="chapter">
+        <li class="chapter m-more">
           <div class="chapter-text">
             <p class="chapter-when">2022–2023 · Forge 1.16 to 1.18</p>
             <h3>Hemp-Craft</h3>
@@ -1222,7 +1225,7 @@
           </div>
         </li>
 
-        <li class="chapter">
+        <li class="chapter m-more">
           <div class="chapter-text">
             <p class="chapter-when">2025 · Fabric 1.21</p>
             <h3>Hempdustry 2</h3>
@@ -1240,7 +1243,7 @@
           </figure>
         </li>
 
-        <li class="chapter chapter-now">
+        <li class="chapter chapter-now m-more">
           <div class="chapter-text">
             <p class="chapter-when">2026 · Version 2.1</p>
             <h3>Back where it started</h3>
@@ -1257,7 +1260,7 @@
         </li>
       </ol>
 
-      <aside class="two-mods">
+      <aside class="two-mods m-more">
         <h3>Two mods, one root</h3>
         <p>Hemp-Craft and Hempdustry 2 share some mechanics and textures, but they're completely different projects now. NotTyzo worked hard on reimplementing my ideas without MCreator, and had my go-ahead to use the textures and the original CurseForge page and branding. Hemp-Craft is not published under a free software licence. In Hempdustry 2 I reworked some mechanics and added new ones, to make the mod more complete and closer to real-world use and science. It's still a Minecraft mod, though, so it's nowhere near realistic.</p>
       </aside>
@@ -1289,7 +1292,7 @@
           <a class="button discord-join" href="https://discord.gg/2UBEb8PzD3" target="_blank" rel="noopener noreferrer"><svg class="logo" aria-hidden="true"><use href="#logo-discord"></use></svg>Join the server</a>
         </article>
 
-        <ul class="discord-why">
+        <ul class="discord-why m-rail" aria-label="What the Discord is for">
           <li><span class="slot"><img src="assets/icons/schwag.png" alt="" width="16" height="16"></span><div><h3>Report a bug</h3><p>Something crashed, broke or looks wrong. Say which loader and Minecraft version, and a log if there is one.</p></div></li>
           <li><span class="slot"><img src="assets/icons/warped_kush_buds.png" alt="" width="16" height="16"></span><div><h3>Suggest a feature</h3><p>Ideas are welcome. <a href="#roadmap">Coming next</a> shows what's already planned.</p></div></li>
           <li><span class="slot"><img src="assets/icons/grow_lamp.png" alt="" width="16" height="16"></span><div><h3>Show your grow</h3><p>Fields, grow rooms, hash labs, hempcrete houses. Screenshots welcome.</p></div></li>
@@ -1384,6 +1387,7 @@
 
 <script src="assets/js/config-tool.js" defer></script>
 <script src="assets/js/advancements.js" defer></script>
+<script src="assets/js/phone.js" defer></script>
 <script>
   // Light up what the reader is on: the section's own link, or "Explore" for a section listed in its menu,
   // or the Download button.

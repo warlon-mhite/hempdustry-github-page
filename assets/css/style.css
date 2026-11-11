@@ -2947,3 +2947,174 @@ a.dl-mirror:hover .logo { color: var(--paper); }
 .wiki-col a:hover b { color: var(--leaf); }
 .wiki-col a:hover .slot { rotate: -4deg; }
 .wiki .cta { margin-top: var(--space-5); }
+
+/* ==========================================================================
+   Phones — a shorter page (assets/js/phone.js)
+   Below 48rem the page keeps every word but stops stacking it all: rows of cards swipe
+   sideways (.m-rail), side parts fold to their heading (.m-fold), and each section shows its
+   first half with a button for the rest (.m-more). Folding needs JS (html.js), so a reader
+   without it still gets everything.
+   ========================================================================== */
+
+.m-dots, .m-more-btn { display: none; }
+
+@media (max-width: 47.99rem) {
+  /* less air between and inside sections */
+  :root {
+    --space-5: 2rem;
+    --space-6: 2.5rem;
+    --space-7: 3.5rem;
+  }
+  .lede { margin-bottom: var(--space-4); }
+
+  /* the hero keeps one download button; the others wait in #download */
+  .m-wide-only { display: none; }
+
+  /* ---- rails ---- */
+  .m-rail {
+    display: flex;
+    align-items: stretch;
+    gap: 0.75rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    margin-inline: calc(-1 * var(--container-pad));
+    padding-inline: var(--container-pad);
+    scroll-padding-inline: var(--container-pad);
+    max-width: none;
+  }
+  .m-rail::-webkit-scrollbar { display: none; }
+  .m-rail:focus-visible { outline: 2px solid var(--leaf); outline-offset: -2px; }
+
+  .m-rail > * {
+    flex: 0 0 min(82%, 20rem);
+    min-width: 0;
+    margin: 0;
+    scroll-snap-align: start;
+    animation: none;
+  }
+  .m-gallery > * { flex-basis: 88%; }
+
+  /* cards that are bare on a wide page get a frame once they sit side by side */
+  .m-rail.soon-grid > li,
+  .m-rail.block-grid > li,
+  .m-rail.device-grid > li,
+  .m-rail.oss-can > li,
+  .m-rail > .wiki-col,
+  .m-rail > .later {
+    padding: var(--space-2);
+    border: 1px solid var(--ink-15);
+    background: var(--paper-dim);
+  }
+  .m-rail.oss-can { border-top: 0; }
+  .m-rail.oss-can > li { flex-direction: column; gap: var(--space-1); align-items: flex-start; }
+  .m-rail > .later { max-width: none; }
+  .m-rail > .later li { padding-block: 0.6rem; }
+  .m-rail > .later li:last-child { border-bottom: 0; }
+  .m-rail > .wiki-col a:last-child { border-bottom: 0; }
+  .m-rail.device-grid > li .slot { margin-bottom: var(--space-1); }
+  .later-rail { margin-top: var(--space-4); }
+  .bento.m-rail .plate { display: block; }
+
+  .m-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 0.75rem;
+  }
+  .m-dots span {
+    width: 6px;
+    height: 6px;
+    background: var(--ink-15);
+    transition: width 0.2s ease, background-color 0.2s ease;
+  }
+  .m-dots span.is-on { width: 18px; background: var(--leaf); }
+  .m-dots:has(span:only-child) { display: none; }
+
+  /* ---- the rest of a section, on demand ---- */
+  .js main > section:not(.is-more) .m-more { display: none !important; }
+
+  .js .m-more-btn {
+    display: flex;
+    width: 100%;
+    margin-top: var(--space-4);
+    gap: 0.75rem;
+  }
+  .m-more-sign, .m-fold-sign {
+    position: relative;
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+  }
+  .m-more-sign::before, .m-more-sign::after,
+  .m-fold-sign::before, .m-fold-sign::after {
+    content: "";
+    position: absolute;
+    background: currentColor;
+    inset: 5px 0;
+  }
+  .m-more-sign::after, .m-fold-sign::after { inset: 0 5px; transition: scale 0.2s ease; }
+  [aria-expanded="true"] > .m-more-sign::after,
+  [aria-expanded="true"] > .m-fold-sign::after { scale: 1 0; }
+
+  /* ---- folds ---- */
+  .m-fold-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+  .m-fold-btn .m-fold-sign { margin-left: auto; }
+  .m-fold-btn:focus-visible { outline: 2px solid var(--leaf); outline-offset: 4px; }
+
+  .js .m-fold:not(.is-open) > :not(.m-fold-head, .stash-lede, .old-worlds-lede) { display: none !important; }
+  .js .m-fold:not(.is-open) > .stash-lede,
+  .js .m-fold:not(.is-open) > .old-worlds-lede { margin-bottom: 0; }
+
+  /* the folded parts of the stash read as one list of rows */
+  .js .stash-part.m-fold {
+    margin-top: 0;
+    padding-block: var(--space-3);
+    border-top: 1px solid var(--ink-15);
+  }
+  .js .stash-part.m-fold + .wiki-more { margin-top: var(--space-3); }
+  .js .cfg.m-fold { padding-block: var(--space-3); }
+  .js .cfg.m-fold:not(.is-open) .cfg-title { margin-bottom: 0; }
+
+  /* ---- denser blocks ---- */
+  .effects { grid-template-columns: 1fr 1fr; padding: var(--space-3) var(--space-2); }
+  .effect-note { grid-column: 1 / -1; }
+
+  /* the two plates of a gallery end level, the shorter caption taking up the slack */
+  .m-gallery > .plate { display: flex; flex-direction: column; }
+  .m-gallery > .plate figcaption { flex: 1; }
+
+  /* the config builder folds to a row that reads as a tool to open */
+  .js .cfg.m-fold { padding: var(--space-2); border: 1.5px solid var(--ink); background: var(--paper-dim); }
+  .js .cfg.m-fold.is-open { padding-bottom: var(--space-3); }
+
+  /* download: a file's two buttons side by side, the steps as numbered lines */
+  .dl-actions { flex-wrap: nowrap; }
+  .dl-actions .button { flex: 1; padding-inline: 0.6em; }
+  .dl-steps { gap: var(--space-2); }
+  .dl-steps li { position: relative; padding: 0.75rem 0 0 2.75rem; border-top-width: 2px; }
+  .dl-steps li::before { position: absolute; left: 0; top: 0.75rem; margin: 0; font-size: 1.5rem; }
+
+  .chapter-art-slots { display: none; }
+
+  /* licences: icon beside the text, not above it */
+  .licence { flex-direction: row; gap: var(--space-2); padding: var(--space-2); }
+  .licence .slot { --size: 2.75rem; }
+
+  .mc-picker { grid-template-columns: repeat(3, 1fr); }
+  .mc-picker label > span { padding: 0.55rem 0.6rem; }
+  .mc-picker b { font-size: 1.15rem; }
+}

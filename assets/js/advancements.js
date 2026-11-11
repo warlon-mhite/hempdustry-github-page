@@ -453,7 +453,14 @@
   if (fallback) fallback.hidden = true;
   select(root, false);
   // open on the root, a little in from the left, halfway down the window
-  var k0 = root.button.offsetWidth / 26;
-  view.scrollTop = Math.max(0, root.y * k0 - view.clientHeight / 2 + 13 * k0);
-  view.scrollLeft = 0;
+  function centre() {
+    var k0 = root.button.offsetWidth / 26;
+    view.scrollTop = Math.max(0, root.y * k0 - view.clientHeight / 2 + 13 * k0);
+    view.scrollLeft = 0;
+  }
+  centre();
+  // on a phone the tree starts folded away (phone.js), with nothing to measure: centre it when it opens
+  window.addEventListener('phone:open', function (e) {
+    if (e.detail && e.detail.contains(host)) centre();
+  });
 })();
