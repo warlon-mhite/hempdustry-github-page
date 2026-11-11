@@ -30,6 +30,15 @@
   "description": "A free, open-source cannabis (weed, marijuana, hemp) mod for Minecraft Java Edition on Fabric, NeoForge and Forge. Grow three strains in fields, grow pots or hydro trays, smoke them in a spliff, pipe, bong or vaporizer, sift and press hash and rosin, make cannabutter and edibles, and build with hempcrete, hemp bricks and hemp planks. The Forge 1.16.5 and 1.18.2 builds open and convert GanjaCraft and Hemp-Craft worlds.",
   "url": "https://hempdustry.fun/",
   "image": "https://hempdustry.fun/assets/share/hempdustry-2.jpg",
+  "video": {
+    "@type": "VideoObject",
+    "name": "Hempdustry 2.1 trailer",
+    "description": "One minute of Hempdustry 2.1 in Minecraft: growing hemp in a field and a grow room, harvesting, smoking, sifting and pressing hash, the kitchen, and building with hemp blocks. Music: Nefuß, RobaDob (CC BY-NC-SA 4.0).",
+    "thumbnailUrl": "https://hempdustry.fun/assets/video/hempdustry-2.1-trailer-poster.webp",
+    "contentUrl": "https://hempdustry.fun/assets/video/hempdustry-2.1-trailer.mp4",
+    "uploadDate": "2026-11-11",
+    "duration": "PT1M1S"
+  },
   "applicationCategory": "GameApplication",
   "applicationSubCategory": "Minecraft mod",
   "operatingSystem": "Windows, macOS, Linux (Minecraft Java Edition with Fabric, NeoForge or Forge)",
@@ -131,9 +140,16 @@
         </div>
       </div>
 
-      <figure class="plate plate-hero">
-        <img src="assets/shots/showcase-1600.webp" srcset="assets/shots/showcase-800.webp 800w, assets/shots/showcase-1600.webp 1600w" sizes="(min-width: 90rem) 84rem, 100vw" alt="A stepped display in a superflat world holding every item and block of the mod as it was in 2.0: both crops at every growth stage along the bottom, raw materials, the kitchen, the smoking gear and machines, the outfit, and a hemp-brick wall with the paintings at the top." width="1600" height="880" fetchpriority="high">
-        <figcaption><span>Plate 01</span> The mod, on one staircase.</figcaption>
+      <figure class="plate plate-hero plate-video">
+        <div class="video-frame">
+          <video class="hero-video" controls muted loop playsinline preload="metadata" poster="assets/video/hempdustry-2.1-trailer-poster.webp" width="1920" height="1080" aria-label="The Hempdustry 2.1 trailer, one minute: a field and a grow room of hemp, the harvest, smoking, sifting and pressing hash, the kitchen, and hemp building blocks, ending on the title card.">
+            <source src="assets/video/hempdustry-2.1-trailer.webm" type='video/webm; codecs="av01.0.09M.10, opus"'>
+            <source src="assets/video/hempdustry-2.1-trailer.mp4" type="video/mp4">
+            <a href="assets/video/hempdustry-2.1-trailer.mp4">Watch the trailer (MP4, 1 minute)</a>
+          </video>
+          <button class="button button-primary video-sound" type="button" hidden><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M1 5.5h3l4-3v11l-4-3H1z"/><path fill="none" stroke="currentColor" stroke-width="1.4" d="M10.5 5.5q1.8 2.5 0 5M12.5 3.5q3.4 4.5 0 9"/></svg><span>Watch with sound</span></button>
+        </div>
+        <figcaption><span>Plate 01</span> The 2.1 trailer: grow it, smoke it, sift it, press it, build with it. Music: Nefuß, <i>RobaDob</i> (CC BY-NC-SA 4.0).</figcaption>
       </figure>
 
       <ol class="loop" aria-label="The loop">
@@ -1463,6 +1479,42 @@
       f.removeAttribute('data-src');
     });
   });
+
+  // The hero trailer: a muted loop while it's on screen (never on its own under reduced motion).
+  // "Watch with sound" starts it over with sound and the player's controls. Without JS it is a plain player.
+  (function () {
+    var v = document.querySelector('.hero-video');
+    var btn = document.querySelector('.video-sound');
+    if (!v || !btn) return;
+    var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var watching = false;
+    v.controls = false;
+    btn.hidden = false;
+    if (still) btn.querySelector('span').textContent = 'Play the trailer';
+    function loop() {
+      if (still || watching) return;
+      var p = v.play();
+      // a browser that refuses even a muted autoplay (power saving): hand over the plain player
+      if (p) p.catch(function () { if (!watching && v.paused) v.controls = true; });
+    }
+    btn.addEventListener('click', function () {
+      watching = true;
+      v.loop = false;
+      v.muted = false;
+      v.currentTime = 0;
+      v.controls = true;
+      btn.hidden = true;
+      v.play().catch(function () {});
+    });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        if (watching) return;
+        if (es[es.length - 1].isIntersecting) loop(); else v.pause();
+      }).observe(v);
+    } else {
+      loop();
+    }
+  })();
 
   // The video in the story is a plain link until it's pressed; then YouTube's player (no-cookie domain) takes its place.
   document.querySelectorAll('.yt-facade').forEach(function (a) {

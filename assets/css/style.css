@@ -682,6 +682,28 @@ h2 {
 
 .plate-hero { box-shadow: 10px 10px 0 var(--leaf); }
 
+/* the hero trailer: 16:9, black while it loads, a sound button in the corner until it's pressed */
+.video-frame { position: relative; }
+.hero-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+.video-sound {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.55em 1em;
+  font-size: var(--text-small);
+  box-shadow: 3px 3px 0 #000;
+}
+.video-sound[hidden] { display: none; }
+@media (max-width: 30rem) {
+  .video-sound { right: 0.5rem; bottom: 0.5rem; padding: 0.4em 0.75em; }
+}
+
 /* the loop: plant → harvest → smoke → bake → build */
 .loop {
   display: flex;
