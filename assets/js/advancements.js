@@ -7,7 +7,7 @@
   var host = document.querySelector('[data-adv]');
   if (!host) return;
 
-  var WIKI = 'https://github.com/warlon-mhite/hempdustry-fabric/wiki/Advancements';
+  var WIKI = 'https://github.com/warlon-mhite/hempdustry-java/wiki/Advancements';
   var STORE = 'hempdustry-advancements';
 
   // id, parent, icon, frame, title, game description, tip, wiki anchor, flags
