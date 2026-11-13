@@ -2614,7 +2614,22 @@ a.dl-mirror:hover .logo { color: var(--paper); }
 }
 
 @media (min-width: 40rem) { .mc-picker { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 64rem) { .mc-picker { grid-template-columns: repeat(6, 1fr); } }
+/* supported versions three wide, the ended ones five wide below */
+@media (min-width: 64rem) {
+  .mc-picker { grid-template-columns: repeat(15, 1fr); }
+  .mc-picker label { grid-column: span 5; }
+  .mc-picker label.mc-ended { grid-column: span 3; }
+}
+
+.mc-picker-group {
+  grid-column: 1 / -1;
+  margin: var(--space-1) 0 0;
+  font-size: var(--text-small);
+  color: var(--ink-60);
+}
+
+.mc-picker .mc-ended > span { border-style: dashed; }
+.mc-picker .mc-ended b { font-size: 1.2rem; }
 
 .mc-picker legend {
   padding: 0;
@@ -2680,6 +2695,8 @@ a.dl-mirror:hover .logo { color: var(--paper); }
   .download:has(#mc-262:checked) #dl-262,
   .download:has(#mc-12111:checked) #dl-12111,
   .download:has(#mc-1211:checked) #dl-1211,
+  .download:has(#mc-2612:checked) #dl-2612,
+  .download:has(#mc-1201:checked) #dl-1201,
   .download:has(#mc-1182:checked) #dl-1182,
   .download:has(#mc-1165:checked) #dl-1165 { display: grid; }
 }
@@ -2695,6 +2712,15 @@ a.dl-mirror:hover .logo { color: var(--paper); }
 
 .dl-panel-head h4 { margin: 0; font-size: var(--text-h3); font-weight: 800; }
 .dl-panel-head p { color: var(--ink-85); }
+
+/* ended versions: one line that says the build is the last */
+.dl-panel-head .dl-ended {
+  flex-basis: 100%;
+  padding: 0.45rem 0.75rem;
+  border-left: 4px solid var(--ink-35);
+  background: var(--paper-dim);
+  font-size: var(--text-small);
+}
 
 .dl-loaders { display: grid; }
 
